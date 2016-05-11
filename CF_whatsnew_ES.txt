@@ -1,0 +1,307 @@
+Cliente @firma 3.4.1
+----------------------------
+RFE;	Cifrado;	Se eliminan los cifrados RC2 y RC4 por inseguros
+
+
+Cliente @firma 3.4
+----------------------------
+
+RFE;	General;	Se elimina la compatibilidad con Java 5.
+RFE;	General;	Se elimina la firma de múltiples hashes (método compatible del Cliente 2.4)
+RFE;	General;	Se elimina la función de firma Web
+RFE;	General;	Se eliminan los filtros de certificados compatibles con el Cliente 2.4
+RFE;	General;	Se elimina la función para que se muestre al usuario un diálogo de confirmación con el hash de los datos que se va a firmar
+RFE;	Applet;		Se omiten las peticiones de confirmación al usuario cuando se accede a un fichero que está en el mismo host que el applet. El codebase del applet y la URI de acceso al fichero deben utilizar la misma dirección host.
+RFE;	Applet;		Se omiten las peticiones de confirmación en los métodos en que permiten la selección de un fichero por parte del integrador, cuando el usuario ya ha seleccionado ese fichero mediante el método loadFilePath().
+RFE;	Keystores;	Se evita la limitación de no poder firmar con SHA1withRSA impuesta en la última versión de los drivers de DNIe (v10.0.0) y tarjetas CERES (v17.2.0) en sistemas Windows a través del PKCS#12 de las tarjetas (principalmente en Firefox).
+RFE;	Mozilla;	Se sustituye la variable de entorno NSS_HOME para identificar el directorio del NSS de Firefox por AFIRMA_NSS_HOME.
+RFE;	Mozilla;	Se sustituye la variable de entorno PROFILE_HOME para identificadar el directorio de perfil de usuario de Firefox por AFIRMA_PROFILES_INI para indicar el fichero en donde se declaran los perfiles.
+RFE;	Firmas Binarias;Actualización a BouncyCastle 1.51.
+BUG;	Firmas CAdES;	Se corrige el error que impedía generar cofirmas CAdES a partir de una firma y el hash de los datos firmados.
+BUG;	Firmas CAdES;	Correcciones para una mejor adecuación al estándar CAdES-EPES.
+BUG;	Firmas CMS;	Se corrige el error que impedía agregar atributos firmados o no firmados a las firmas y cofirmas CMS.
+RFE;	Firmas XAdES;	Actualización a la versión 0.1.1 de JXAdES, lo que permite la compatibilidad con Java 7u25 y superiores y solventa un problema con el orden de los nodos de los SignedAttributes.
+BUG;	Firmas XAdES;	Se corrige el error que impedía que se identificase el tipo de datos firmados en las firmas XAdES a través de su OID.
+BUG;	Firmas XAdES;	Siempre se agrega el objeto xades:DataObjectFormat en las multifirmas. En las cofirmas se agrega el formato de los datos firmados originalmente, y en las contrafirmas el formato de la firma (XML).
+RFE;	Firmas XAdES;	En las cofirmas XAdES se identifica el tipo de la referencia a los datos con la URL: http://www.w3.org/2000/09/xmldsig#Object
+RFE;	Firmas XAdES;	En las cofirmas enveloping ahora se incluye el nodo de datos por cada cofirma agregada. Esto homogeniza el comportamiento del Cliente @firma con Integr@.
+RFE;	Firmas XAdES;	Se permite la firma con Manifest mediante la configuración del parámetro "useManifest".
+BUG;	Firmas XAdES;	Ahora todos los campos del KeyInfo de XAdES tienen en cuenta el escape de caracteres según XMLDSig y RFC 4514.
+BUG;	Firmas XAdES;	Se agrega el mimeType "hash/sha1" a las firmas generadas masivamente cuando el formato es XAdES o XMLdSig y el modo "explicit".
+BUG;	Firmas XAdES;	Se corrige firma masica de directorios en el que se indicaba la operación de cofirma, el formato XAdES o XMLdSig y el modo "explicit", en el que al encontrar un dato que no fuese una firma, se firmaba el dato en lugar su huella digital.
+RFE;	Firmas XMLdSig;	Se modifica la cofirma XMLdSig enveloping para que se agregue el nodo de datos firmados en cada cofirma.
+RFE;	Firmas XML;	Se elimina el uso del atributo hashAlgorithm para indicar el algoritmo de huella digital en las firmas explícitas.
+RFE;	Firmas XML;	Se homogeniza el uso del atributo Type en los nodos de objetos firmados.
+RFE;	Firmas PDF;	Se incluyen los parámetros para la configuración de una rúbrica de firma.
+RFE;	Firmas PDF;	Se agrega la posibilidad de generar firmas PAdES-BES en lugar de firma PAdES básicas a través de la propiedad de configuración "signatureSubFilter".
+RFE;	Firmas masivas;	Se modifica el procedimiento para que el mensaje de advertencia de acceso a disco sólo aparezca la primera vez que se solicita firmar un fichero en lugar de mostrarlo al inicializar el procedimiento de firma masiva.
+BUG;	Firmas masivas;	Corrección en el cambio de formato de a mitad del proceso masiva.
+RFE;	Firmas masivas;	Se detalla el mensaje de error al intentar firmar hashes con formatos PDF, ODF, OOXML y FacturaE.
+RFE;	OS X;		Se agrega la compatibilidad con el almacén de MacOS X (KeyChain) desde la JDK de Oracle.
+RFE;	OS X;		Se mejoran los diálogos gráficos de carga y guardado de ficheros para evitar incompatibilidades con las últimas versiones de MacOS X.
+RFE;	UI;		El diálogo de selección de certificados muestra un icono descriptivo en los certificados próximos a caducar.
+RFE;	UI;		El diálogo de selección de certificados muestra un icono descriptivo en los certificados caducados.
+
+Cliente @firma 3.3.1 (Update 5)
+-------------------------------
+
+RFE;	Despliegue;	Se abandona el despliegue JNLP como modo de despliegue por defecto para evitar errores en MacOS X y problemas de cacheo. Aún se puede utilizar el modo JNLP estableciendo el valor true como segundo parámetro en la función de carga.
+RFE;	Despliegue;	Se abandona el uso de la biblioteca deployJava.js como medio de despliegue de applets.
+RFE;	Applet;		Se corrige el comportamiento del método selectDirectory().
+
+
+Cliente @firma 3.3.1 (Update 4)
+-------------------------------
+
+RFE;	Applet;		Se sustituye la atributo Trusted-Library por Caller-Allowable-Codebase al MANIFEST.MF para evitar los diálogos de advertencia adicionales de Java 7u45. 
+RFE;	Applet;		Se agregan nuevos atributos al MANIFEST.MF del applet para identificar el nombre y versión de la aplicación.
+
+
+Cliente @firma 3.3.1 (Update 3)
+-------------------------------
+
+RFE;	Despliegue;	Se documenta en el JavaScript de despliegue la posibilidad de deshabilitar la carga vía JNLP por medio de la función de carga del applet.
+BUG;	Mozilla;	Se corrige un problema de regresión por el que no se podía cargar el almacén de certificados de Mozilla Firefox cuando contenía caracteres extraños (tildes, 'ñ',...) en la ruta de instalación.
+RFE;	Firmas XML;	Se detecta cuando está instalado XMLSec como endorsed de la JRE para evitar el uso del referenciador a medida, que en ese caso impide las firmas XML.
+
+
+Cliente @firma 3.3.1 (Update 2)
+-------------------------------
+
+RFE;	Applet;		Se agrega el atribute Trusted-Library al MANIFEST.MF para evitar diálogos de advertencia al usuario.
+BUG;	Mozilla;	Se mejora la función de acceso al almacén de Mozilla Firefox para evitar errores en algunas instalaciones.
+RFE;	Mozilla;	Se agrega la posibilidad de configurar el perfil de usuario y el directorio de NSS mediante variables de sistema para la compatibilidad con versiones portables de Firefox.
+RFE;	Windows;	Se procede a cachear el almacén de Windows tras su primera carga para evitar problemas derivados del MiniDriver del DNIe. Este proceso requiere que se inserten las tarjetas inteligentes antes del proceso de firma e impide el uso de varias tarjetas desde el mismo lector en la misma sesión, como ya ocurría en Firefox.
+RFE;	Windows;	Se eliminan por completo los accesos al registro de Windows, que causan ciertos problemas: Advertencias con el UAC de Windows, cargas innecesarias de DLL, temporales que no se borran,...
+RFE;	Firmas XML;	Se agrega un derreferenciador a medida para permitir la generacion de firmas XML después de un error de regresión en Java 7u25.
+
+
+Cliente @firma 3.3.1
+----------------------------
+
+BUG;	Despliegue;	Se corrige el problema de carga del Cliente cuando se configuran rutas relativas para los valores "base" y "baseDownloadURL" de constantes.js
+RFE;	Bootloader;	Se actualiza el mensaje del diálogo de licencia.
+BUG;	Bootloader;	Se corrige un problema con la validación de los certificados de firma de los instalables.
+BUG;	Applet;		Se evitan los mensajes de confirmación de acceso a fichero cuando se ha indicado una cadena vacía o formada por caracteres blancos (espacios, tabuladores...).
+BUG;	Applet;		Se notifican los errores derivados de la carga de ficheros grandes.
+BUG;	Applet;		Ahora es posible determinar cuando el usuario denegó la solicitud de acceso o guardado a un fichero/directorio.
+RFE;	Applet;		Cuando se solicita un manejador de firma no cargado, se muestran todos los formatos soportados (no los disponibles) para evitar cargarlos innecesariamente.
+RFE;	Keystores;	Se agrega la compatibilidad con Firefox 11 y superiores.
+BUG;	Firmas;		Se corrige el problema que hacía que las contrafirmas no se generasen según los parámetros extras indicados.
+RFE;	Firmas;		Se reconoce el tipo de fichero RAR para su identificación en firmas.
+BUG;	Firmas CAdES;	Las firmas generadas con un algoritmo SHA-2 siempre incluirán el atributo SigningCertificateV2.
+BUG;	Firmas CAdES;	Las firmas CAdES siempre incluyen ahora el atributo opcional "contentHint" para permitir la configuración 100% manual de la política de firma de la AGE.
+BUG;	Firmas XAdES;	Se corrige el problema que invalidaba las contrafirma generadas por algunos productos de firma electrónica de terceros.
+RFE;	Firmas XML;	Se agrega la propiedad "includeOnlySignningCertificate" mediante el cual se puede evitar que se incluya toda la cadena de certificación en las firmas/multifirmas XAdES/XMLdSig (necesario para compatibilidad con versiones antiguas de la Plataforma @firma)
+RFE;	FacturaE;	Se agrega el formato de firma de facturas electrónicas.
+RFE;	Firmas masivas;	Los nombres generados durante los proceso de cofirma masiva de directorios ahora incluyen la partícula ".sign" o ".cosign" según se haya firmado o cofirmado el fichero.
+RFE;	Firmas masivas;	Los nombres generados durante los proceso de firma masiva en formatos PDF, ODF y OOXML de directorios ahora incluyen la partícula ".cosign" si el documento original estaba firmado.
+BUG;	Firmas masivas;	Se corrige un error que hacia fallar todo el proceso de firma masiva de directorios cuando se ha pedido procesar los subdirectorios y uno de ellos no tenía permiso de lectura.
+BUG;	Firmas masivas;	Se corrige el error de estructuración de las firmas XAdES con respecto a su esquema por el que el nodo de descripción aparecía después del de identificación en el elemento DataObjectFormat.
+BUG;	Cifrado;	Se corrige la selección de los datos de cifrado mediante fichero.
+BUG;	Cifrado;	El método getKey() para la recuperación de la clave de cifrado ahora devuelve null como indica la documentación cuando no se ha utilizado una clave
+RFE;	Windows;	Se agrega la compatibilidad con Java 6u32 y Java 7u3, a partir de las cuales no se podía acceder al registro de Windows para obtener el directorio del sistema y Mozilla.
+RFE;	Windows;	Se mejora el comportamiento del Cliente para que, al no poder abrir el almacén de Windows por falta de bibliotecas de Java (caso común de Java 6 64bits) se permita la carga de certificados mediante PKCS#12.
+BUG;	Linux;		Se corrige el caso de uso de Chrome en Linux con Chrome 32 bits cuando no hay ningún Firefox 32 en el sistema. En estos casos el sistema solo tiene NSS 64 en los directorios de bibliotecas comunes y el Cliente el NSS que Chrome instala en un directorio específico
+BUG;	Linux;		Se corrige la carga de NSS 64 bits en Open SuSe 12.1 para el acceso al almacén de certificados.
+BUG;	Linux;		Se corrige el error que impedía acceder al almacén de Mozilla cuando existía una instalación residual de NSS.
+
+
+Cliente @firma 3.3
+----------------------------
+
+RFE;	Bootloader;	Se eliminan todos los métodos públicos del applet Bootloader que actuará de forma automática cuando sea necesario y nunca por indicación del integrador.
+RFE;	General;	Cambios en paquetes de clases que pueden hacer que los despliegues que utilicen el Cliente como biblioteca Java dejen de funcionar.
+RFE;	Applet;		El formato de firma por defecto deja de ser CMS y pasa a ser CAdES.
+BUG;	Applet;		El método getSignCertificateBase64Encoded() devuelve siempre el certificado seleccionado.
+BUG;	Applet;		El método getFileBase64Encoded(URI, boolean) ya no muestra diálogos modales innecesarios.
+BUG;	Applet;		Se corrige la documentación del método getSignatureText() para indicar que si no hay ninguna firma generada devuelve null.
+BUG;	Applet;		Los métodos getSignCertificate() y getSignCertificateBase64Encoded() ya no devuelven un error al invocarse despues de realizar un cambio de almacén de certificados.
+BUG;	Applet;		Se corrige el problema que hacía aparecer como nombre por defecto "*EXT" en los diálogos de guardado de firma en lugar de "*.EXT", en donde "EXT" es la extensión correspondiente al formato.
+BUG;	Applet;		Se corrigen varios casos en los que los nombres generados por el procedimiento de multifirma masiva de directorios introducían particular erróneas en el nombre (.sign, .cosign,...)
+RFE;	Applet;		Ahora, el método setElectronicSignature(String) sustituye la entrada de setElectronicSignatureFile(String) y viceversa.
+RFE;	Applet;		Se eliminan los métodos, anteriormente deprecados, Firma() y getCMSData()
+RFE;	Applet;		Se elimina el método changeLanguage().
+RFE;	Applet;		Se recogen los parámetros "language", "country" y "variant" al inicio del Applet para la selección del idioma de la aplicación.
+RFE;	Applet;		El método setPlainData() siempre recibe una cadena en Base64 y getPlainData() la devuelve en Base64
+RFE;	Applet;		Cuando no se indica el tipo de envoltura CMS que se desea generar, el método buildCMSStructure() genera una firma EnvelopedData.
+RFE;	Applet;		Por motivos de seguridad se pide permiso al usuario mediante un diálogo modal cada vez que se vaya a cargar o guardar un fichero en disco sin que este lo haya seleccionado explícitamente.
+RFE;	Applet;		Se agrega un nuevo parámetro al método setpolicy() del Applet, el hash SHA1 de la política.
+RFE;	Applet;		El identificador de la política puede ser una URL, una URN o un OID.
+RFE;	Applet;		Se agrega el método el método getTextFromBase64(base64, charsetName) para la transformación de Base64 a texto indicando la codificación.
+RFE;	Applet;		Se agrega el método el método getBase64FromText(text, charsetName) para la transformación de texto a Base64 indicando la codificación.
+RFE;	Applet;		Se agrega el método addRFC2254CertificateFilter() para agregar un nuevo filtro de certificados.
+RFE;	Applet;		Se agrega el método resetFilters() para eliminar todos los filtros definidos hasta el momento.
+RFE;	Applet;		Se agrega el método setMandatoryCertificate() para indicar si debe seleccionarse un certificado directamente cuando sea el único disponible.
+RFE;	Applet;		Se agrega el método setShowOnlySignatureCertificates() para indicar si sólo deben mostrarse en el listado de certificados aquellos válidos para firmar.
+RFE;	Applet;		Se depreca el método setCertFilterRFC2254() en favor de addRFC2254CertificateFilter().
+RFE;	Applet;		Se depreca el método setMandatoryCertificateConditionRFC2254() en favor de addRFC2254CertificateFilter() y setMandatoryCertificate().
+RFE;	Applet;		Se depreca el método getSignatureText() en favor del nuevo método getSignatureText(charsetName)
+RFE;	Applet;		Se depreca el método getTextFileContent(). En su lugar se debe utilizar el método getFileBase64Encoded(String, boolean) seguido de getTextFromBase64(b64, charsetname)
+RFE;	Keystores;	Se agrega la compatibilidad con Firefox 9 y 10.
+RFE;	Keystores;	Se agrega la compatibilidad con el almacén de certificados de Firefox en Mac OS X.
+BUG;	Keystores;	Se solucionan problemas de compatibilidad con el almacén de certificados del sistema en Mac OS X.
+BUG;	Firmas;		Se soluciona un problema por el que se podían identificar las firmas XAdES como XMLdSig y las CAdES como CMS.
+BUG;	Firmas CAdES;	Las firmas SHA1 incorporaran por defecto el atributo SigningCertificateV1 y el resto el SigningCertificateV2. Esto se puede cambiar con la propiedad SigningCertificateV2.
+BUG;	Firmas XAdES;	Se solventa el problema que impedía firmar textos planos con el formato de firma XAdES.
+RFE;	Firmas XAdES;	Se agrega la propiedad signedPropertiesTypeUrl a las firmas XAdES para usarla junto con xadesNamespace y poder generar firmas conforme a versiones antiguas del estándar.
+BUG;	Firmas XMLdSig;	Se identifica el mimetype de los datos firmados.
+RFE;	Firmas XML;	Se ha acelerado el proceso de identificación de datos en Base64 y optimizado su consumo de memoria.
+
+
+Cliente @firma 3.2
+----------------------------
+
+RFE;	Despliegue;	Inclusión de un comprobador de entorno que instala los componentes necesarios para compatibilizar el entorno de ejecución de Java con el Cliente @firma (bibliotecas endorsed, proveedores criptográficos, etc.).
+RFE;	Despliegue;	Se elimina el modo de despliegue con instalación local de código Java y sus funcionalidades asociadas (actualizar, etc.).
+RFE;	Despliegue;	Se utiliza el sistema de versionado de JNLP para reducir el tráfico de red que causa solicitudes de autenticación con HTTPS. (Ticket 143881)
+RFE;	General;	Compatibilidad con módulos PKCS#11 (incluyendo NSS) con Java 64 bits (x64) en Windows 64 bits (x64).
+RFE;	General;	Compatibilidad (limitada) con NSS 64 bits en Mac OS X con Java 64 bits.
+RFE;	General;	Compatibilidad con Opera.
+RFE;	General;	Se anexa el número de serie de certificado en el texto del diálogo de selección para evitar problemas causados por dos certificados (casi) iguales y el error 4165344 de Java. (Ticket 145250)
+RFE;	General;	Cuando se convierte de texto a Base64 mediante getBase64FromText() se detecta la codificación en el caso de que el texto fuese un XML bien formado y declarase el "encoding" en su cabecera. (Ticket 147618)
+RFE;	General;	Uso de iText 2.1.7 para mejor compatibilidad de licencias
+RFE;	Firmas XML;	Compatibilidad con Java 7.
+RFE;	Pruebas;	Sistema preliminar de pruebas de unidad basado en JUnit (firmadores, cifradores, almacenes de claves).
+
+
+Cliente @firma 3.1.1
+----------------------------
+
+RFE;	Bootloader;	La licencia del producto se mostrará si está disponible en el idioma del sistema del usuario, si no lo está se mostrará en español.
+RFE;	Despliegue;	Mejoras genéricas en el despliegue en navegadores Safari.
+BUG;	General;	Se repara la carga de ficheros establecidos con el método setFileuri() cuando estos contenían en su ruta un carácter especial ('[', ']', '#'...).
+RFE;	General;	Mejoras genéricas de la seguridad y calidad del código y la documentación JavaDoc.
+BUG;	General;	Se reparan los filtros ficheros por extensión del método "loadFilePath()". (Ticket 126135)
+RFE;	General;	Se introduce el método “changeLanguage()” para cambiar el idioma del Cliente a otro disponible.
+BUG;	General;	Solventados errores en el acceso a claves privadas del llavero de Mac OS X. (Ticket 141345)
+RFE;	General;	Compatibilidad con Firefox 4.
+RFE;	General;	Compatibilidad con NSS en ciertas versiones obsoletas de Linux.
+BUG;	General;	Tratamiento especial de los certificados sin cadena de confianza para evitar la aparición de problemas asociados al error 4906869 de Java.
+BUG;	Mozilla;	Corregidos problemas con Firefox 32 bits en Windows 64 bits con Java 32 bits. (Ticket 98632)
+BUG;	Mozilla;	Solventado un error de regresión que impedía el acceso al almacén de Firefox 2.
+BUG;	Mozilla;	Se notifica que deben insertarse las tarjetas inteligentes al cargarse el almacén en lugar de hacerlo al cargar el applet. Al inicio Firefox lo cerraba a los 30 segundos.
+BUG;	Mozilla;	Se corrigen varios casos en los que el diálogo de solicitud de contraseña del almacén podría no ser modal a la pantalla del navegador.
+BUG;	Firmas XML;	Cambio en el orden de las transformadas XML (enveloped siempre la primera) para evitar errores en analizadores XML estrictos.
+RFE;	Firmas XML;	Se elimina la generación de firmas Externally Detached desde el Applet de firma.
+BUG;	Firmas XML;	Solventados errores en la cofirma de árboles complejos de contrafirmas.
+RFE;	Firmas XML;	Creación de un nodo UnsignedProperties en firmas XAdES independientemente si la firma incluye o no atributos sin firmar, para facilitar la introducción posterior de estos.
+RFE;	Firmas ODF;	Compatibilidad con firmas LibreOffice / OpenOffice.org 3.2 / 3.3.
+RFE;	Firmas PDF;	Advertencia cuando se intenta firmar un PDF certificado.
+RFE;	Firmas PDF;	Compatibilidad con PDF cifrados con contraseña (no se soporta AES256 ni certificados).
+BUG;	Firmas PDF;	Mejorada la identificación de ficheros PDF.
+RFE;	Sobres;		Se permite que los sobres "Envuelto", "Firmado y Envuelto" y "Autenticado y Envuelto" declaren varios remitentes.
+RFE;	Sobres;		Se unifican las listas de destinatarios establecidas mediante los métodos "setRecipientsToCMS()" y "addRecipientToCMS()".
+RFE;	Documentación;	Actualización y modificaciones varias en la documentación del proyecto.
+RFE;	Bibliotecas;	Actualización a BouncyCastle 1.46 e iText 5.0.6.
+
+
+Cliente @firma 3.1
+----------------------------
+RFE;	Despliegue;	Se integran las funciones de despliegue común y a través de JNLP. Ahora, el cliente no requiere instalación cuando se ejecute sobre Java 6u10 o superior (sólo aquitectura de 32bits).
+BUG;	Bootloader;	Corregida la carga del cliente cuando no estuviese instalado en el entorno Internet Explorer 6 / Java 5.
+BUG;	Bootloader;	Se repara un error en la carga del Bootloader desde un directorio configurado y la documentación asociada a las variables que lo determinan. (Ticket 110616)
+BUG;	BootLoader;	Ahora el bootloader busca el fichero "version.properties" en el directorio de instalables tal como se declara en la documentación. (Tickets 100208, 105307)
+RFE;	Bootloader;	Se deja a elección del usuario la actualización a la última versión publicada del cliente.
+RFE;	Bootloader;	Actualizados los textos de licencia.
+RFE;	Bootloader;	Reducido el tamaño del dialogo de licencia para facilitar su visionado en monitores con baja resolución.
+RFE;	BootLoader;	Instalación de los ficheros JAR instalables empaquetados con PACK200.
+RFE;	Bootloader;	Al desinstalar las versiones 2.4 del cliente y anteriores se intentan eliminar las bibliotecas de NSS del directorio "system32" de Windows para evitar incompatibilidades (Ticket 108927).
+BUG; 	General;	Los métodos getSignatureBase64Encoded() y getSignatureText() ya no solicitan al usuario la firma cuando no esta establecida (Ticket 107505).
+BUG;	General;	Se corrigen varias situaciones en las que se notificaban varios errores simultáneos, mostrando varios mensajes consecutivos al usuario.
+RFE;	General;	La operación de firma siempre procesa los últimos datos seleccionados con setFileuri(), setData(), setHash() o con el fichero seleccionado por el usuario a través de la ventana modal.
+RFE;	General;	Los métodos getFileBase64Encoded(String, boolean), cipherFile(String), decipherFile(String) y signAndPackFile(String) ya no modifican la configuración del fichero de entrada.
+RFE; 	General;	Se modifica el comportamiento para que, por defecto, se muestren los errores generados por el cliente al usuario.
+RFE;	General;	Se homogenizan los mensajes que notifican que se ha seleccionado un documento no compatible con el formato de firma configurado. El nuevo mensaje es "Formato de fichero erróneo o no válido". Aplica a firmas PDF/ODF/OOXML/XAdES Enveloped/XMLdSig Enveloped
+RFE;	General;	Se habilita el uso de filtros de certificados acordes a la RFC 2254.
+RFE;	General;	Se añade la funcionalidad SignText análoga a la presente con el mismo nombre en los navegadores Netscape
+RFE;	General;	En la carga del Applet se informa de nombre y versión del sistema operativo y arquitectura del JRE, para facilitar el diagnóstico de errores relacionados con el entorno
+RFE;	General;	En la carga del Applet se imprime el acuerdo de licencia
+RFE;	General;	Se agrega el método addExtraParam() al applet de firma que permite configurar propiedades únicas de cada formato de firma.
+RFE;	General;	Cambio en la visibilidad de métodos para optimizar el código (paso de public a friend y private).
+RFE;	General;	Traducción de los mensajes del cliente @firma a idioma Inglés y autodeducción del entorno del usuario (por defecto en castellano).
+RFE;	General;	Optimización de tamaño.
+RFE;	General;	Nuevo sistema de despliegue basado en JNLP (necesario Java 6).
+RFE;	General;	Disponibilidad de Interfaz de escritorio para la ejecución del cliente (necesario Java 6 update 18 o superior).
+RFE;	General;	Disponibilidad de Instalador offline para la instalación del cliente, la interfaz de escritorio, documentación y ejemplos.
+RFE;	Windows;	Se eliminan las bibliotecas nativas "aodeply.dll" y "Shortpathname.dll" de los requisitos de instalación del cliente.
+BUG;	Mozilla;	Ahora siempre se muestra los certificados del perfil activo o, en caso de no haber ninguno, del perfil por defecto.
+BUG;	Mozilla;	En entornos Windows/Firefox se mejora el proceso de carga de NSS. Mejoras: acceso al almacén sin que el directorio esté en el Path, solución a problemas en Windows 7 y de compatibilidad con el Cliente 2.4.1 y anteriores.
+BUG;	Mozilla;	Se soluciona el problema de acceso al almacén interno en Mozilla de tipo "No se pudo cargar le módulo softokn3.dll".
+BUG;	Mozilla;	Se soluciona el problema que impedía acceder al almacén de Mozilla cuando en la ruta se encontraba alguno de los caracteres '(', ')', 'ñ' o  'Ñ'. (Ticket 98632)
+RFE;	Mozilla;	Se cambia el diálogo de advertencia para la carga de dispositivos externos al arranque del applet para no interferir con el comportamiento del cliente en modo programático.
+RFE;	Mozilla;	Se agrega la variable JavaScript "showMozillaSmartCardWarning" a "constantes.js" para configurar que se muestre o no el diálogo de advertencia para que se inserten los tokens externos cuando el navegador sea firefox. Para desactivarlo hay que establecerla a 'false'.
+RFE;	Mozilla;	Se evita la aparición, durante la instalación y carga del cliente, así como durante la escritura de datos a disco, de las advertencias de Firefox acerca de un Script ocupado, dándole la posibilidad de detener su ejecución.
+RFE;	Mozilla;	Se imprime en pantalla información sobre la biblioteca PKCS#11 de NSS, para mejorar la detección de incidencias relacionadas con JRE 64 Bits
+BUG;	PKCS#11;	Se registran los PKCS#11 ya cargados en el sistema para evitar múltiples instanciaciones. (Ticket 100521)
+BUG; 	Keystores;	Se repara un error que en determinadas situaciones impedía operar con certificados en tarjeta por intertar extraerse del dispositivo equivocado.
+RFE;	KeyStores;	Se agrega soporte para el acceso al almacén con los certificados de "Otras Personas" (WINDOWS ADDRESSBOOK) en Windows.
+RFE;	KeyStores;	Se incorpora la funcionalidad de la selección del almacén de certificados (incluidos certificados en disco).
+BUG;	Firmas;		Se ha corregido el problema que impedía firmar 2 veces consecutivas con el DNIe. (Ticket 100521)
+RFE;	Firmas;		Se agregan nuevas notificaciones por consola para advertir a los integradores configuraciones de firma erroneas.
+RFE;	Firmas;		Ahora no se seleccionará automáticamente el formato de firma predeterminado cuando se indique un formato no soportado, en su lugar las operaciones siguientes fallarán y capturarán el error.
+RFE;	Firmas;		Nuevo Formato de firma. Firmas OOXML compatible con Microsoft Office 2007, 2008 y 2010.
+RFE;	Firmas;		Generación de firmas PDF compatibles con el estándar PAdES (manteniendo compatibilidad con Adobe Reader y el estándar ISO 32000-1).
+RFE;	Firmas;		Se permite la generación de firmas XML conforme al estándar XAdES 1.4.1.
+RFE;	Firmas;		Se permite la generación de firmas binarias conforme al estándar CAdES 1.8.1.
+BUG;	Firmas XML;	Corregido un error en el espacio de nombres de XAdES.
+BUG;	Firmas XML;	Corregidos problemas de codificación en las firmas XML.
+BUG;	Firmas XML;	Corregido problema en la conversión a base 64 de datos binarios que hacía fallar el proceso de firma con datos pequeños.
+BUG;	Firmas XML;	Corregidas las firmas XML (XMLdSig / XAdES) explícitas cuando se especifican los datos a través del método setHash(String). (Ticket 113324)
+BUG;	Firmas XML;	Se elimina el atributo "Description" del elemento "DataObjectFormat" de las firmas XAdES, no soportado en XAdES 1.4 ni en XAdES 1.3
+BUG;	Firmas XML;	Los identificadores XML siempre empiezan por letras, y nunca por números o caracteres especiales (Ticket 107652).
+BUG;	Firmas XML;	Se modifican los manejadores de firmas XML para que detecten automáticamente los identificadores de los nodos de firma. Esto soluciona también el problema de las contrafirmas sobre firmas con sello de tiempo. (Ticket 50650)
+RFE;	Firmas XML;	Se agrega la funcionalidad de firma de substructuras XML mediante transformaciones.
+RFE;	Firmas XML;	Se agrega la funcionalidad de firma de hojas de estilo XML.
+RFE;	Firmas XML;	Se declaran las transformaciones Base 64 en las firmas XML de datos binarios (con posibilidad de desactivarlo).
+RFE;	Firmas XML;	Se agrega el atributo "hashAlgorithm" al nodo OBJECT de las firmas detached explícitas para indicar el algoritmo con el que se calculó el hash.
+RFE;	Firmas XML;	Se ha modificado el comportamiento de la biblioteca XAdES para que genere el SigningTime de las firmas con la hora Zulú.
+RFE;	Firmas XML;	Cuando se establece un algoritmo de firma no soportado se indica como tal al usuario.
+RFE;	Firmas XML;	Se aumenta la compatibilidad del cliente con las firmas XML generadas por otras aplicaciones (Ticket 109358)
+RFE;	Firmas XML;	Se completa el soporte para agregar transformaciones personalizadas en las firmas XML (Ticket 70608)
+RFE;	Firmas XML;	Las cofirmas generadas ahora heredan las transformaciones de las referencias de la firma original, mejorando la precisión del proceso
+RFE;	Firmas XML;	Las cofirmas generadas ahora soportan múltiples referencias de datos
+BUG;	Firmas XAdES;	Se ha modificado el comportamiento de la biblioteca XAdES para corrigir el orden de los nodos "ObjectIdentifier" y "Description" de las propiedades del objeto firmado, estableciéndolos según el estándar.
+BUG;	Firmas OOXML;	Se corrige la generación de firmas con algoritmos de la familia SHA-2.
+BUG;	Firmas Binaria;	Se corrige el error que impedía que las firmas CADES-T se contrafirmasen correctamente (Ticket 115645).
+BUG;	Firmas Binaria;	Se generan firmas con el ContentType acorde a estándar (Ticket 108858)
+BUG;	Firmas PDF;	Se bloquea la posibilidad de generar firmas con el algoritmo MD2withRSA.
+BUG;	Firmas PDF;	Se ha corregido el caso en el que fallaba la firma de ficheros PDF que contenían errores sin llegar a estar corruptos.
+RFE;	Firmas Web;	En el formulario que se presenta con los datos que se van a firmar, se han deshabilitado los campos para que no puedan modificarse (Algunos campos aun quedando activos). (Ticket 91128)
+RFE;	Cifrado;	Se incorpora la funcionalidad de almacenamiento y recuperación de claves de cifrado en un almacén del usuario del sistema asociado al cliente @firma.
+RFE;	Sobres;		Se agrega el tipo de sobre "Sobre autenticado"
+RFE;	Sobres;		Se incorpora la funcionalidad de selección de destinatarios de sobre digitales mediante su certificado en base 64.
+RFE;	LDAP;		Se incorpora la funcionalidad de la recuperación de certificados en base 64 desde servidores LDAP.
+BUG;	JavaScript;	Las variables "baseDownloadUrl" y "base" del "constantes.js" ahora admiten rutas relativas. (Tickets 104824, 104961)
+BUG;	JavaScript;	Se soluciona un error en JavaScript que impedía la carga del cliente cuando se encontraban problemas leves en la carga del instalador.
+BUG;	Documentación;	Se ha revisado y corregido la documentación del cliente. Entre los cambios se corrige la tabla de entornos compatibles con el cliente de firma (ticket 104334).
+BUG;	Documentación;	Diversas correcciones en la documentación (Tickets 88948, 100131, 107652)
+
+
+
+Cliente @firma 3.0.3
+----------------------------
+
+BUG;	Firma XML;	Corregidas las firmas XML (XMLdSig / XAdES) explícitas cuando se especifican los datos a través del método setHash(String). (Ticket 113324)
+
+
+
+Cliente @firma 3.0.2
+----------------------------
+
+RFE;	Firma;		En la firma de ficheros con contenido en base 64 seleccionado mediante el método setFileuri(), se realiza una recodificación del Base 64 para evitar la inclusión de caracteres extraños.
+BUG;	Firma;		En la firma de ficheros con contenido en base 64 seleccionado mediante el método setFileuri(), se detecta el tipo de documento codificado.
+RFE;	Firma XML;	Mejora del proceso de detección del tipo de documento para permitir obtener el MimeType de los documentos OOXML y ODF.
+BUG;	Firma XML;	Ya se detecta correctamente cuando un contenido es XML para así indicarlo en el MimeType de la firma.
+BUG;	Certificados;	Se evita la aparición de caracteres extraños en los nombres de certificados del diálogo de selección. Esto se hace extrayendo los nombres de su DN, en lugar del nombre del X500Principal que comúnmente aparece declarado con un tipo incorrecto de datos.
+BUG;	Certificados;	Ahora es posible a acceder a certificados con alias duplicados en MSCAPI, evitando el error de Java 6483657.
+BUG;	Firma XMLdSIG;	Se ha corregido el error que se lanzaba al firmarse con formato XMLdSig datos de los que no se podía identificar el tipo.
+RFE;	Otros;		Los mensajes por consola ya se lanzan con el nombre "es.gob.afirma".
+RFE;	Mozilla;	En el momento de abrir el repositorio de certificados, se pide mediante un diálogo modal que se introduzcan los dispositivos externos.
+
+
+Leyenda:
+--------
+
+BUG:	Reparación de error.
+RFE:	Request for Enhancement - Se refiere a cualquier cambio realizado para mejorar el cliente.

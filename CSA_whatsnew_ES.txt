@@ -1,0 +1,20 @@
+
+Cliente StandAlone v2.1
+--------------------------
+
+RFE;	General;	Se agrega la posibilidad de usar el almacén controlador 100% Java para simplificar el uso del DNIe.
+RFE;	General;	Ahora se genera en disco el log de la última ejecución de la aplicación para facilitar la notificación de errores a los servicios de soporte.
+RFE;	General;	Se conservan los valores por defecto configurados en Preferencias y los directorios anteriormente usados para la entrada y salida de datos.
+BUG;	General;	Corrección en las firmas EPES. Ahora, si no indica el hash de la política, se calcula con el algoritmo indicado en lugar de hacerlo siempre con SHA-512.
+RFE:	Librerías;	Actualización a BouncyCastle 1.51.
+RFE:	Librerías;	Se actualiza a la versión 0.1.1 de JXAdES para corregir un error con la posición del nodo SignerRole de las firmas XAdES.
+RFE;	UI;		El diálogo de selección de certificados muestra un icono descriptivo en los certificados próximos a caducar.
+RFE;	UI;		El diálogo de selección de certificados muestra un icono descriptivo en los certificados caducados.
+RFE;	UI;		El diálogo de selección de certificados aparece con botones para refrescar los certificados del almacén, cambiar a almacén PKCS#12 y acceder a la Wiki de referencia de la aplicación.
+BUG;	Firmas CAdES;	Se corrige un desvio de las CAdES-EPES con respecto al estándar.
+BUG;	Firmas CAdES;	Las contrafirmas no agregan atributo contentType.
+RFE;	Firmas XAdES;	Se actualiza el dereferenciador a medida para mantener la compatibilidad con Java 8.
+RFE;	Firmas XAdES;	Ahora, en una firma enveloped, si el nodo raíz tiene Id, no se usa "" para referenciarlo, sino este Id, y se omite por lo tanto la transformación XPath adicional.
+RFE;	Firmas XAdES;	Ahora el nodo raíz AFIRMA siempre se crea con un Id para facilitar tratamientos posteriores.
+BUG;	Firmas XAdES;	Ahora todos los campos del KeyInfo de XAdES tienen en cuenta el escape de caracteres según XMLDSig y RFC 4514
+RFE;	Firmas PAdES;	Ahora no se distingue entre tipos de certificaciones PDF, cualquier tipo de certificación (no admisión de cambios, solo admisión de valores en campos de formulario, solo admisión de anotaciones y valores en campos de formulario) hara que se rechaze el proceso de firma a menos que se indique lo contrario mediante parámetros adicionales.

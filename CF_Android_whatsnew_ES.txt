@@ -1,0 +1,32 @@
+
+Version 1.3
+-----------
+- Soporte para la firma de ficheros de mayor tamaño.
+- Se corrige el error derivado de realizar 2 varias firmas consecutivas en la misma página.
+- Se corrige el error de codificación de parámetros que impedía su funcionamiento con Google Chrome.
+- Despliegue compatible con el MiniApplet @firma v1.3.
+- Corrección de errores y mejora en la estabilidad.
+
+
+Version 1.2
+-----------
+- Mejor adhesión a estándar de formatos de firma: no se incluye la descripción del contenido en contrafirmas CAdES, se permite configurar el atributo commitmentTypeIndication y se deja de poder configurar el atributo certifiedRole (debería estar firmado por una tercera entidad).
+- Se agrega soporte a la configuración "AUTO" como formato. Detección del formato de las firmas proporcionadas en cofirma y contrafirma.
+- Soporte multi-idioma mejorado.
+- Corrección de errores y mejora en la estabilidad.
+
+
+Version 1.1
+-----------
+- Redirección automática del formato de firma XAdES para realizarlo en modo trifásico.
+- Mejora de compatibilidad con dispositivos.
+- Corrección de errores.
+
+
+Version 1.0
+-----------
+- Firma CAdES y PAdES completa en el propio dispositivo.
+- Firma CAdES, XAdES y PAdES, en tres fases con soporte servidor.
+- Compatibilidad mejorada con archivos grandes.
+- Guardado de ficheros en el dispositivo.
+- Firma de ficheros locales.

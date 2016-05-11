@@ -1,0 +1,10 @@
+El paso de JAR a EXE se realiza mediante la herramienta Launch4J y el instalador se crea con la aplicación NSIS. Los ficheros de configuración de ambas herramientas se encuentra en el SVN: 
+
+http://svn-ctt.administracionelectronica.gob.es/svn/clienteafirma/projects/cliente-afirma/trunk/afirma-simple-installer
+
+Para generar el instalador:
+
+1.- Copiar el directorio de una JRE 8 (32 bits) en el directorio “afirma-simple-installer” con el nombre “JRE”.
+2.- Situar el JAR de Autofirma en este mismo directorio con el nombre “AutoFirma.jar” y ejecutar Launch4J con el fichero de configuración “AutoFirma_launch4J_project.xml”. Como resultado generará el fichero “AutoFirma.exe”.
+3.- Situar el JAR del configurador de Autofirma en este mismo directorio con el nombre “AutoFirmaConfigurador.jar” y ejecutar Launch4J con e fichero de configuración “AutoFirmaConfigurator_launch4J_project.xml”. Como resultado generará el fichero “AutoFirmaConfigurador.exe”.
+4.- Ejecutar el script “AutoFirma_NSIS_project.nsi” con la aplicación NSIS y como resultado generará el instalador “AutoFirma1.4.2.exe”.
