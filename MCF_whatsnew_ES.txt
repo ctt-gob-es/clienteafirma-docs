@@ -1,6 +1,7 @@
 
 MiniApplet 1.5
 ----------------------------
+RFE;	General;	Soporte completo de DNIe 3.0.
 BUG;	JavaScript;	Se evita la triple llamada a la función callback de error cuando no se puede lanzar AutoFirma.
 BUG;	JavaScript;	Correcciones para el correcto lanzamiento de la aplicación nativa cuando en Firefox no cargue el applet.
 RFE;	Applet;		Se incorpora una función para la selección directa de certificados por parte del usuario.
