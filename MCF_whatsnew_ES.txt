@@ -6,7 +6,8 @@ BUG;	JavaScript;	Se evita la triple llamada a la función callback de error cuand
 BUG;	JavaScript;	Correcciones para el correcto lanzamiento de la aplicación nativa cuando en Firefox no cargue el applet.
 RFE;	Applet;		Se incorpora una función para la selección directa de certificados por parte del usuario.
 RFE;	Applet;		Se incorpora una función para la operación de firma/multifirma seguida del guardado de los datos resultantes.
-RFE;	KeyStores;	Se permite el cambio de almacén de claves después de la carga del MiniApplet o AutoFirma. Los almacenes soportados son los de Windows, Mozilla y el llavero de OS X.
+RFE;	KeyStores;	Se permite el cambio de almacén de claves después de la carga del MiniApplet o AutoFirma. Los almacenes soportados son los de Windows, Linux (SHARED_NSS), Mozilla y el llavero de OS X.
+BUG;	KeyStores;	Corrección del filtro de certificados "ssl".
 RFE;	Lotes;		Se implementa la operación de contrafirma por lotes.
 RFE;	Lotes;		Se implementa la firma de facturas electrónicas por lotes.
 RFE;	Firmas Binarias;Se migra a SpongyCastle 1.54 para evitar las colisiones con versiones antiguas de BouncyCastle que se pueden encontrar en servidor.
