@@ -2,8 +2,10 @@
 MiniApplet 1.5
 ----------------------------
 RFE;	General;	Soporte completo de DNIe 3.0.
+RFE;	General;	Se recuerda el último directorio desde el que se cargó o guardó un fichero y el siguiente dialogo de carga o guardado de fichero que aparezca mostrará por defecto ese directorio.
 BUG;	JavaScript;	Se evita la triple llamada a la función callback de error cuando no se puede lanzar AutoFirma.
 BUG;	JavaScript;	Correcciones para el correcto lanzamiento de la aplicación nativa cuando en Firefox no cargue el applet.
+BUG;	JavaScript;	Correcciones en la función downloadRemoteData() para la correcta descarga de ficheros binarios.
 RFE;	Applet;		Se incorpora una función para la selección directa de certificados por parte del usuario.
 RFE;	Applet;		Se incorpora una función para la operación de firma/multifirma seguida del guardado de los datos resultantes.
 RFE;	KeyStores;	Se permite el cambio de almacén de claves después de la carga del MiniApplet o AutoFirma. Los almacenes soportados son los de Windows, Linux (SHARED_NSS), Mozilla y el llavero de OS X.
