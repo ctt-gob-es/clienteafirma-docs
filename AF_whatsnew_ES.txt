@@ -2,11 +2,7 @@
 AutoFirma v1.5
 --------------------------
 RFE;	General;		Se incorporan funciones para el calculo y comprobación de huellas digitales (hash).
-RFE;	General;		Soporte completo de DNIe 3.0.
 RFE;	General;		Se recuerda el último directorio desde el que se cargó o guardó un fichero y el siguiente dialogo de carga o guardado de fichero que aparezca mostrará por defecto ese directorio.
-BUG;	JavaScript;		Se evita la triple llamada a la función callback de error cuando no se puede lanzar AutoFirma.
-BUG;	JavaScript;		Correcciones para el correcto lanzamiento de la aplicación nativa cuando en Firefox no cargue el applet.
-BUG;	JavaScript;		Correcciones en la función downloadRemoteData() para la correcta descarga de ficheros binarios.
 RFE;	KeyStores;		Se incorpora el soporte completo de DNIe 3.0 (comunicación por chip y NFC).
 BUG;	KeyStores;		Corrección del filtro de certificados "ssl".
 RFE;	Firmas Binarias;	Se migra a SpongyCastle 1.54 para evitar las colisiones con versiones antiguas de BouncyCastle que se pueden encontrar en servidor.
@@ -20,6 +16,9 @@ RFE;	Invocación - KeyStores;	Se permite el cambio de almacén de claves después d
 RFE;	Invocación - Lotes;	Se implementa la operación de contrafirma por lotes.
 RFE;	Invocación - Lotes;	Se implementa la firma de facturas electrónicas por lotes.
 BUG;	Invocación - Firmas;	Se corrige un error en el paso de parámetros con caracteres no ASCII. Por ejemplo, en la definición de filtros.
+BUG;	Invocación - JavaScript; Se evita la triple llamada a la función callback de error cuando no se puede lanzar AutoFirma.
+BUG;	Invocación - JavaScript; Correcciones para el correcto lanzamiento de la aplicación nativa cuando en Firefox no cargue el applet.
+BUG;	Invocación - JavaScript; Correcciones en la función downloadRemoteData() para la correcta descarga de ficheros binarios.
 
 AutoFirma v1.4.2
 --------------------------
