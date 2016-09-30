@@ -1,4 +1,10 @@
 
+MiniApplet 1.5.1
+----------------------------
+RFE;	Applet;		Se admite el parámetro "filenameExts" en las distintas operaciones de firma/multifirma para filtrar por extensión los tipos de fichero que puede cargar por defecto el usuario.
+RFE;	KeyStores;	Se implementa el filtro de certificados "disableopeningexternalstores" que evita que se muestre el botón para la carga de PKCS#12 en el diálogo de selección.
+
+
 MiniApplet 1.5
 ----------------------------
 RFE;	General;	Soporte completo de DNIe 3.0.
