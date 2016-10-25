@@ -1,10 +1,4 @@
 
-MiniApplet 1.5.1
-----------------------------
-RFE;	Applet;		Se admite el parámetro "filenameExts" en las distintas operaciones de firma/multifirma para filtrar por extensión los tipos de fichero que puede cargar por defecto el usuario.
-RFE;	KeyStores;	Se implementa el filtro de certificados "disableopeningexternalstores" que evita que se muestre el botón para la carga de PKCS#12 en el diálogo de selección.
-
-
 MiniApplet 1.5
 ----------------------------
 RFE;	General;	Soporte completo de DNIe 3.0.
@@ -12,16 +6,20 @@ RFE;	General;	Se recuerda el último directorio desde el que se cargó o guardó un
 BUG;	JavaScript;	Se evita la triple llamada a la función callback de error cuando no se puede lanzar AutoFirma.
 BUG;	JavaScript;	Correcciones para el correcto lanzamiento de la aplicación nativa cuando en Firefox no cargue el applet.
 BUG;	JavaScript;	Correcciones en la función downloadRemoteData() para la correcta descarga de ficheros binarios.
+RFE;	Applet;		Se admite el parámetro "filenameExts" en las distintas operaciones de firma/multifirma para filtrar por extensión los tipos de fichero que puede cargar por defecto el usuario.
 RFE;	Applet;		Se incorpora una función para la selección directa de certificados por parte del usuario.
 RFE;	Applet;		Se incorpora una función para la operación de firma/multifirma seguida del guardado de los datos resultantes.
+RFE;	Applet;		Se ejecuta la función de Google Analytics en un hilo aparte para evitar retrasos en la carga del applet.
 RFE;	KeyStores;	Se permite el cambio de almacén de claves después de la carga del MiniApplet o AutoFirma. Los almacenes soportados son los de Windows, Linux (SHARED_NSS), Mozilla y el llavero de OS X.
 BUG;	KeyStores;	Corrección del filtro de certificados "ssl".
+RFE;	KeyStores;	Se implementa el filtro de certificados "disableopeningexternalstores" que evita que se muestre el botón para la carga de PKCS#12 en el diálogo de selección.
 RFE;	Lotes;		Se implementa la operación de contrafirma por lotes.
 RFE;	Lotes;		Se implementa la firma de facturas electrónicas por lotes.
 RFE;	Firmas Binarias;Se migra a SpongyCastle 1.54 para evitar las colisiones con versiones antiguas de BouncyCastle que se pueden encontrar en servidor.
 BUG;	Firmas CAdES;	Correccion en la configuración de los parámetros de los CommitmentTypeIndication (se usa el prefijo "commitmentTypeIndication" en lugar de "commitmentTypeIndications".
 RFE;	Firmas PAdES;	Se cambia el paquete de iText para evitar colisiones con versiones oficiales que se pueden encontrar en servidor.
 BUG;	Firmas PAdES;	Se corrige el problema que llevaba a invalidar como PDF/A la firma de documentos que lo fueran y estuviesen generados con algunas herramientas.
+BUG;	Firmas PAdES;	Se corrige un error de generación de las firmas PAdES cuando se indicaba el parámetro includeOnlySigningCertificate.
 
 
 MiniApplet 1.4
