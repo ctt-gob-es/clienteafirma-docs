@@ -20,6 +20,7 @@ RFE;	Invocación - Lotes;	Se implementa la operación de contrafirma por lotes.
 RFE;	Invocación - Lotes;	Se implementa la firma de facturas electrónicas por lotes.
 BUG;	Invocación - Firmas;	Se corrige un error en el paso de parámetros con caracteres no ASCII. Por ejemplo, en la definición de filtros.
 BUG;	Invocación - JavaScript; Se evita la triple llamada a la función callback de error cuando no se puede lanzar AutoFirma.
+BUG;	Invocación - JavaScript; Se corrige que después de la llamada a la función de éxito asociada a la operación de guardado de datos, se ejecute la operación de error cuando la comunicación es a través de servidor intermedio.
 BUG;	Invocación - JavaScript; Correcciones para el correcto lanzamiento de la aplicación nativa cuando en Firefox no cargue el applet.
 BUG;	Invocación - JavaScript; Correcciones en la función downloadRemoteData() para la correcta descarga de ficheros binarios.
 BUG;	Invocación - JavaScript; Correcciones en la comunicación con servidor intermedio con el JavaScript de despliegue cuando los datos tienen determinado tamaño.
