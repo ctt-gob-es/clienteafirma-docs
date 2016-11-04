@@ -6,8 +6,9 @@ RFE;	General;		Se incorporan funciones para el calculo y comprobación de huellas
 RFE;	General;		Se recuerda el último directorio desde el que se cargó o guardó un fichero y el siguiente dialogo de carga o guardado de fichero que aparezca mostrará por defecto ese directorio.
 RFE;	General;		Se permite configurar las URL remotas del fichero de versión y la web de actualización de la aplicación.
 RFE;	KeyStores;		Se incorpora el soporte completo de DNIe 3.0 (comunicación por chip y NFC).
-BUG;	KeyStores;		Corrección del filtro de certificados "ssl".
 RFE;	KeyStores;		Se implementa el filtro de certificados "disableopeningexternalstores" que evita que se muestre el botón para la carga de PKCS#12 en el diálogo de selección.
+BUG;	KeyStores;		Corrección del filtro de certificados "ssl".
+BUG;	KeyStores;		Correcciones en el uso de claves de tarjetas inteligentes.
 RFE;	Firmas Binarias;	Se migra a SpongyCastle 1.54 para evitar las colisiones con versiones antiguas de BouncyCastle que se pueden encontrar en servidor.
 RFE;	Firmas PAdES;		Se cambia el paquete de iText para evitar colisiones con versiones oficiales que se pueden encontrar en servidor.
 RFE;	Firmas PAdES;		Se amplían las funciones de firma visible PDF permitiendo la configuración del texto e imagen de firma.

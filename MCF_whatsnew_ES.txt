@@ -11,8 +11,9 @@ RFE;	Applet;		Se incorpora una función para la selección directa de certificados
 RFE;	Applet;		Se incorpora una función para la operación de firma/multifirma seguida del guardado de los datos resultantes.
 RFE;	Applet;		Se ejecuta la función de Google Analytics en un hilo aparte para evitar retrasos en la carga del applet.
 RFE;	KeyStores;	Se permite el cambio de almacén de claves después de la carga del MiniApplet o AutoFirma. Los almacenes soportados son los de Windows, Linux (SHARED_NSS), Mozilla y el llavero de OS X.
-BUG;	KeyStores;	Corrección del filtro de certificados "ssl".
 RFE;	KeyStores;	Se implementa el filtro de certificados "disableopeningexternalstores" que evita que se muestre el botón para la carga de PKCS#12 en el diálogo de selección.
+BUG;	KeyStores;	Corrección del filtro de certificados "ssl".
+BUG;	KeyStores;	Correcciones en el uso de claves de tarjetas inteligentes.
 RFE;	Lotes;		Se implementa la operación de contrafirma por lotes.
 RFE;	Lotes;		Se implementa la firma de facturas electrónicas por lotes.
 RFE;	Firmas Binarias;Se migra a SpongyCastle 1.54 para evitar las colisiones con versiones antiguas de BouncyCastle que se pueden encontrar en servidor.
