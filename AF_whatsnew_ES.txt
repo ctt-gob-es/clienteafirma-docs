@@ -4,6 +4,7 @@ AutoFirma v1.5
 --------------------------
 RFE;	General;		Se incorporan funciones para el calculo y comprobación de huellas digitales (hash).
 RFE;	General;		Se recuerda el último directorio desde el que se cargó o guardó un fichero y el siguiente dialogo de carga o guardado de fichero que aparezca mostrará por defecto ese directorio.
+RFE;	General;		Se permite configurar las URL remotas del fichero de versión y la web de actualización de la aplicación.
 RFE;	KeyStores;		Se incorpora el soporte completo de DNIe 3.0 (comunicación por chip y NFC).
 BUG;	KeyStores;		Corrección del filtro de certificados "ssl".
 RFE;	KeyStores;		Se implementa el filtro de certificados "disableopeningexternalstores" que evita que se muestre el botón para la carga de PKCS#12 en el diálogo de selección.
@@ -24,7 +25,7 @@ BUG;	Invocación - JavaScript; Se corrige que después de la llamada a la función 
 BUG;	Invocación - JavaScript; Correcciones para el correcto lanzamiento de la aplicación nativa cuando en Firefox no cargue el applet.
 BUG;	Invocación - JavaScript; Correcciones en la función downloadRemoteData() para la correcta descarga de ficheros binarios.
 BUG;	Invocación - JavaScript; Correcciones en la comunicación con servidor intermedio con el JavaScript de despliegue cuando los datos tienen determinado tamaño.
-
+BUG;	Instalación;	Se corrige que se elimine el contenido de la variable de entorno PATH cuando este valor era superior a 1024 antes de instalar/desinstalar. En su lugar, no se agrega/elimina la ruta de AutoFirma.
 
 AutoFirma v1.4.3
 --------------------------
