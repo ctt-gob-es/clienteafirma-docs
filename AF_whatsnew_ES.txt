@@ -10,6 +10,8 @@ RFE;	KeyStores;		Se implementa el filtro de certificados "disableopeningexternal
 BUG;	KeyStores;		Corrección del filtro de certificados "ssl".
 BUG;	KeyStores;		Correcciones en el uso de claves de tarjetas inteligentes.
 RFE;	Firmas Binarias;	Se migra a SpongyCastle 1.54 para evitar las colisiones con versiones antiguas de BouncyCastle que se pueden encontrar en servidor.
+BUG;	Firmas CAdES;	Correccion en la configuración de los parámetros de los CommitmentTypeIndication (se usa el prefijo "commitmentTypeIndication" en lugar de "commitmentTypeIndications".
+BUG;	Firmas CAdES;	Se reintroduce el atributo Content-Hints en las contrafirmas para que sean acordes a la política de firma de la AGE.
 RFE;	Firmas PAdES;		Se cambia el paquete de iText para evitar colisiones con versiones oficiales que se pueden encontrar en servidor.
 RFE;	Firmas PAdES;		Se amplían las funciones de firma visible PDF permitiendo la configuración del texto e imagen de firma.
 BUG;	Firmas PAdES;		Se corrige el problema que llevaba a invalidar como PDF/A la firma de documentos que lo fueran y estuviesen generados con algunas herramientas.
