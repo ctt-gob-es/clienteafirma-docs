@@ -9,6 +9,7 @@ RFE;	KeyStores;		Se incorpora el soporte completo de DNIe 3.0 (comunicación por 
 RFE;	KeyStores;		Se implementa el filtro de certificados "disableopeningexternalstores" que evita que se muestre el botón para la carga de PKCS#12 en el diálogo de selección.
 BUG;	KeyStores;		Corrección del filtro de certificados "ssl".
 BUG;	KeyStores;		Correcciones en el uso de claves de tarjetas inteligentes.
+BUG;	KeyStores;	Corrección para permitir el uso del controlar PKCS#11 del DNIe y la tarjeta en caso de error en el controlador Java al acceder a través del almacén de Firefox.
 RFE;	Firmas Binarias;	Se migra a SpongyCastle 1.54 para evitar las colisiones con versiones antiguas de BouncyCastle que se pueden encontrar en servidor.
 BUG;	Firmas CAdES;	Correccion en la configuración de los parámetros de los CommitmentTypeIndication (se usa el prefijo "commitmentTypeIndication" en lugar de "commitmentTypeIndications".
 BUG;	Firmas CAdES;	Se reintroduce el atributo Content-Hints en las contrafirmas para que sean acordes a la política de firma de la AGE.
