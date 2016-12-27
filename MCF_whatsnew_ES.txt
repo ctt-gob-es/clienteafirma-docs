@@ -3,6 +3,7 @@ MiniApplet 1.5
 ----------------------------
 RFE;	General;	Soporte completo de DNIe 3.0.
 RFE;	General;	Se recuerda el último directorio desde el que se cargó o guardó un fichero y el siguiente dialogo de carga o guardado de fichero que aparezca mostrará por defecto ese directorio.
+RFE;	General;	Se mejora el tratamiento del fichero de importación de configuración para que se notifiquen correctamente los problemas de formato y se admita la codificación UTF-8 con BOM.
 BUG;	JavaScript;	Se evita la triple llamada a la función callback de error cuando no se puede lanzar AutoFirma.
 BUG;	JavaScript;	Correcciones para el correcto lanzamiento de la aplicación nativa cuando en Firefox no cargue el applet.
 BUG;	JavaScript;	Correcciones en la función downloadRemoteData() para la correcta descarga de ficheros binarios.
@@ -10,11 +11,11 @@ RFE;	Applet;		Se admite el parámetro "filenameExts" en las distintas operaciones
 RFE;	Applet;		Se incorpora una función para la selección directa de certificados por parte del usuario.
 RFE;	Applet;		Se incorpora una función para la operación de firma/multifirma seguida del guardado de los datos resultantes.
 RFE;	Applet;		Se ejecuta la función de Google Analytics en un hilo aparte para evitar retrasos en la carga del applet.
+RFE;	Applet;		Se implementa el filtro de certificados "disableopeningexternalstores" que evita que se muestre el botón para la carga de PKCS#12 en el diálogo de selección.
+BUG;	Applet;		Corrección del filtro de certificados "ssl".
 RFE;	KeyStores;	Se permite el cambio de almacén de claves después de la carga del MiniApplet o AutoFirma. Los almacenes soportados son los de Windows, Linux (SHARED_NSS), Mozilla y el llavero de OS X.
-RFE;	KeyStores;	Se implementa el filtro de certificados "disableopeningexternalstores" que evita que se muestre el botón para la carga de PKCS#12 en el diálogo de selección.
-BUG;	KeyStores;	Corrección del filtro de certificados "ssl".
 BUG;	KeyStores;	Correcciones en el uso de claves de tarjetas inteligentes.
-BUG;	KeyStores;	Corrección para permitir el uso del controlar PKCS#11 del DNIe y la tarjeta en caso de error en el controlador Java al acceder a través del almacén de Firefox.
+BUG;	KeyStores;	Corrección para permitir el uso del controlar PKCS#11 del DNIe y la tarjeta CERES en caso de error en el controlador Java al acceder a través del almacén de Firefox.
 RFE;	Lotes;		Se implementa la operación de contrafirma por lotes.
 RFE;	Lotes;		Se implementa la firma de facturas electrónicas por lotes.
 RFE;	Firmas Binarias;Se migra a SpongyCastle 1.54 para evitar las colisiones con versiones antiguas de BouncyCastle que se pueden encontrar en servidor.
@@ -29,14 +30,14 @@ MiniApplet 1.4
 ----------------------------
 RFE;	General;	Compatibilidad de los despliegues con los nuevos clientes de firma nativos (AutoFirma 1.4.2, Cliente @firma Android 1.4, Cliente @firma iOS 1.4).
 BUG;	General;	Correcciones de los textos en gallego.
-RFE;	JavaScript;	Soporte de comunicación por socket con AutoFirma, haciendo innecesario el despliegue de un servidor intermedio sólo cuando los despliegues no tengan porqué ser compatibles con dispositivos móviles.
+RFE;	JavaScript;	Soporte de comunicación por socket con AutoFirma, haciendo innecesario el despliegue de un servidor intermedio salvo cuando los despliegues deban ser compatibles con dispositivos móviles e Internet Explorer 10 y anteriores.
 RFE;	JavaScript;	Se agrega a la función checkTime un tercer parámetro para indicar la URL del servidor a la que llamar para comprobar la hora.
 RFE;	JavaScript;	Se agrega la función downloadRemoteData() para la descarga de datos remotos en base 64, para poder pasárselos a la aplicación de firma.
 RFE;	JavaScript;	Se elimina el soporte de URL HTTP/HTTPS como entrada a los métodos de firma. Se debe usar en su lugar la función downloadRemoteData().
 RFE;	JavaScript;	Se agrega la función forceWSMode() para forzar que la comunicación con AutoFirma se realice a través de un servidor intermedio.
 RFE;	Applet;		Nuevo filtro de certificados por identificador de directiva.
 RFE;	Applet;		Nuevo filtro RFC2254 de certificados por issuer que comprueba la expresión recursivamente en toda la cadena de issuers.
-RFE;	Applet;		Nuevo filtro por de certificado de seudónimo.
+RFE;	Applet;		Nuevo filtro de certificados de seudónimo.
 BUG;	OSX;		Correcciones para compatibilidad con OS X 10.11 y el modo SIP (System Integrity Protection)
 RFE;	KeyStores;	Se incopora el uso de JMulticard para el uso de tarjeta de FNMT sin necesidad de controladores instalados (100% Java).
 RFE;	Lotes;		Se agrega una nueva función de firma por lotes.
