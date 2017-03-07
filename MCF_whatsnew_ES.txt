@@ -3,6 +3,7 @@ MiniApplet 1.6
 ----------------------------
 RFE;	KeyStores;	Se detectan perfiles temporales de Windows para utilizar en lugar del almacén del sistema una serie de tarjetas inteligentes de las que se pueda encontrar los PKCS#11.
 RFE;	KeyStores;	Se agrega un filtro de certificados para la selección expresa de un certificado proporcionado en base64 (que puede haberse obtenido como resultado de una operación de firma).
+BUG;	Firmas;			Corregido error que impedía hacer firmas trifásicas aplicando la opción de configuración "includeOnlySignningCertificate".
 
 
 MiniApplet 1.5

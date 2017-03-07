@@ -3,6 +3,9 @@ AutoFirma v1.6
 --------------------------
 RFE;	KeyStores;		Se detectan perfiles temporales de Windows para utilizar en lugar del almacén del sistema una serie de tarjetas inteligentes de las que se pueda encontrar los PKCS#11.
 RFE;	KeyStores;		Se agrega un filtro de certificados para la selección expresa de un certificado proporcionado en base64 (que puede haberse obtenido como resultado de una operación de firma).
+BUG;	Firmas;			Corregido error que impedía hacer firmas trifásicas aplicando la opción de configuración "includeOnlySignningCertificate".
+BUG;	Invocación-JavaScript;	Se corrige el problema de truncado del certificado devuelto en el callback de éxito tras las operaciones de firma con la comunicación por sockets.
+
 
 AutoFirma v1.5
 --------------------------
@@ -15,6 +18,7 @@ RFE;	KeyStores;		Se implementa el filtro de certificados "disableopeningexternal
 BUG;	KeyStores;		Corrección del filtro de certificados "ssl".
 BUG;	KeyStores;		Correcciones en el uso de claves de tarjetas inteligentes.
 BUG;	KeyStores;		Corrección para permitir el uso del controlador PKCS#11 del DNIe y la tarjeta CERES en caso de error en el controlador Java al acceder a través del almacén de Firefox.
+BUG;	KeyStores;		Compatibilidad de AutoFirma con Firefox 48 y superior Linux.
 RFE;	Firmas Binarias;	Se migra a SpongyCastle 1.54 para evitar las colisiones con versiones antiguas de BouncyCastle que se pueden encontrar en servidor.
 BUG;	Firmas CAdES;		Correccion en la configuración de los parámetros de los CommitmentTypeIndication (se usa el prefijo "commitmentTypeIndication" en lugar de "commitmentTypeIndications".
 BUG;	Firmas CAdES;		Se reintroduce el atributo Content-Hints en las contrafirmas para que sean acordes a la política de firma de la AGE.
@@ -36,11 +40,13 @@ BUG;	Invocación-JavaScript;	Se evita la triple llamada a la función callback de 
 BUG;	Invocación-JavaScript;	Se corrige que después de la llamada a la función de éxito asociada a la operación de guardado de datos, se ejecute la operación de error cuando la comunicación es a través de servidor intermedio.
 BUG;	Invocación-JavaScript;	Correcciones para el correcto lanzamiento de la aplicación nativa cuando Firefox no cargue el applet.
 BUG;	Invocación-JavaScript;	Correcciones en la función downloadRemoteData() para la correcta descarga de ficheros binarios.
-BUG;	Instalación;		Se corrige que se elimine el contenido de la variable de entorno PATH cuando este valor era superior a 1024 caracteres antes de instalar/desinstalar. En su lugar, no se agrega/elimina la ruta de AutoFirma.
-BUG;	Instalación;		Se corrige la referencia a la JRE del directorio de instalación, lo que permite la instalación y uso de AutoFirma sin tener Java 8 instalado.
 RFE;	Instalación;		Se actualiza a la JRE 8 u111
 RFE;	Instalación;		Se publica instalador MSI para despliegues masivos sobre Windows.
 RFE;	Instalación;		Se publican versiones Windows de 32 y 64 bits, cada cual con un JRE con la misma arquitectura.
+BUG;	Instalación;		Se corrige que se elimine el contenido de la variable de entorno PATH cuando este valor era superior a 1024 caracteres antes de instalar/desinstalar. En su lugar, no se agrega/elimina la ruta de AutoFirma.
+BUG;	Instalación;		Se corrige la referencia a la JRE del directorio de instalación, lo que permite la instalación y uso de AutoFirma sin tener Java 8 instalado.
+BUG;	Instalación;		Se corrige el proceso de instalación de AutoFirma en macOS Sierra.
+
 
 AutoFirma v1.4.3
 --------------------------
