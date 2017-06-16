@@ -1,4 +1,15 @@
 
+Version 1.5
+-----------
+- Compatibilidad con DNIe 3.0.
+- Compatibilidad con el sistema de gestión de permisos de Android 5.1.
+
+
+Version 1.4
+-----------
+- Solucionados problemas de compatibilidad con algunas versiones de Android 4.
+
+
 Version 1.3
 -----------
 - Soporte para la firma de ficheros de mayor tamaño.
