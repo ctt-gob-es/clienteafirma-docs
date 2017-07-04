@@ -1,6 +1,6 @@
 El paso de JAR a EXE se realiza mediante la herramienta Launch4J y el instalador se crea con la aplicación NSIS. Los ficheros de configuración de ambas herramientas se encuentra en el SVN: 
 
-http://svn-ctt.administracionelectronica.gob.es/svn/clienteafirma/projects/cliente-afirma/trunk/afirma-simple-installer
+https://github.com/ctt-gob-es/clienteafirma/tree/master/afirma-simple-installer
 
 Para generar el instalador:
 
