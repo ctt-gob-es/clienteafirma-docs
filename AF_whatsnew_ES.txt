@@ -8,14 +8,17 @@ RFE;	General;		Actualización de la biblioteca JXAdES a la versión 0.2.0.
 RFE;	General;		Actualización de la biblioteca PDFBox a la versión 2.0.7.
 RFE;	General;		Mejoras en el uso de proxies.
 BUG;	General;		Se incorpora el soporte para la generación y comprobación de huellas de ficheros en Base16.
+RFE;	General;		Se activa la comprobación de los certificados de las conexiones SSL. Esto implica que las conexiones con los servicios del servidor intermedio, el servicio de firma trifásica y el servicio de despliegue JNLP deben estar securizadas (en caso de estarlo) con certificados de confianza para Java.
+RFE;	General;		Se incorporan los certificados raíces y las CA intermedias de generación de certificados SSL a las JRE con las que se publica AutoFirma.
 RFE;	KeyStores;		Se detectan perfiles temporales de Windows para utilizar en lugar del almacén del sistema una serie de tarjetas inteligentes de las que se pueda encontrar los PKCS#11.
 RFE;	KeyStores;		Se agrega un filtro de certificados para la selección expresa de un certificado proporcionado en base64 (que puede haberse obtenido como resultado de una operación de firma).
 BUG;	KeyStores;		Corrección en el acceso al almacén de claves de Mozilla Firefox cuando se encontrase el almacén configurado en modo SQL.
 BUG;	Firmas;			Corregido error que impedía hacer firmas trifásicas aplicando la opción de configuración "includeOnlySignningCertificate".
 BUG;	Firmas XAdES;		Se corrige un error por el cual fallaban las cofirmas y contrafirmas XAdES cuando se configura la propiedad "explicit=true".
+BUG;	Firmas PAdES;		En la firmas trifásicas se puede referir a la última página con el identificador "-1", al igual que se hacía con las firmas normales.
 BUG;	Firmas FacturaE;	Se corrige la firma con el formato FacturaE a través de consola.
 RFE;	Firmas OOXMl;		Compatibilidad con Microsoft Office 2016
-RFE;	Java WebStart;		Se agrega la compatibilidad para el despliegue de AutoFirma como aplicación JavaWeb start.
+RFE;	Java WebStart;		Se agrega la compatibilidad para el despliegue de AutoFirma como aplicación Java WebStart.
 RFE;	Invocación-JavaScript;	Se agrega la compatibilidad con el método setStickySignatory() del MiniApplet para la selección única del certificado.
 RFE;	Invocación-JavaScript;	Se agrega la compatibilidad con los métodos de carga de datos del MiniApplet.
 RFE;	Invocación-JavaScript;	Se agrega la compatibilidad con el método getCurrentLog() del MiniApplet.

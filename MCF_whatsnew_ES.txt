@@ -10,6 +10,7 @@ RFE;	KeyStores;	Se agrega un filtro de certificados para la selección expresa de
 BUG;	KeyStores;	Corrección en el acceso al almacén de claves de Mozilla Firefox cuando se encontrase el almacén configurado en modo SQL.
 BUG;	Firmas;		Corregido error que impedía hacer firmas trifásicas aplicando la opción de configuración "includeOnlySignningCertificate".
 BUG;	Firmas XAdES;	Se corrige un error por el cual fallaban las cofirmas y contrafirmas XAdES cuando se configura la propiedad "explicit=true".
+BUG;	Firmas PAdES;	En la firmas trifásicas se puede referir a la última página con el identificador "-1", al igual que se hacía con las firmas normales.
 RFE;	Firmas OOXMl;	Compatibilidad con Microsoft Office 2016
 
 
