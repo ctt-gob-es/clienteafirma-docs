@@ -19,9 +19,9 @@ BUG;	Firmas PAdES;		En la firmas trifásicas se puede referir a la última página 
 BUG;	Firmas FacturaE;	Se corrige la firma con el formato FacturaE a través de consola.
 RFE;	Firmas OOXMl;		Compatibilidad con Microsoft Office 2016
 RFE;	Java WebStart;		Se agrega la compatibilidad para el despliegue de AutoFirma como aplicación Java WebStart.
-RFE;	Invocación-JavaScript;	Se agrega la compatibilidad con el método setStickySignatory() del MiniApplet para la selección única del certificado.
-RFE;	Invocación-JavaScript;	Se agrega la compatibilidad con los métodos de carga de datos del MiniApplet.
-RFE;	Invocación-JavaScript;	Se agrega la compatibilidad con el método getCurrentLog() del MiniApplet.
+RFE;	Invocación-JavaScript;	Se agrega la compatibilidad con el método setStickySignatory() del MiniApplet para la selección única del certificado (sólo comunicación por sockets).
+RFE;	Invocación-JavaScript;	Se agrega la compatibilidad con los métodos de carga de datos del MiniApplet (sólo comunicación por sockets).
+RFE;	Invocación-JavaScript;	Se agrega la compatibilidad con el método getCurrentLog() del MiniApplet (sólo comunicación por sockets).
 RFE;	Invocación-JavaScript;	Mejora significativa en la estabilidad de la conexión entre AutoFirma y el navegador web. Esto corrige problemas de comunicación entre AutoFirma y Chrome.
 BUG;	Invocación-JavaScript;	Se corrige el problema de truncado del certificado devuelto en el callback de éxito tras las operaciones de firma con la comunicación por sockets.
 
