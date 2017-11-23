@@ -6,18 +6,18 @@ RFE;	General;	Actualización de la versión de JMulticard a la 1.4.
 RFE;	General;	Actualización de la versión de JXAdES a la 0.2.0.
 RFE;	General;	Mejoras en el uso de proxies.
 RFE:	Librerías;	Actualización a SpongyCastle 1.54.
-BUG;	UI;			Se corrige la URL de la página de ayuda del diálogo de selección de certificados.
+BUG;	UI;			Se corrige la URL de la página de ayuda del diálogo de selección de certificados. [INC 295720]
 RFE;	KeyStores;	Se detectan perfiles temporales de Windows para utilizar en lugar del almacén del sistema una serie de tarjetas inteligentes de las que se pueda encontrar los PKCS#11.
 RFE;	KeyStores;	Se agrega un filtro de certificados para la selección expresa de un certificado proporcionado en base64 (que puede haberse obtenido como resultado de una operación de firma).
 BUG;	KeyStores;	Corrección en el acceso al almacén de claves de Mozilla Firefox cuando se encontrase el almacén configurado en modo SQL.
-BUG;	KeyStores;	Corrección del diálogo de inserción de PIN de las tarjetas DNIe/FNMT para admitir signos de puntuación.
+BUG;	KeyStores;	Corrección del diálogo de inserción de PIN de las tarjetas DNIe/FNMT para admitir signos de puntuación. [INC 295960]
 BUG;	Firmas;		Corregido error que impedía hacer firmas trifásicas aplicando la opción de configuración "includeOnlySignningCertificate".
 BUG;	Firmas XAdES;	Se corrige un error por el cual fallaban las cofirmas y contrafirmas XAdES cuando se configura la propiedad "explicit=true".
-BUG;	Firmas XAdES;	Se corrige un error por el cual fallaban las contrafirmas XAdES trifásicas sobre determinadas firmas.
-BUG;	Firmas XAdES;	Se corrige un error por el cual fallaban las contrafirmas XAdES cuando existían contrafirmas previas con un prefijo de espacio de nombres no reconocido.
-BUG;	Firmas XAdES;	Se vuelve a insertar en el nodo CONTENT de las firmas XAdES el tipo de dato firmado. Esto también corrige la extracción de los datos cuando se firma un XML.
+BUG;	Firmas XAdES;	Se corrige un error por el cual fallaban las contrafirmas XAdES trifásicas sobre determinadas firmas. [INC 283137]
+BUG;	Firmas XAdES;	Se corrige un error por el cual fallaban las contrafirmas XAdES cuando existían contrafirmas previas con un prefijo de espacio de nombres no reconocido. [INC 332565]
+BUG;	Firmas XAdES;	Se vuelve a insertar en el nodo CONTENT de las firmas XAdES el tipo de dato firmado. Esto también corrige la extracción de los datos cuando se firma un XML. [INC 333030]
 BUG;	Firmas PAdES;	En la firmas trifásicas se puede referir a la última página con el identificador "-1", al igual que se hacía con las firmas normales.
-RFE;	Firmas OOXML;	Compatibilidad con Microsoft Office 2016
+RFE;	Firmas OOXML;	Compatibilidad con Microsoft Office 2016 [INC 281980][INC 318690]
 
 
 MiniApplet 1.5
