@@ -10,8 +10,9 @@ RFE:	Librerías;		Actualización a SpongyCastle 1.54.
 RFE;	Librerías;		Actualización a JMulticard 1.4.
 RFE;	Librerías;		Actualización a JXAdES 0.2.0.
 RFE;	Librerías;		Actualización a PDFBox 2.0.7.
-BUG;	UI;				Se corrige la URL de la página de ayuda del diálogo de selección de certificados. [INC 295720]
-BUG;	UI;				Se corrige el guardado y uso del usuario y contraseña del proxy configurado. [INC 329883]
+BUG;	UI;			Se corrige la URL de la página de ayuda del diálogo de selección de certificados. [INC 295720]
+BUG;	UI;			Se corrige el guardado y uso del usuario y contraseña del proxy configurado. [INC 329883]
+BUG;	UI;			Se corrige un error en Windows por el que, después de actualizar la aplicación, se seguía mostrando la ayuda de la versión anterior.
 RFE;	KeyStores;		Se detectan perfiles temporales de Windows para utilizar en lugar del almacén del sistema una serie de tarjetas inteligentes de las que se pueda encontrar los PKCS#11.
 RFE;	KeyStores;		Se agrega un filtro de certificados para la selección expresa de un certificado proporcionado en base64 (que puede haberse obtenido como resultado de una operación de firma).
 BUG;	KeyStores;		Corrección en el acceso al almacén de claves de Mozilla Firefox cuando se encontrase el almacén configurado en modo SQL.
