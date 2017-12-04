@@ -10,29 +10,31 @@ RFE:	Librerías;		Actualización a SpongyCastle 1.54.
 RFE;	Librerías;		Actualización a JMulticard 1.4.
 RFE;	Librerías;		Actualización a JXAdES 0.2.0.
 RFE;	Librerías;		Actualización a PDFBox 2.0.7.
-BUG;	UI;			Se corrige la URL de la página de ayuda del diálogo de selección de certificados.
-BUG;	UI;			Se corrige el guardado y uso del usuario y contraseña del proxy configurado.
+BUG;	UI;			Se corrige la URL de la página de ayuda del diálogo de selección de certificados. [INC 295720]
+BUG;	UI;			Se corrige el guardado y uso del usuario y contraseña del proxy configurado. [INC 329883]
 BUG;	UI;			Se corrige un error en Windows por el que, después de actualizar la aplicación, se seguía mostrando la ayuda de la versión anterior.
 RFE;	KeyStores;		Se detectan perfiles temporales de Windows para utilizar en lugar del almacén del sistema una serie de tarjetas inteligentes de las que se pueda encontrar los PKCS#11.
 RFE;	KeyStores;		Se agrega un filtro de certificados para la selección expresa de un certificado proporcionado en base64 (que puede haberse obtenido como resultado de una operación de firma).
 BUG;	KeyStores;		Corrección en el acceso al almacén de claves de Mozilla Firefox cuando se encontrase el almacén configurado en modo SQL.
-BUG;	KeyStores;		Corrección del diálogo de inserción de PIN de las tarjetas DNIe/FNMT para admitir signos de puntuación.
+BUG;	KeyStores;		Corrección del diálogo de inserción de PIN de las tarjetas DNIe/FNMT para admitir signos de puntuación. [INC 295960]
 BUG;	Firmas;			Corregido error que impedía hacer firmas trifásicas aplicando la opción de configuración "includeOnlySignningCertificate".
 BUG;	Firmas XAdES;		Se corrige un error por el cual fallaban las cofirmas y contrafirmas XAdES cuando se configura la propiedad "explicit=true".
-BUG;	Firmas XAdES;		Se corrige un error por el cual fallaban las contrafirmas XAdES trifásicas sobre determinadas firmas.
-BUG;	Firmas XAdES;		Se corrige un error por el cual fallaban las contrafirmas XAdES cuando existían contrafirmas previas con un prefijo de espacio de nombres no reconocido.
-BUG;	Firmas XAdES;		Se vuelve a insertar en el nodo CONTENT de las firmas XAdES el tipo de dato firmado. Esto también corrige la extracción de los datos cuando se firma un XML.
+BUG;	Firmas XAdES;		Se corrige un error por el cual fallaban las contrafirmas XAdES trifásicas sobre determinadas firmas. [INC 283137]
+BUG;	Firmas XAdES;		Se corrige un error por el cual fallaban las contrafirmas XAdES cuando existían contrafirmas previas con un prefijo de espacio de nombres no reconocido. [INC 332565]
+BUG;	Firmas XAdES;		Se vuelve a insertar en el nodo CONTENT de las firmas XAdES el tipo de dato firmado. Esto también corrige la extracción de los datos cuando se firma un XML. [INC 333030]
+RFE;	Firmas PAdES;		Se generan por defecto firmas PAdES-BES.
 BUG;	Firmas PAdES;		En la firmas trifásicas se puede referir a la última página con el identificador "-1", al igual que se hacía con las firmas normales.
 BUG;	Firmas FacturaE;	Se corrige la firma con el formato FacturaE a través de consola.
-RFE;	Firmas OOXMl;		Compatibilidad con Microsoft Office 2016
+RFE;	Firmas OOXMl;		Compatibilidad con Microsoft Office 2016 [INC 281980][INC 318690]
 RFE;	Java WebStart;		Se agrega la compatibilidad para el despliegue de AutoFirma como aplicación Java WebStart.
-RFE;	Invocación-JavaScript;	Se agrega la compatibilidad con el método setStickySignatory() del MiniApplet para la selección única del certificado (sólo comunicación por sockets).
+RFE;	Invocación-JavaScript;	Se agrega la compatibilidad con el método setStickySignatory() del MiniApplet para la selección única del certificado (sólo comunicación por sockets). [INC 256414][INC 216366]
 RFE;	Invocación-JavaScript;	Se agrega la compatibilidad con los métodos de carga de datos del MiniApplet (sólo comunicación por sockets).
 RFE;	Invocación-JavaScript;	Se agrega la compatibilidad con el método getCurrentLog() del MiniApplet (sólo comunicación por sockets).
 RFE;	Invocación-JavaScript;	Mejora significativa en la estabilidad de la conexión entre AutoFirma y el navegador web. Esto corrige problemas de comunicación entre AutoFirma y Chrome.
 BUG;	Invocación-JavaScript;	Se corrige el problema de truncado del certificado devuelto en el callback de éxito tras las operaciones de firma con la comunicación por sockets.
-BUG;	Instalación;	Se corrige el proceso de instalación para que no se modifique el perfil del usuario por defecto de Windows y evitar la corrupción de datos de los nuevos usuarios.
-BUG;	Instalación;	Se corrige el proceso de instalación para que se puedan abrir los ficheros de firma con extensiones registradas en unidades de red.
+BUG;	Instalación;	Se corrige el proceso de instalación para que no se modifique el perfil del usuario por defecto de Windows y evitar la corrupción de datos de los nuevos usuarios. [INC 280709]
+BUG;	Instalación;	Se corrige el proceso de instalación para que se puedan abrir los ficheros de firma con extensiones registradas en unidades de red. [INC 298244]
+
 
 AutoFirma v1.5
 --------------------------
