@@ -1,4 +1,10 @@
 
+AutoFirma v1.6.1
+--------------------------
+RFE;	Librerías;		Actualización a JMulticard 1.5. Esta versión desactiva el soporte de las tarjetas de GyD, lo que permite que se carguen con el controlador oficial.
+RFE;	KeyStores;		Se mejora la compatibilidad con Firefox 58 y superiores.
+
+
 AutoFirma v1.6
 --------------------------
 RFE;	General;		Compatibilidad con Java 9
