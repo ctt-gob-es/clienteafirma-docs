@@ -2,12 +2,12 @@
 AutoFirma v1.6.2
 --------------------------
 RFE;	UI;			El diálogo de selección de certificados se muestra sobre cualquier otra pantalla.
-RFE;	UI;			Se agrega una opción en el menú de herramientas para abrir y ver la información de una firma.
+RFE;	UI;			Se agrega una opción en el menú Archivo para abrir y ver la información de una firma.
 BUG;	UI;			Se elimina la opción de validación de certificados desde el panel de información de firma, ya que no se puede verificar que la información de validación proporcionada sea de confianza.
 BUG;	Firmas;			Se corrige la configuración de la política de firma de la AGE cuando se utiliza el formato AUTO con una multifirma.
 BUG;	Firmas CAdES;		Se corrige error en la identificación de los documentos OOXML y ODF por el cual no se validaban correctamente las firmas CAdES realizadas sobre este tipo de documentos firmados.
 BUG;	Firmas XAdES;		Se corrige la validación de las firmas XAdES realizadas sobre datos binarios.
-BUG;	Firmas XAdES;		Se corrige la contrafirma de firmas XAdES cuando se declaran espacios de nombre vacíos.
+BUG;	Firmas XAdES;		Se corrige la contrafirma de firmas XAdES en las que se declaraba el espacios de nombre vacío.
 BUG;	Firmas XAdES;		Se hereda el prefijo del espacio de nombre de XAdES del nodo "UnsignedSignatureProperties" cuando se realiza una contrafirma sobre una firma que ya contenía este nodo.
 
 

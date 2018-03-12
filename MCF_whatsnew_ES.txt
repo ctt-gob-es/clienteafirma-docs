@@ -1,4 +1,11 @@
 
+MiniApplet 1.6.2
+--------------------------
+BUG;	Applet;			Se corrige el método getFileNameContentBase64()" para se devuelva también el nombre del fichero cargado cuando no se indican funciones callback para la devolución.
+BUG;	Firmas XAdES;		Se corrige la contrafirma de firmas XAdES en las que se declaraba el espacios de nombre vacío.
+BUG;	Firmas XAdES;		Se hereda el prefijo del espacio de nombre de XAdES del nodo "UnsignedSignatureProperties" cuando se realiza una contrafirma sobre una firma que ya contenía este nodo.
+
+
 MiniApplet 1.6
 ----------------------------
 RFE;	General;	Compatibilidad con Java 9
