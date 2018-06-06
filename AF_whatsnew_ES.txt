@@ -1,5 +1,5 @@
 
-AutoFirma v1.6.3
+AutoFirma v1.6.4
 --------------------------
 RFE;	UI;			Se muestra el diálogo de selección de certificados incluso cuando no hay certificados para permitir cargar un PKCS#12 o insertar una tarjeta inteligente.
 RFE;	UI;			Se redimensiona el diálogo de selección de certificados al nuevo contenido cuando se recarga el almacén o se abre uno nuevo.
@@ -15,6 +15,13 @@ RFE;	Firma lotes;		Se optimiza el proceso de firma en servidor para reducir el c
 BUG;	Firmas PAdES;		Se corrige el proceso de carga para que, al cargar un PDF sin firmas, se indique que no se trata de una firma PDF válida.
 RFE;	Invocación-JavaScript;	Se agrega compatibilidad con el método de selección de certificados del Cliente @firma cuando se utiliza la comunicación por servidor intermedio.
 RFE;	Invocación-JavaScript;	Se habilita un modo de espera con servidor intermedio que evita que una aplicación de por caducada una petición mientras AutoFirma siga abierto (Requiere el JavaScript del Cliente 1.6.3 o superior).
+
+
+AutoFirma v.1.6.3
+--------------------------
+RFE;	UI;			Se agrega, para sistemas operativos Windows, una opción al panel General de las preferencias para desabilitar el uso de tarjetas mediante JMulticard. También afecta al uso desde el navegador.
+BUG;	Windows;		El empaquetado Windows 32bits ahora no reserva memoria adicional para evitar que no se pueda abrir la aplicación cuando no la haya.
+RFE;	Proxy;			La opción de uso de proxy de red aparecerá ahora habilitada por defecto para emular la configuración por defecto de AutoFirma 1.5.
 
 
 AutoFirma v1.6.2
