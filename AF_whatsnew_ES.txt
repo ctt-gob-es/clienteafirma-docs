@@ -6,11 +6,11 @@ RFE;	UI;			Se redimensiona el diálogo de selección de certificados al nuevo cont
 RFE;	UI;			Antes de abrir o guardar un fichero de datos firmados, se muestra un diálogo con información sobre el mismo.
 RFE;	UI;			Los ficheros ejecutables firmados nunca se ejecutan al extraerlos de una firma, se almacenan donde indique el usuario.
 RFE;	UI;			Se agrega la arquitectura de Java al diálogo "Acerca de..." de la aplicación.
+RFE;	UI;			Se externaliza la configuración del formato de firma por defecto a un diálogo accesible desde la pantalla "General" de las preferencias.
+RFE;	UI;			Se agrega la funcionalidad de firma masiva para la firma de multiples documentos o directorios desde la interfaz gráfica.
 BUG;	UI;			Se corrige el error por el cual, al abrir un PKCS#12 desde el diálogo de selección de certificados, el diálogo de inserción de contraseña quedaba inaccesible por detrás.
 BUG;	UI;			Se corrigen atajos de teclado duplicados.
-RFE;	UI;			Se externaliza la configuración del formato de firma por defecto a un diálogo accesible desde la pantalla "General" de las preferencias.
 BUG;	KeyStores;		Se corrige el refresco de los almacenes PKCS#12 y JKS.
-RFE;	Firma masiva;		Se agrega la funcionalidad de firma masiva para la firma de multiples documentos o directorios desde la interfaz gráfica.
 RFE;	Firma lotes;		Se optimiza el proceso de firma en servidor para reducir el consumo de memoria.
 BUG;	Firmas PAdES;		Se corrige el proceso de carga para que, al cargar un PDF sin firmas, se indique que no se trata de una firma PDF válida.
 RFE;	Invocación-JavaScript;	Se agrega compatibilidad con el método de selección de certificados del Cliente @firma cuando se utiliza la comunicación por servidor intermedio.
@@ -20,8 +20,8 @@ RFE;	Invocación-JavaScript;	Se habilita un modo de espera con servidor intermedi
 AutoFirma v.1.6.3
 --------------------------
 RFE;	UI;			Se agrega, para sistemas operativos Windows, una opción al panel General de las preferencias para desabilitar el uso de tarjetas mediante JMulticard. También afecta al uso desde el navegador.
+RFE;	UI;			La opción de uso de proxy de red aparecerá ahora habilitada por defecto para emular la configuración por defecto de AutoFirma 1.5.
 BUG;	Windows;		El empaquetado Windows 32bits ahora no reserva memoria adicional para evitar que no se pueda abrir la aplicación cuando no la haya.
-RFE;	Proxy;			La opción de uso de proxy de red aparecerá ahora habilitada por defecto para emular la configuración por defecto de AutoFirma 1.5.
 
 
 AutoFirma v1.6.2
