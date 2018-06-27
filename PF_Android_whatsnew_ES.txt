@@ -1,0 +1,9 @@
+Portafirmas Android
+
+Portafirmas v2.3.2
+--------------------------
+BUG;	Se corrige el cierre de la aplicación con las versiones del servicio proxy no adaptadas al nuevo mecanismo de seguridad (como el incluido con la versión distribuible del Portafirmas).
+BUG;	Se corrige la recuperación del listado de aplicaciones para los filtros de peticiones de firma.
+BUG;	Se agrega la solicitud de permisos al almacenamiento externo para evitar errores en la carga y el guardado de ficheros.
+BUG;	Se corrige que algunos textos apareciesen cortados.
+BUG;	Se corrigen algunos problemas de compatibilidad con Android 4.3.
