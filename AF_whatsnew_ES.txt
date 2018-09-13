@@ -9,15 +9,17 @@ RFE;	UI;			Los ficheros ejecutables firmados nunca se ejecutan al extraerlos de 
 RFE;	UI;			Se agrega la arquitectura de Java al diálogo "Acerca de..." de la aplicación.
 RFE;	UI;			Se externaliza la configuración del formato de firma por defecto a un diálogo accesible desde la pantalla "General" de las preferencias.
 RFE;	UI;			Se agrega la funcionalidad de firma masiva para la firma de multiples documentos o directorios desde la interfaz gráfica.
+RFE;	UI;			Se permite configurar desde el panel de preferencias si las firmas CAdES y XAdES deben cofirmarse, contrafirmar las firmas hoja del árbol de firma o contrafirmas todas sus firmas.
+RFE;	UI;			Se permite acceder al panel de preferencias desde la información mostrada cuando se selecciona una firma CAdES o XAdES, para así poder modificar su configuración.
 BUG;	UI;			Se corrige el error por el cual, al abrir un PKCS#12 desde el diálogo de selección de certificados, el diálogo de inserción de contraseña quedaba inaccesible por detrás.
 BUG;	UI;			Se corrigen atajos de teclado duplicados.
 BUG;	KeyStores;		Se corrige el refresco de los almacenes PKCS#12 y JKS.
 RFE;	Firma lotes;		Se optimiza el proceso de firma en servidor para reducir el consumo de memoria.
 BUG;	Firmas PAdES;		Se corrige el proceso de carga para que, al cargar un PDF sin firmas, se indique que no se trata de una firma PDF válida.
 BUG;	Firmas PAdES;		Se corrige la firma de campos de firma preexistentes.
-RFE;	Invocación-JavaScript;	Se agrega compatibilidad con el método de selección de certificados del Cliente @firma cuando se utiliza la comunicación por servidor intermedio.
-RFE;	Invocación-JavaScript;	Se habilita un modo de espera con servidor intermedio que evita que una aplicación de por caducada una petición mientras AutoFirma siga abierto (Requiere el JavaScript del Cliente 1.6.3 o superior).
-BUG;	Invocación-JavaScript;	Se corrige el proceso de comunicación para evitar que en llamadas de firma en serie por sockets, se envíen a firmar datos erroneos (afectaba al uso de Internet Explorer 11).
+RFE;	Invocación-JavaScript;	Se agrega compatibilidad con el método de selección de certificados del Cliente @firma cuando se utiliza la comunicación por servidor intermedio (Requiere el JavaScript del Cliente 1.6.4 o superior).
+RFE;	Invocación-JavaScript;	Se habilita un modo de espera con servidor intermedio que evita que una aplicación dé por caducada una petición mientras AutoFirma siga abierto (Requiere el JavaScript del Cliente 1.6.4 o superior).
+BUG;	Invocación-JavaScript;	Se corrige el proceso de comunicación para evitar que en llamadas de firma en serie por sockets se envíen a firmar datos erroneos (afectaba al uso de Internet Explorer 11) (Requiere el JavaScript del Cliente 1.6.4 o superior).
 
 
 AutoFirma v.1.6.3
