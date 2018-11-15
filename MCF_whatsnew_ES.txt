@@ -1,7 +1,17 @@
 
+MiniApplet 1.6.4
+--------------------------
+RFE;	UI;			Se muestra el diálogo de selección de certificados incluso cuando no hay certificados para permitir cargar un PKCS#12 o insertar una tarjeta inteligente.
+RFE;	UI;			Se redimensiona el diálogo de selección de certificados al nuevo contenido cuando se recarga el almacén o se abre uno nuevo.
+BUG;	KeyStores;		Se corrige el refresco de los almacenes PKCS#12 y JKS.
+RFE;	Firma lotes;		Se optimiza el proceso de firma en servidor para reducir el consumo de memoria.
+RFE;	Firmas PAdES;		Se elimina el margen de los textos en las firmas visibles PDF.
+BUG;	Firmas PAdES;		Se corrige la validación de algunas firmas PAdES no generadas por el Cliente @firma.
+
+
 MiniApplet 1.6.2
 --------------------------
-BUG;	Applet;			Se corrige el método getFileNameContentBase64()" para se devuelva también el nombre del fichero cargado cuando no se indican funciones callback para la devolución.
+BUG;	Applet;				Se corrige el método getFileNameContentBase64()" para se devuelva también el nombre del fichero cargado cuando no se indican funciones callback para la devolución.
 BUG;	Firmas XAdES;		Se corrige la contrafirma de firmas XAdES en las que se declaraba el espacios de nombre vacío.
 BUG;	Firmas XAdES;		Se hereda el prefijo del espacio de nombre de XAdES del nodo "UnsignedSignatureProperties" cuando se realiza una contrafirma sobre una firma que ya contenía este nodo.
 
