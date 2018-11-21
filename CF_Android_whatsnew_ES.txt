@@ -1,9 +1,9 @@
 
 Version 1.6
 -----------
-- Se corrige un cierre inesperado de la aplicación cuando la configuración de firma proporcionada desde el navegador web es demasiado grande para enviarse directamente a la aplicación.
-- Se corrige la generación de firmas PAdES visible en una fase.
-- Soporte para la operación de selección de certificados sin firmar al invocarse desde un navegador web.
+- Se corrige un cierre inesperado de la aplicación cuando en la configuración de firma proporcionada desde el navegador web no se envían los datos a firmar y, aún así, es demasiado grande para enviarse sin servidor intermedio.
+- Se corrige la generación de firmas PAdES visibles.
+- Se agrega el soporte para la operación de selección de certificados al invocarse desde un navegador web.
 
 Version 1.5
 -----------

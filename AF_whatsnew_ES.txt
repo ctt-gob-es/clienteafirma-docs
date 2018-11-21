@@ -13,6 +13,7 @@ RFE;	UI;			Se permite configurar desde el panel de preferencias si las firmas CA
 RFE;	UI;			Se permite acceder al panel de preferencias desde la información mostrada cuando se selecciona una firma CAdES o XAdES, para así poder modificar su configuración.
 BUG;	UI;			Se corrige el error por el cual, al abrir un PKCS#12 desde el diálogo de selección de certificados, el diálogo de inserción de contraseña quedaba inaccesible por detrás.
 BUG;	UI;			Se corrigen atajos de teclado duplicados.
+BUG;	UI;			Se corrige la identificación de los ficheros .xls y .ppt al extraerlos de las firmas y ya no se intentarán abrir con la aplicación asignada a los .doc.
 BUG;	KeyStores;		Se corrige el refresco de los almacenes PKCS#12 y JKS.
 RFE;	Firma lotes;		Se optimiza el proceso de firma en servidor para reducir el consumo de memoria.
 RFE;	Firmas PAdES;		Se elimina el margen de los textos en las firmas visibles PDF.
@@ -22,6 +23,7 @@ BUG;	Firmas PAdES;		Se corrige la validación de algunas firmas PAdES no generada
 RFE;	Invocación-JavaScript;	Se agrega compatibilidad con el método de selección de certificados del Cliente @firma cuando se utiliza la comunicación por servidor intermedio (Requiere el JavaScript del Cliente 1.6.4 o superior).
 RFE;	Invocación-JavaScript;	Se habilita un modo de espera con servidor intermedio que evita que una aplicación dé por caducada una petición mientras AutoFirma siga abierto (Requiere el JavaScript del Cliente 1.6.4 o superior).
 BUG;	Invocación-JavaScript;	Se corrige el proceso de comunicación para evitar que en llamadas de firma en serie por sockets se envíen a firmar datos erroneos (afectaba al uso de Internet Explorer 11) (Requiere el JavaScript del Cliente 1.6.4 o superior).
+RFE;	Consola;		Ahora es posible firmar con formatos OOXML y ODF.
 
 
 AutoFirma v.1.6.3
