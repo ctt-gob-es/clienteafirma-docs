@@ -2,8 +2,10 @@
 AutoFirma v1.6.4
 --------------------------
 RFE;	General;		Se integra un mecanismo de plugins con el que agregar nuevas funcionalidades de la aplicación.
+RFE;	UI;			Se agrega una opción al panel General de las preferencias para permitir durante la sesión el cacheo del DNIe y tarjetas de la FNMT cuando se utilicen a través de JMulticard.
 RFE;	UI;			Se muestra el diálogo de selección de certificados incluso cuando no hay certificados para permitir cargar un PKCS#12 o insertar una tarjeta inteligente.
 RFE;	UI;			Se redimensiona el diálogo de selección de certificados al nuevo contenido cuando se recarga el almacén o se abre uno nuevo.
+RFE;	UI;			Se remodelan diversos diálogos gráficos para mejorar la accesibilidad visual de la aplicación.
 RFE;	UI;			Antes de abrir o guardar un fichero de datos firmados, se muestra un diálogo con información sobre el mismo.
 RFE;	UI;			Los ficheros ejecutables firmados nunca se ejecutan al extraerlos de una firma, se almacenan donde indique el usuario.
 RFE;	UI;			Se agrega la arquitectura de Java al diálogo "Acerca de..." de la aplicación.
@@ -20,6 +22,7 @@ RFE;	Firmas PAdES;		Se elimina el margen de los textos en las firmas visibles PD
 BUG;	Firmas PAdES;		Se corrige el proceso de carga para que, al cargar un PDF sin firmas, se indique que no se trata de una firma PDF válida.
 BUG;	Firmas PAdES;		Se corrige la firma de campos de firma preexistentes.
 BUG;	Firmas PAdES;		Se corrige la validación de algunas firmas PAdES no generadas por el Cliente @firma.
+RFE;	Invocación-JavaScript;	Cuando ocurre un error al firmar se detalla mejor al usuario el motivo que lo originó.
 RFE;	Invocación-JavaScript;	Se agrega compatibilidad con el método de selección de certificados del Cliente @firma cuando se utiliza la comunicación por servidor intermedio (Requiere el JavaScript del Cliente 1.6.4 o superior).
 RFE;	Invocación-JavaScript;	Se habilita un modo de espera con servidor intermedio que evita que una aplicación dé por caducada una petición mientras AutoFirma siga abierto (Requiere el JavaScript del Cliente 1.6.4 o superior).
 BUG;	Invocación-JavaScript;	Se corrige el proceso de comunicación para evitar que en llamadas de firma en serie por sockets se envíen a firmar datos erroneos (afectaba al uso de Internet Explorer 11) (Requiere el JavaScript del Cliente 1.6.4 o superior).
