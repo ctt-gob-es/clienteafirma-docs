@@ -2,7 +2,7 @@
 AutoFirma v1.6.4
 --------------------------
 RFE;	General;		Se integra un mecanismo de plugins con el que agregar nuevas funcionalidades de la aplicación.
-RFE;	UI;			Se agrega una opción al panel General de las preferencias para permitir durante la sesión el cacheo del DNIe y tarjetas de la FNMT cuando se utilicen a través de JMulticard.
+RFE;	Librerías;		Se incorporan los nuevos cambios de JMulticard que permite el cacheo de los pines de las tarjetas de FNMT y DNIe.
 RFE;	UI;			Se muestra el diálogo de selección de certificados incluso cuando no hay certificados para permitir cargar un PKCS#12 o insertar una tarjeta inteligente.
 RFE;	UI;			Se redimensiona el diálogo de selección de certificados al nuevo contenido cuando se recarga el almacén o se abre uno nuevo.
 RFE;	UI;			Se remodelan diversos diálogos gráficos para mejorar la accesibilidad visual de la aplicación.
