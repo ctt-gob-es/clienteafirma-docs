@@ -1,19 +1,30 @@
 
-MiniApplet 1.6.4
+MiniApplet 1.7
 --------------------------
-RFE;	UI;			Se muestra el diálogo de selección de certificados incluso cuando no hay certificados para permitir cargar un PKCS#12 o insertar una tarjeta inteligente.
-RFE;	UI;			Se redimensiona el diálogo de selección de certificados al nuevo contenido cuando se recarga el almacén o se abre uno nuevo.
-BUG;	KeyStores;		Se corrige el refresco de los almacenes PKCS#12 y JKS.
-RFE;	Firma lotes;		Se optimiza el proceso de firma en servidor para reducir el consumo de memoria.
-RFE;	Firmas PAdES;		Se elimina el margen de los textos en las firmas visibles PDF.
-BUG;	Firmas PAdES;		Se corrige la validación de algunas firmas PAdES no generadas por el Cliente @firma.
+RFE;	Firmas CAdES;		Se permite que en las llamadas desde el navegador o consola se indique el ClaimedRole.
+
+
+MiniApplet 1.6.5
+--------------------------
+RFE;	Librerías;	Actualización a JMulticard 1.5. Esta version permite el cacheo de los pines de las tarjetas de FNMT y DNIe. Es necesario usar "setStickySignatory" para habilitar el cacheo.
+RFE;	UI;		Se muestra el diálogo de selección de certificados incluso cuando no hay certificados para permitir cargar un PKCS#12 o insertar una tarjeta inteligente.
+RFE;	UI;		Se redimensiona el diálogo de selección de certificados al nuevo contenido cuando se recarga el almacén o se abre uno nuevo.
+BUG;	UI;		Se corrige el error por el cual, al abrir un PKCS#12 desde el diálogo de selección de certificados, el diálogo de inserción de contraseña quedaba inaccesible por detrás.
+RFE;	KeyStores;	Se permite que los PKCS#11 se declaren en Firefox mediante rutas relativas, en cuyo caso se buscan a partir del PATH.
+RFE;	KeyStores;	Se integra en AutoFirma el NSS de Firefox 65 para Windows para permitir el acceso al almacén de los nuevos Firefox cuando la arquitectura de Firefox y AutoFirma sean distintas.
+BUG;	KeyStores;	Se corrige la firma con tarjetas inteligentes desde FireFox, que en algunos casos permitía listar los certificados pero no usarlos.
+BUG;	KeyStores;	Se corrige el caso en el que, al actualizar un almacén de certificados a través del diálogo, aparecía un diálogo de PIN que quedaba por detras del propio diálogo de selección.
+BUG;	KeyStores;	Se corrige el refresco de los almacenes PKCS#12 y JKS.
+RFE;	Firma lotes;	Se optimiza el proceso de firma en servidor para reducir el consumo de memoria.
+RFE;	Firmas PAdES;	Se elimina el margen de los textos en las firmas visibles PDF.
+RFE;	Firmas PAdES;	Se permite configuar en los PDF que los lectores pueden incluir en ellos la marca de validación de las firmas.
 
 
 MiniApplet 1.6.2
 --------------------------
-BUG;	Applet;				Se corrige el método getFileNameContentBase64()" para se devuelva también el nombre del fichero cargado cuando no se indican funciones callback para la devolución.
-BUG;	Firmas XAdES;		Se corrige la contrafirma de firmas XAdES en las que se declaraba el espacios de nombre vacío.
-BUG;	Firmas XAdES;		Se hereda el prefijo del espacio de nombre de XAdES del nodo "UnsignedSignatureProperties" cuando se realiza una contrafirma sobre una firma que ya contenía este nodo.
+BUG;	Applet;		Se corrige el método getFileNameContentBase64()" para se devuelva también el nombre del fichero cargado cuando no se indican funciones callback para la devolución.
+BUG;	Firmas XAdES;	Se corrige la contrafirma de firmas XAdES en las que se declaraba el espacios de nombre vacío.
+BUG;	Firmas XAdES;	Se hereda el prefijo del espacio de nombre de XAdES del nodo "UnsignedSignatureProperties" cuando se realiza una contrafirma sobre una firma que ya contenía este nodo.
 
 
 MiniApplet 1.6

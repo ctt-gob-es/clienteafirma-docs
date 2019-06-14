@@ -1,9 +1,16 @@
 
+AutoFirma v1.7
+--------------------------
+RFE;	Firmas CAdES;		Se permite que en las llamadas desde el navegador o consola se indique el ClaimedRole.
+
+
 AutoFirma v1.6.5
 --------------------------
 RFE;	General;		AutoFirma es compatible con OpenJDK 11.
 RFE;	General;		Se integra un mecanismo de plugins con el que agregar nuevas funcionalidades de la aplicación.
-RFE;	Librerías;		Se incorporan los nuevos cambios de JMulticard que permite el cacheo de los pines de las tarjetas de FNMT y DNIe. Es necesario usar "setStickySignatory" para usarlo.
+RFE;	Librerías;		Se distribuye OpenJDK 11 con AutoFirma macOS y Windows (64 bits).
+RFE;	Librerías;		Actualización a JMulticard 1.5. Esta version permite el cacheo de los pines de las tarjetas de FNMT y DNIe. Es necesario usar "setStickySignatory" para habilitar el cacheo.
+RFE;	Librerias;		Se incorpora la biblioteca Apache Satuario v2.1.3. Esta permite evitar el problema de compatibilidad de las firmas XAdES con Java 11 omitiendo los saltos de línea internos del XML para que no se introduzcan retornos de carro (&#13;) en los Base64.
 RFE;	UI;			Se muestra el diálogo de selección de certificados incluso cuando no hay certificados para permitir cargar un PKCS#12 o insertar una tarjeta inteligente.
 RFE;	UI;			Se redimensiona el diálogo de selección de certificados al nuevo contenido cuando se recarga el almacén o se abre uno nuevo.
 RFE;	UI;			Se remodelan diversos diálogos gráficos para mejorar la accesibilidad visual de la aplicación.
