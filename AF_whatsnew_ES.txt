@@ -2,6 +2,8 @@
 AutoFirma v1.7
 --------------------------
 RFE;	Firmas CAdES;		Se permite que en las llamadas desde el navegador o consola se indique el ClaimedRole.
+RFE;	Invocación-JavaScript;	Optimización de la transmisión de datos por sockets, lo que evita que se corte la comunicación Internet Explorer al realizar multiples firmas (Requiere el JavaScript del Cliente 1.7 o superior).
+BUG;	Invocación-JavaScript;	Se evita la impresión de datos grandes en el log, lo que evita que este se corrompa y borre y que AutoFirma no complete el proceso de guardado.
 
 
 AutoFirma v1.6.5
@@ -46,6 +48,7 @@ RFE;	Windows;		El instalador EXE pregunta al usuario si desea crear el acceso di
 BUG;	Windows;		Se corrige que se quedase bloqueado el proceso de instalación cuando se encontrase una contraseña maestra en el almacén de FireFox.
 BUG;	Windows;		Se corrige que se agregase al PATH la ruta de instalación por defecto de AutoFirma en lugar de la ruta real de instalación.
 RFE;	Linux;			Se incluye instalador RPM.
+
 
 AutoFirma v.1.6.3
 --------------------------
