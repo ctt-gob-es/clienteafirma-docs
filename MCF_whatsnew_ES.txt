@@ -2,6 +2,14 @@
 MiniApplet 1.7
 --------------------------
 RFE;	Firmas CAdES;		Se permite que en las llamadas desde el navegador o consola se indique el ClaimedRole.
+RFE;	Firmas XAdES;		Se obvia la configuración de manifest (extraParam "useManifest") en las operaciones de cofirma y contrafirma. No se pueden realizar multifirmas con manifest, independientemente a si la firma original tenía manifest o no.
+RFE;	Firmas XAdES;		Se permite la firma XAdES con manifest de múltiples referencias externas indicando el hash correspondiente a los datos referenciados por ellas.
+RFE;	Firmas XAdES;		En las firmas manifest, se utilizará el parámetro "referencesDigestMethod" para determinar el algoritmo de hash utilizado cuando no se indique el parametro "precalculatedHashAlgorithm".
+BUG;	Firmas XAdES;		Las firmas manifest deberán recibir el hash de los datos referenciados. Nunca se accedera a los datos para calcular su hash.
+BUG;	Firmas XAdES;		Las firmas Externally Detached de URLs externas ahora están correctamente referenciadas por el objeto DataObjectFormat.
+BUG;	Firmas XAdES;		Las firmas Externally Detached no solicitaran datos a firmar cuando pueden recuperarlos a partir de la URI indicada.
+BUG;	Firmas XAdES;		No se extrae el contenido de las firmas XAdES Externally Detached y firmas con manifest.
+BUG;	Firmas PAdES;		Se corrige el que no se obtenga la información de las firmas PDF aunque alguna una de las firmas no contenga la fecha de firma.
 
 
 MiniApplet 1.6.5
