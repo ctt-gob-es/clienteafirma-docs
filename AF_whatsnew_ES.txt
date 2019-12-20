@@ -5,6 +5,8 @@ RFE;	General;		Se identifican por separado la versión de AutoFirma de cada siste
 RFE;	General;		La comprobación de actualizaciones sólo se realiza una vez al día.
 RFE;	UI;			Se muestra al usuario la opción para el giró del texto de la firma visible PDF.
 BUG;	UI;			No se muestra al usuario la opción de extraer datos de la firma cuando esta sea XAdES Externally Detached o una firma con manifest.
+RFE;	KeyStores;		Se mejora la detección de perfil de Firefox para corregir problemas derivados de los cambios en las versiones 69 y superiores (cambia según sistema operativo). 
+BUG;	KeyStores;		Se corrige la selección de perfil de Firefox ya que a veces se seleccionaba el primer perfil disponible en lugar del activo.
 RFE;	Firmas CAdES;		Se permite que en las llamadas desde el navegador o consola se indique el ClaimedRole.
 RFE;	Firmas XAdES;		Se obvia la configuración de manifest (extraParam "useManifest") en las operaciones de cofirma y contrafirma. No se pueden realizar multifirmas con manifest, independientemente a si la firma original tenía manifest o no.
 RFE;	Firmas XAdES;		Se permite la firma XAdES con manifest de múltiples referencias externas indicando el hash correspondiente a los datos referenciados por ellas.
@@ -15,6 +17,9 @@ BUG;	Firmas XAdES;		Las firmas Externally Detached no solicitaran datos a firmar
 BUG;	Firmas XAdES;		No se extrae el contenido de las firmas XAdES Externally Detached y firmas con manifest.
 BUG;	Firmas XAdES;		Se corrige que al cofirmar firmas se puedan cofirmar referencias de la firma que no correspondían a los datos firmados.
 BUG;	Firmas XAdES;		Se corrige que al cofirmar firmas la referencia a los datos siempre fuese de tipo Object en lugar del tipo señalado por la firma.
+BUG;	Firmas XAdES;		Se corrige que se agregase a algunas de las referencias de las firmas generadas el tipo "Object" cuando el elemento referenciado no era de este tipo (referencias externas, referencias a los datos en firmas Detached, etc.).
+BUG;	Firmas XAdES;		Se corrige la identificación de las firmas XAdES con sellos de tiempo XML, lo que permite su cofirma y contrafirma.
+BUG;	Firmas XAdES;		Se corrige que fallase el proceso de cofirma de una firma XAdES que incluyese espacios, saltos de línea o comentarios entre los nodos de las transformaciones que declara.
 BUG;	Firmas PAdES;		Se corrige el que no se muestre la información de las firmas PDF aunque alguna una de las firmas no contenga la fecha de firma.
 RFE;	Firmas PAdES;		En lugar de mostrar un error directamente, se consulta al usuario si desea forzar la firma del documentos PDF cerficados o con firmas no registradas a pesar de que esto puede invalidar las firmas anteriores.
 RFE;	Firmas PAdES;		Se permite indicar la orientación de la firma visible PDF.
