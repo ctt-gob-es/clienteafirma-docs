@@ -1,5 +1,14 @@
 Portafirmas Android
 
+Portafirmas v1.5
+--------------------------
+BUG;	Se corrige la visualización de documentos en Android.
+BUG;	Ya no se declaran equivocadamente la operación de las líneas de firma en el detalle de las peticiones.
+RFE;	Visualización del mensaje de las peticiones.
+RFE;	Nuevo modo de acceso con certificados remotos (acceso con Cl@ve Permante y firma con Cl@ve Firma).
+RFE;	Adaptación completa del Portafirmas Android a Firebase para mantener el soporte de las notificaciones PUSH.
+
+
 Portafirmas v2.3.2
 --------------------------
 BUG;	Se corrige el cierre de la aplicación con las versiones del servicio proxy no adaptadas al nuevo mecanismo de seguridad (como el incluido con la versión distribuible del Portafirmas).
