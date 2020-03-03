@@ -28,8 +28,8 @@ BUG;	Firmas PAdES;		Se corrige el que no se muestre la información de las firmas
 RFE;	Firmas PAdES;		En lugar de mostrar un error directamente, se consulta al usuario si desea forzar la firma del documentos PDF cerficados o con firmas no registradas a pesar de que esto puede invalidar las firmas anteriores.
 RFE;	Firmas PAdES;		Se permite indicar la orientación de la firma visible PDF.
 BUG;	Firmas PAdES;		Se corrige el que no se detectasen elementos de firma en PDF generados con determinadas herramientas.
-RFE;	Invocación-JavaScript;	Comunicación por WebSockets. Se introduce la compatibilidad con navegadores Edge e Internet Explorer 10. Sustituye a la comunicación por socket tradicional mejorando la estabilidad y velocidad. (Requiere el JavaScript del Cliente 1.7 o superior).
-RFE;	Invocación-JavaScript;	El nuevo JavaScript de despliegue pedirá actualizar AutoFirma (necesario para aprovechar la comunicación por websockets).
+RFE;	Invocación-JavaScript;	Comunicación por WebSockets. Se sustituye la comunicación por socket tradicional, salvo en Internet Explorer, mejorando la estabilidad y velocidad. (Requiere el JavaScript del Cliente 1.7 o superior).
+RFE;	Invocación-JavaScript;	AutoFirma pedirá que se actualice cuando se ejecute desde el nuevo JavaScript de despliegue (necesario para aprovechar la comunicación por websockets).
 RFE;	Invocación-JavaScript;	Se agrega compatibilidad con el método setStickySignatory en la comunicación por servidor intermedio. (Requiere el JavaScript del Cliente 1.7 o superior).
 RFE;	Invocación-JavaScript;	Las firmas XAdES Externally Detached y firmas Manifest no obligaran a la configuración de un dato de entrada, ya que las referencias necesarias se pueden incluir en los extraParams.
 BUG;	Invocación-JavaScript;	Se evita la impresión de datos grandes en el log, lo que evita que este se corrompa y borre y que AutoFirma no complete el proceso de guardado.
