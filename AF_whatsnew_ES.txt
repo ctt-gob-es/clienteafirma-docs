@@ -12,6 +12,7 @@ BUG;	UI;			No se muestra al usuario la opción de extraer datos de la firma cuand
 RFE;	KeyStores;		Se mejora la detección de perfil de Firefox para corregir problemas derivados de los cambios en las versiones 69 y superiores (cambia según sistema operativo). 
 BUG;	KeyStores;		Se corrige el comportamiento del filtro de certificados de seudónimo para identificarlos por la extension "2.5.4.65". 
 BUG;	KeyStores;		Se corrige la selección de perfil de Firefox ya que a veces se seleccionaba el primer perfil disponible en lugar del activo.
+REF;	Firmas;			Se agrega una propiedad de configuración (extraParams "checkSignatures") para realizar una verificación de las firmas antes de agregarles una nueva multifirma.
 BUG;	Firmas;			Se corrige el que se expandiesen los datos de la política de firma de la AGE cuando se indicaba el parámetro "expPolicy" y un formato de firma que no soportase esta política (como FacturaE)
 RFE;	Firmas CAdES;		Se permite que en las llamadas desde el navegador o consola se indique el ClaimedRole.
 RFE;	Firmas XAdES;		Se obvia la configuración de manifest (extraParam "useManifest") en las operaciones de cofirma y contrafirma. No se pueden realizar multifirmas con manifest, independientemente a si la firma original tenía manifest o no.
