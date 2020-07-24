@@ -12,6 +12,8 @@ BUG;	Firmas XAdES;	Las firmas Externally Detached no solicitaran datos a firmar 
 BUG;	Firmas XAdES;	No se extrae el contenido de las firmas XAdES Externally Detached y firmas con manifest.
 BUG;	Firmas XAdES;	Se corrige que al cofirmar firmas se seleccionasen referencias de la firma que no correspondían a los datos firmados.
 BUG;	Firmas XAdES;	Se corrige que al cofirmar firmas la referencia a los datos siempre fuese de tipo Object en lugar de heredarla de la firma.
+BUG;	Firmas XAdES;	Se corrige que se agregase a algunas de las referencias de las firmas generadas el tipo "Object" cuando el elemento referenciado no era de este tipo (referencias externas, referencias a los datos en firmas Detached, etc.).
+BUG;	Firmas XAdES;		Se corrige la identificación de las firmas XAdES con sellos de tiempo XML, lo que permite su cofirma y contrafirma.
 REF;	Firmas PAdES;	El usuario puede forzar la firma de documentos PDF que contengan firmas previas sin registrar.
 BUG;	Firmas PAdES;	Se corrige el que no se obtenga la información de las firmas PDF aunque alguna una de las firmas no contenga la fecha de firma.
 
