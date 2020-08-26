@@ -41,6 +41,8 @@ BUG;	Firmas XAdES;		Se corrige que al cofirmar firmas se puedan cofirmar referen
 BUG;	Firmas XAdES;		Se corrige que al cofirmar firmas la referencia a los datos siempre fuese de tipo Object en lugar del tipo señalado por la firma (referencias externas, referencias a los datos en firmas Detached, etc.). [INC 603014]
 BUG;	Firmas XAdES;		Se corrige la identificación de las firmas XAdES con sellos de tiempo XML, lo que permite su cofirma y contrafirma. [INC 514933]
 BUG;	Firmas XAdES;		Se corrige que fallase el proceso de cofirma de una firma XAdES que incluyese espacios, saltos de línea o comentarios entre los nodos de las transformaciones que declara. [INC 609777]
+BUG;	Firmas XAdES;		La contrafirma de una contrafirma realizada con un espacio de nombres XAdES distinto a "xades" se generaba declarando el espacio de nombres "null" y no lo declaraba en los nodos. [INC 726628]
+BUG;	Firmas XAdES;		Las firmas enveloped que declaraban en la URI de referencia a los datos un identificador de nodo podían identificarse incorrectamente como Detached lo que llevaba a que se decodificase un Base 64 que contuviesen si la estructura del XML se asemejaba a la de las firmas detached ordinarias del cliente.
 RFE;	Firmas PAdES;		En lugar de mostrar un error directamente, se consulta al usuario si desea forzar la firma del documentos PDF cerficados o con firmas no registradas a pesar de que esto puede invalidar las firmas anteriores.
 RFE;	Firmas PAdES;		Se permite indicar la orientación de la firma visible PDF.
 RFE;	Firmas PAdES;		Se agrega la ofuscación de los identificadores de usuario en las firmas visibles PDF cuando dichos identificadores se extraen del certificado de firma. Se omite la ofuscación con certificados de seudónimo.
@@ -63,8 +65,12 @@ BUG;	Invocación-JavaScript;	Se evita la impresión de datos grandes en el log, lo
 BUG;	Invocación-JavaScript;	Se corrige el que no se dé mensaje de error cuando se use comunicación por servidor intermedio y se llame a un método de carga de ficheros.
 BUG;	Invocación-JavaScript;	Se corrige la operación de selección de certificado con servidor intermedio cuando el tamaño de la configuración de la operación era demasiado grande y se subía al servidor.
 BUG;	Invocación-JavaScript;	Se identifica correctamente el navegador Safari en iOS 13 (Mejora proporcionada por el usuario "rasputino" de GitHub).
+RFE;	Consola;		Se habilitan nuevas opciones de configuración de calculo y comprobación de hashes.
+RFE;	Consola;		Se permite el uso de las funciones de calculo y comprobación de hashes sin necesidad de interacción con interfaces gráficos.
 BUG;	Windows;		Se corrige el que la ruta de AutoFirma no se elimine del PATH durante la desinstalación.
 RFE;	Linux;			Se mejora el criterio de selección del directorio de bibliotecas de NSS (Mejora proporcionada por el usuario "ssaavedra" de GitHub).
+BUG;	Mac;			Se corrige el acceso al almacén de Firefox.
+BUG;	Mac;			Se corrige la función de restauración de la instalación.
 RFE;	Instalación;		Los instaladores Windows y macOS permiten seleccionar al usuario que se configure Firefox para que confíe en los certificados de confianza del almacén del sistema.
 
 AutoFirma v1.6.5
