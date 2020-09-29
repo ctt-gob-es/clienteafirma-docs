@@ -102,7 +102,7 @@ RFE;	UI;			Se configura que el formato de firma por defecto para los documentos 
 BUG;	UI;			Se corrige el error por el cual, al abrir un PKCS#12 desde el diálogo de selección de certificados, el diálogo de inserción de contraseña quedaba inaccesible por detrás.
 BUG;	UI;			Se corrigen atajos de teclado duplicados.
 BUG;	UI;			Se corrige la identificación de los ficheros .xls y .ppt al extraerlos de las firmas y ya no se intentarán abrir con la aplicación asignada a los .doc.
-RFE;	KeyStores;		Se permite que los PKCS#11 se declaren en Firefox mediante rutas relativas, en cutto caso buscan en el PATH.
+RFE;	KeyStores;		Se permite que los PKCS#11 se declaren en Firefox mediante rutas relativas, en cullo caso buscan en el PATH.
 RFE;	KeyStores;		Se integra en AutoFirma el NSS de Firefox 65 para Windows para permitir el acceso al almacén de los nuevos Firefox cuando la arquitectura de Firefox y AutoFirma sean distintas.
 BUG;	KeyStores;		Se corrige la firma con tarjetas inteligentes desde FireFox, que en algunos casos permitía listar los certificados pero no usarlos.
 BUG;	KeyStores;		Se corrige el caso en el que, al actualizar un almacén de certificados a través del diálogo, aparecía un diálogo de PIN que quedaba por detras del propio diálogo de selección.
