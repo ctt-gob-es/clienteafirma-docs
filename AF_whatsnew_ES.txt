@@ -1,10 +1,11 @@
 
 AutoFirma v1.8
 --------------------------
-BUG;	UI;			Se permitia seleccionar un área de firma visible para el PDF aún cuando se seleccionaba un campo de firma y se usaba el área del campo.
-BUG;	UI;			No se permitía insertar una marca visible en el PDF cuando se seleccionaba un campo de firma.
+BUG;	UI;					Se permitia seleccionar un área de firma visible para el PDF aún cuando se seleccionaba un campo de firma y se usaba el área del campo.
+BUG;	UI;					No se permitía insertar una marca visible en el PDF cuando se seleccionaba un campo de firma.
 BUG;	Firmas PAdES;		No se reemplazaban en el texto de las firmas visibles todas las entradas en las que había que insertar la fecha.
 BUG;	Firmas PAdES;		No se firmaba el documento cuando se seleccionaba un campo de firma preexistente para firma invisible. [INC 308732]
+RFE;	Firmas PAdES;		Se añaden nuevos atributos que permiten dar la opción o forzar al usuario a determinar el área y el aspecto de la firma visible.
 
 
 AutoFirma v1.7
