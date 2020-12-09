@@ -1,12 +1,23 @@
 
 AutoFirma v1.8
 --------------------------
-BUG;	UI;					Se permitia seleccionar un área de firma visible para el PDF aún cuando se seleccionaba un campo de firma y se usaba el área del campo.
-BUG;	UI;					No se permitía insertar una marca visible en el PDF cuando se seleccionaba un campo de firma.
+RFE;	General;		Se agrega mayor flexibilidad al mecanismo de plugins permitiendo nuevas opciones de seguridad e integración a nivel gráfico y en el proceso de firma por protocolo.
+BUG;	UI;			Se permitia seleccionar un área de firma visible para el PDF aún cuando se seleccionaba un campo de firma y se usaba el área del campo.
+BUG;	UI;			No se permitía insertar una marca visible en el PDF cuando se seleccionaba un campo de firma.
+BUG;	UI;			No se mostraba el mensaje de advertencia antes de firmar con las firmas visibles PDF.
+RFE;	KeyStores;		Se identifica la arquitectura de NSS en Windows para evitar el uso de bibliotecas que después fallen en la ejecución.
 BUG;	Firmas PAdES;		No se reemplazaban en el texto de las firmas visibles todas las entradas en las que había que insertar la fecha.
 BUG;	Firmas PAdES;		No se firmaba el documento cuando se seleccionaba un campo de firma preexistente para firma invisible. [INC 308732]
 RFE;	Firmas PAdES;		Se añaden nuevos atributos que permiten dar la opción o forzar al usuario a determinar el área y el aspecto de la firma visible.
-
+RFE;	Firmas PAdES;		Se permite que el usuario seleccione el área y la apariencia de la firma en la invocación por protocolo con los parámetros "visibleSignature" y "visibleAppearance".
+RFE;	Firmas PAdES;		Se muestran las imagenes del documento en la previsualización de la firma visible PDF incluso cuando estas están mal formadas.
+RFE;	Hashes;			Se externaliza la funcionalidad a un plugin.
+RFE;	Invocación-JavaScript;	Se notifica al cliente de firma la versión del JavaScript de despliegue.
+RFE;	Invocación-JavaScript;	Se permite configurar una versión mínima de AutoFirma que debe ejecutarse.
+BUG;	Invocación-JavaScript;	Algunos errores no se trasladaban a la función callback de error.
+BUG;	Invocación-JavaScript;	Existían problemas de codificación de mensajes de error devueltos.
+BUG;	Invocación-Lotes;	Se reciben los lotes a firmar incluso cuando estos exceden el tamaño en la cabecera de la petición permitido por el navegador.
+RFE;	Linux;			Se identifica la arquitectura de las bibliotecas NSS antes de la carga para comprobar que son de la misma arquitecura que el la JRE utilizada.
 
 AutoFirma v1.7
 --------------------------
@@ -19,7 +30,7 @@ RFE;	General;		Adecuación al estándar ETSI TS 119 192-1: Se solita confirmación 
 RFE;	General;		Adecuación al estándar ETSI TS 119 192-1: Se permite revisar los atributos a firmar.
 RFE;	Librerías;		AutoFirma 32 y 64 bits se distribuye con OpenJDK JRE 11.0.6.
 RFE;	Librerías;		Se incorpora la librería JXAdES v0.2.2.
-RFE;	Librerías;		Se incorpora la librería JMulticard v1.6.
+RFE;	Librerías;		Se incorpora la librería JMulticard v1.6. Entre otras cosas, es compatible con los DNIe con número de soporte a partir del BMP100001. [INC 769883]
 RFE;	UI;			Se muestra al usuario la opción para el giró del texto de la firma visible PDF.
 RFE;	UI;			Se remodela la interfaz de configuración de proxy para hacerla más intuitiva.
 RFE;	UI;			Se permite a los usuarios cambiar de almacén de claves desde el diálogo de selección de certificado.
