@@ -5,6 +5,8 @@ RFE;	General;		Se agrega mayor flexibilidad al mecanismo de plugins permitiendo 
 BUG;	UI;			Se permitia seleccionar un área de firma visible para el PDF aún cuando se seleccionaba un campo de firma y se usaba el área del campo.
 BUG;	UI;			No se permitía insertar una marca visible en el PDF cuando se seleccionaba un campo de firma.
 BUG;	UI;			No se mostraba el mensaje de advertencia antes de firmar con las firmas visibles PDF.
+BUG;	UI;			Se evitan bloqueos durante la restauración de la instalación cuando el almacén de Firefox tiene establecida una contraseña.
+RFE;	UI;			Se permite omitir el cierre de Chrome y Firefox durante la restauración si el usuario lo indica.
 RFE;	KeyStores;		Se identifica la arquitectura de NSS en Windows para evitar el uso de bibliotecas que después fallen en la ejecución.
 BUG;	Firmas PAdES;		No se reemplazaban en el texto de las firmas visibles todas las entradas en las que había que insertar la fecha.
 BUG;	Firmas PAdES;		No se firmaba el documento cuando se seleccionaba un campo de firma preexistente para firma invisible. [INC 308732]
