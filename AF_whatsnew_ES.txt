@@ -6,6 +6,7 @@ BUG;	UI;			Se permitia seleccionar un área de firma visible para el PDF aún cuan
 BUG;	UI;			No se permitía insertar una marca visible en el PDF cuando se seleccionaba un campo de firma.
 BUG;	UI;			No se mostraba el mensaje de advertencia antes de firmar con las firmas visibles PDF.
 BUG;	UI;			Se evitan bloqueos durante la restauración de la instalación cuando el almacén de Firefox tiene establecida una contraseña.
+BUG;	UI;			Se abre el visor de firmas y se informa de que la firma no tiene certificados cuando se intenta cargar una firma con este defecto.
 RFE;	UI;			Se permite omitir el cierre de Chrome y Firefox durante la restauración si el usuario lo indica.
 RFE;	KeyStores;		Se identifica la arquitectura de NSS en Windows para evitar el uso de bibliotecas que después fallen en la ejecución.
 BUG;	Firmas PAdES;		No se reemplazaban en el texto de las firmas visibles todas las entradas en las que había que insertar la fecha.
