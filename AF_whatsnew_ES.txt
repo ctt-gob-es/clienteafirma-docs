@@ -8,6 +8,7 @@ BUG;	UI;			No se mostraba el mensaje de advertencia antes de firmar con las firm
 BUG;	UI;			Se evitan bloqueos durante la restauración de la instalación cuando el almacén de Firefox tiene establecida una contraseña.
 BUG;	UI;			Se abre el visor de firmas y se informa de que la firma no tiene certificados cuando se intenta cargar una firma con este defecto.
 RFE;	UI;			Se permite omitir el cierre de Chrome y Firefox durante la restauración si el usuario lo indica.
+RFE;	UI;			Se incluye una página de ayuda con las configuraciones admitidas por los distintos formatos de firma para su uso por línea de comandos.
 RFE;	KeyStores;		Se identifica la arquitectura de NSS en Windows para evitar el uso de bibliotecas que después fallen en la ejecución.
 BUG;	Firmas PAdES;		No se reemplazaban en el texto de las firmas visibles todas las entradas en las que había que insertar la fecha.
 BUG;	Firmas PAdES;		No se firmaba el documento cuando se seleccionaba un campo de firma preexistente para firma invisible. [INC 308732]
@@ -20,6 +21,7 @@ RFE;	Invocación-JavaScript;	Se permite configurar una versión mínima de AutoFirm
 BUG;	Invocación-JavaScript;	Algunos errores no se trasladaban a la función callback de error.
 BUG;	Invocación-JavaScript;	Existían problemas de codificación de mensajes de error devueltos.
 BUG;	Invocación-Lotes;	Se reciben los lotes a firmar incluso cuando estos exceden el tamaño en la cabecera de la petición permitido por el navegador.
+RFE;	Consola;		En las firmas PDF se permite indicar la ruta de los ficheros de la imagen de rúbrica, la imagen a estampar y los datos adjuntos, en lugar de proporcionarlos en Base 64.
 RFE;	Linux;			Se identifica la arquitectura de las bibliotecas NSS antes de la carga para comprobar que son de la misma arquitecura que el la JRE utilizada.
 
 AutoFirma v1.7
