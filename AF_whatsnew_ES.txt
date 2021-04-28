@@ -2,25 +2,25 @@
 AutoFirma v1.8
 --------------------------
 RFE;	General;		Se agrega mayor flexibilidad al mecanismo de plugins permitiendo nuevas opciones de seguridad e integración a nivel gráfico y en el proceso de firma por protocolo.
+RFE;	UI;			Se permite omitir el cierre de Chrome y Firefox durante la restauración si el usuario lo indica.
+RFE;	UI;			Se incluye una página de ayuda con las configuraciones admitidas por los distintos formatos de firma para su uso por línea de comandos.
+RFE;	UI;			Nuevo diálogo de mensaje de error que permite a los usuarios visualizar la traza completa de los errores.
 BUG;	UI;			Se permitia seleccionar un área de firma visible para el PDF aún cuando se seleccionaba un campo de firma y se usaba el área del campo.
 BUG;	UI;			No se permitía insertar una marca visible en el PDF cuando se seleccionaba un campo de firma.
 BUG;	UI;			No se mostraba el mensaje de advertencia antes de firmar con las firmas visibles PDF.
 BUG;	UI;			Se evitan bloqueos durante la restauración de la instalación cuando el almacén de Firefox tiene establecida una contraseña.
 BUG;	UI;			Se abre el visor de firmas y se informa de que la firma no tiene certificados cuando se intenta cargar una firma con este defecto.
-RFE;	UI;			Se permite omitir el cierre de Chrome y Firefox durante la restauración si el usuario lo indica.
-RFE;	UI;			Se incluye una página de ayuda con las configuraciones admitidas por los distintos formatos de firma para su uso por línea de comandos.
 RFE;	KeyStores;		Se identifica la arquitectura de NSS en Windows para evitar el uso de bibliotecas que después fallen en la ejecución.
-BUG;	Firmas PAdES;		No se reemplazaban en el texto de las firmas visibles todas las entradas en las que había que insertar la fecha.
-BUG;	Firmas PAdES;		No se firmaba el documento cuando se seleccionaba un campo de firma preexistente para firma invisible. [INC 308732]
 RFE;	Firmas PAdES;		Se añaden nuevos atributos que permiten dar la opción o forzar al usuario a determinar el área y el aspecto de la firma visible.
 RFE;	Firmas PAdES;		Se permite que el usuario seleccione el área y la apariencia de la firma en la invocación por protocolo con los parámetros "visibleSignature" y "visibleAppearance".
 RFE;	Firmas PAdES;		Se muestran las imagenes del documento en la previsualización de la firma visible PDF incluso cuando estas están mal formadas.
+BUG;	Firmas PAdES;		No se reemplazaban en el texto de las firmas visibles todas las entradas en las que había que insertar la fecha.
+BUG;	Firmas PAdES;		No se firmaba el documento cuando se seleccionaba un campo de firma preexistente para firma invisible. [INC 308732]
 RFE;	Hashes;			Se externaliza la funcionalidad a un plugin.
 RFE;	Invocación-JavaScript;	Se notifica al cliente de firma la versión del JavaScript de despliegue.
 RFE;	Invocación-JavaScript;	Se permite configurar una versión mínima de AutoFirma que debe ejecutarse.
 BUG;	Invocación-JavaScript;	Algunos errores no se trasladaban a la función callback de error.
 BUG;	Invocación-JavaScript;	Existían problemas de codificación de mensajes de error devueltos.
-BUG;	Invocación-Lotes;	Se reciben los lotes a firmar incluso cuando estos exceden el tamaño en la cabecera de la petición permitido por el navegador.
 RFE;	Consola;		En las firmas PDF se permite indicar la ruta de los ficheros de la imagen de rúbrica, la imagen a estampar y los datos adjuntos, en lugar de proporcionarlos en Base 64.
 RFE;	Linux;			Se identifica la arquitectura de las bibliotecas NSS antes de la carga para comprobar que son de la misma arquitecura que el la JRE utilizada.
 
@@ -33,6 +33,7 @@ RFE;	General;		Se agrega a las opciones de configuración manual de proxy la posi
 RFE;	General;		Adecuación al estándar ETSI TS 119 192-1: Se verifican a nivel critográfico y de caducidad de los certificados las firmas cargadas.
 RFE;	General;		Adecuación al estándar ETSI TS 119 192-1: Se solita confirmación antes firmar.
 RFE;	General;		Adecuación al estándar ETSI TS 119 192-1: Se permite revisar los atributos a firmar.
+RFE;	General;		Actualización de la URL de la política de firma de la AGE.
 RFE;	Librerías;		AutoFirma 32 y 64 bits se distribuye con OpenJDK JRE 11.0.6.
 RFE;	Librerías;		Se incorpora la librería JXAdES v0.2.2.
 RFE;	Librerías;		Se incorpora la librería JMulticard v1.6. Entre otras cosas, es compatible con los DNIe con número de soporte a partir del BMP100001. [INC 769883]
@@ -57,7 +58,7 @@ RFE;	Firmas XAdES;		Se identificará en las cofirmas la versión de XAdES utilizad
 RFE;	Firmas XAdES;		Se agrega compatibilidad parcial para la generación de cofirmas y contrafirmas de firmas XAdES 1.1.1 y 1.2.2 (No se permite la generación de firmas en estos formatos).
 RFE;	Firmas XAdES;		Mejoras en la identificación de los distintos tipos de firmas (Enveloping, Enveloped, internally Detached y Externally Detached).
 RFE;	Firmas XAdES;		Se habilita el procesado seguro de los XML en todas las funciones de carga para evitar ataques con XML.
-RFE;	Firmas XAdES;		Adecuación interna para el futuro soporte de firmas XAdES B-Level.
+RFE;	Firmas XAdES;		Adecuación interna para el futuro soporte de firmas XAdES B-B-Level.
 BUG;	Firmas XAdES;		Las firmas manifest deberán recibir el hash de los datos referenciados. Nunca se accedera a los datos para calcular su hash.
 BUG;	Firmas XAdES;		Las firmas Externally Detached de URLs externas ahora están correctamente referenciadas por el objeto DataObjectFormat.
 BUG;	Firmas XAdES;		Las firmas Externally Detached no solicitaran datos a firmar cuando pueden recuperarlos a partir de la URI indicada.
@@ -74,6 +75,7 @@ RFE;	Firmas PAdES;		Se agrega la ofuscación de los identificadores de usuario en
 RFE;	Firmas PAdES;		Adecuación interna para el futuro soporte de firmas PAdES B-Level.
 BUG;	Firmas PAdES;		Se corrige el que no se muestre la información de las firmas PDF aunque alguna una de las firmas no contenga la fecha de firma.
 BUG;	Firmas PAdES;		Se corrige el que no se detectasen elementos de firma en PDF generados con determinadas herramientas. [INC 627484] (Corrección señalada por La Diputación Provincial de A Coruña)
+BUG;	Firma lotes;		Se corrige el guardado de datos en el procesado concurrente de lotes.
 RFE;	Hashes;			Se incorpora un nuevo formato de fichero de hashes de un directorio.
 RFE;	Hashes;			Se optimiza el proceso de cálculo y comprobación de hashes pasando a usar hilos concurrentes para reducir los tiempos de proceso.
 BUG;	Hashes;			Se corrige que no se mostrasen los ficheros prexistentes de informe de comprobación de hashes en el diálogo para el guardado de este informe.
@@ -90,13 +92,18 @@ BUG;	Invocación-JavaScript;	Se evita la impresión de datos grandes en el log, lo
 BUG;	Invocación-JavaScript;	Se corrige el que no se dé mensaje de error cuando se use comunicación por servidor intermedio y se llame a un método de carga de ficheros.
 BUG;	Invocación-JavaScript;	Se corrige la operación de selección de certificado con servidor intermedio cuando el tamaño de la configuración de la operación era demasiado grande y se subía al servidor.
 BUG;	Invocación-JavaScript;	Se identifica correctamente el navegador Safari en iOS 13 (Mejora proporcionada por el usuario "rasputino" de GitHub).
+BUG;	Invocación-lotes;	Se reciben los lotes a firmar incluso cuando estos exceden el tamaño en la cabecera de la petición permitido por el navegador (requiere servidor trifásico actualizado).
 RFE;	Consola;		Se habilitan nuevas opciones de configuración de calculo y comprobación de hashes.
 RFE;	Consola;		Se permite el uso de las funciones de calculo y comprobación de hashes sin necesidad de interacción con interfaces gráficos.
+RFE;	Windows;		Se le permite seleccionar al usuario durante la instalación que se configure Firefox para que confíe en los certificados de confianza del almacén del sistema.
+BUG;	Windows;		Se corrige el proceso de instalación sobre una versión anterior para evitar que queden restos de la versión antigua.
 BUG;	Windows;		Se corrige el que la ruta de AutoFirma no se elimine del PATH durante la desinstalación.
 RFE;	Linux;			Se mejora el criterio de selección del directorio de bibliotecas de NSS (Mejora proporcionada por el usuario "ssaavedra" de GitHub).
-BUG;	Mac;			Se corrige el acceso al almacén de Firefox.
-BUG;	Mac;			Se corrige la función de restauración de la instalación.
-RFE;	Instalación;		Los instaladores Windows y macOS permiten seleccionar al usuario que se configure Firefox para que confíe en los certificados de confianza del almacén del sistema.
+RFE;	MacOS;			Se le permite seleccionar al usuario durante restauración que se configure Firefox para que confíe en los certificados de confianza del almacén del sistema.
+BUG;	MacOS;			Se corrige el acceso al almacén de Firefox.
+BUG;	MacOS;			Se corrige el uso del DNIe en Big Sur.
+BUG;	MacOS;			Se corrige la función de restauración de la instalación.
+
 
 AutoFirma v1.6.5
 --------------------------
