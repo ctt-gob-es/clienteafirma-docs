@@ -1,169 +1,229 @@
-
 AutoFirma v1.8
 --------------------------
-RFE;	General;		Se agrega mayor flexibilidad al mecanismo de plugins permitiendo nuevas opciones de seguridad e integraciÛn a nivel gr·fico y en el proceso de firma por protocolo.
-BUG;	UI;			Se permitia seleccionar un ·rea de firma visible para el PDF a˙n cuando se seleccionaba un campo de firma y se usaba el ·rea del campo.
-BUG;	UI;			No se permitÌa insertar una marca visible en el PDF cuando se seleccionaba un campo de firma.
+RFE;	General;		Se agrega mayor flexibilidad al mecanismo de plugins permitiendo nuevas opciones de seguridad e integraci√≥n a nivel gr√°fico y en el proceso de firma por protocolo.
+RFE;	General;		Se filtra el log de la aplicaci√≥n para evitar registrar datos referentes a la cuenta del usuario (ruta del directorio de usuario, alias de certificados, etc).
+RFE;	Librer√≠as;		Actualizaci√≥n de la biblioteca Java WebSockets a la versi√≥n 1.5.0.
+RFE;	Librer√≠as;		Actualizaci√≥n de la biblioteca PDFBox a la versi√≥n 2.0.25.
+RFE;	Librer√≠as;		Actualizaci√≥n de la biblioteca XMLSec a la 2.1.7.
+RFE;	Librer√≠as;		Se incorpora la versi√≥n 1.4 de la librer√≠a modificada de iText del cliente (basada en iText v1.2.7).
+RFE;	UI;			Mejoras y correcciones de accesibilidad.
+RFE;	UI;			Se permite omitir el cierre de Chrome y Firefox durante la restauraci√≥n si el usuario lo indica.
+RFE;	UI;			Migraci√≥n de la ayuda a HTML.
+RFE;	UI;			Se incluye una p√°gina de ayuda con las configuraciones admitidas por los distintos formatos de firma para su uso por l√≠nea de comandos.
+RFE;	UI;			Se permite la firma masiva visible de documentos PDF y que esta se agregue en m√°s de una p√°gina.
+RFE;	UI;			Se permite habilitar la comprobaci√≥n de PDF Shadow Attack.
+RFE;    UI;         Se elimina la limitaci√≥n de que no se puedan agregar las firmas PDF en los bordes de la p√°gina y se reduce el tama√±o m√≠nimo requerido. 
+RFE;	UI;			Se agrega un di√°logo para definir un listado de dominios seguros en los que ignorar las validaciones SSL.
+BUG;	UI;			Se permitia seleccionar un √°rea de firma visible para el PDF a√∫n cuando se seleccionaba un campo de firma y se usaba el √°rea del campo.
+BUG;	UI;			No se permit√≠a insertar una marca visible en el PDF cuando se seleccionaba un campo de firma.
 BUG;	UI;			No se mostraba el mensaje de advertencia antes de firmar con las firmas visibles PDF.
-BUG;	UI;			Se evitan bloqueos durante la restauraciÛn de la instalaciÛn cuando el almacÈn de Firefox tiene establecida una contraseÒa.
+BUG;	UI;			Se evitan bloqueos durante la restauraci√≥n de la instalaci√≥n cuando el almac√©n de Firefox tiene establecida una contrase√±a.
 BUG;	UI;			Se abre el visor de firmas y se informa de que la firma no tiene certificados cuando se intenta cargar una firma con este defecto.
-RFE;	UI;			Se permite omitir el cierre de Chrome y Firefox durante la restauraciÛn si el usuario lo indica.
-RFE;	UI;			Se incluye una p·gina de ayuda con las configuraciones admitidas por los distintos formatos de firma para su uso por lÌnea de comandos.
-RFE;	KeyStores;		Se identifica la arquitectura de NSS en Windows para evitar el uso de bibliotecas que despuÈs fallen en la ejecuciÛn.
-BUG;	Firmas PAdES;		No se reemplazaban en el texto de las firmas visibles todas las entradas en las que habÌa que insertar la fecha.
+RFE;	KeyStores;		Se identifica la arquitectura de NSS en Windows para evitar el uso de bibliotecas que despu√©s fallen en la ejecuci√≥n.
+RFE;	Firmas;		Se detecta cuando una firma que se va a multifirmar (cofirmar/contrafirmar) contiene firmas inv√°lidas.
+RFE;	Firmas PAdES;		Se modifica el valor del subfiltro por defecto para que en las llamadas desde el navegador se generen firmas PAdES B-Level/BES en lugar de Basic salgo que se indique lo contrario.
+RFE;	Firmas PAdES;		Se permite la firma visible en todas o varias p√°ginas de los documentos PDF.
+RFE;	Firmas PAdES;		Se a√±aden nuevos atributos que permiten dar la opci√≥n o forzar al usuario a determinar el √°rea y el aspecto de la firma visible.
+RFE;	Firmas PAdES;		Se permite que el usuario seleccione el √°rea y la apariencia de la firma en la invocaci√≥n por protocolo con los par√°metros "visibleSignature" y "visibleAppearance".
+RFE;	Firmas PAdES;		Se muestran las imagenes del documento en la previsualizaci√≥n de la firma visible PDF incluso cuando estas est√°n mal formadas.
+RFE;	Firmas PAdES;		Se incorpora un mecanismo de detecci√≥n de PDF Shadow Attacks.
+RFE;	Firmas PAdES;		Se incorpora un mecanismo para detectar cuando se han realizado cambios en los formularios de un PDF despu√©s de firmarlo.
+RFE;    Firmas PAdES;       La imagen de firma ahora no se deformar√° para ajustarse al √°rea de firma. Ocupar√° el m√°ximo espacio posible del √°rea manteni√©ndose centrada.
+BUG;    Firmas PAdES;       Se importa la fuente de letra en las firmas PDF/A con firma visible para respetar el formato.
+BUG;	Firmas PAdES;		Se elimina la fuente ZAPFDINGBATS de las disponibles para la firma visible PDF por no poder importarse en las firmas.
+BUG;	Firmas PAdES;		No se reemplazaban en el texto de las firmas visibles todas las entradas en las que hab√≠a que insertar la fecha.
 BUG;	Firmas PAdES;		No se firmaba el documento cuando se seleccionaba un campo de firma preexistente para firma invisible. [INC 308732]
-RFE;	Firmas PAdES;		Se aÒaden nuevos atributos que permiten dar la opciÛn o forzar al usuario a determinar el ·rea y el aspecto de la firma visible.
-RFE;	Firmas PAdES;		Se permite que el usuario seleccione el ·rea y la apariencia de la firma en la invocaciÛn por protocolo con los par·metros "visibleSignature" y "visibleAppearance".
-RFE;	Firmas PAdES;		Se muestran las imagenes del documento en la previsualizaciÛn de la firma visible PDF incluso cuando estas est·n mal formadas.
+BUG;	Firmas PAdES;		Se corrige el problema por el que se pod√≠an recuperar firmas no declaradas en un PDF cuando tambi√©n existen firmas declaradas.
+BUG;	Firmas PAdES;		Se corrige la carga de enteros de los objetos del PDF cuando se utilizan referencias indirectas, lo que pod√≠a modificar la visualizacion del documento (cambio de tama√±o de im√°genes). [INC 1118488]
+RFE;	Firmas CAdES;		Se agrega el extraParam "includeContentHintAttribute" para configurar que se genere una firma sin el atributo "content-hint", necesario para las firmas PAdES. [INC 1014561]
+RFE;	Firmas CAdES;		Se agregan los par√°metros extra "includeMimeTypeAttribute" y "mimeType" para crear firmas con el atributo "id-aa-ets-mimeType".
+RFE;	Firmas CAdES;		Ahora se detecta cuando se trata de firmar o contrafirmas una firma longeva de archivo CAdES y se pide al usuario que confirme que desea agregar la nueva firma a pesar de que esta invalidar√° la firma final.
+RFE;	Firmas CAdES;		Se agrega el par√°metros extra "allowSignLTSignature" para indicar si se deberia permitir o no la cofirma/contrafirma de firmas longevas de archivo.
+BUG;	Firmas CAdES;		Se agrega la informaci√≥n de revocaci√≥n a las multifirmas de firmas longevas.
+BUG;	Firmas CAdES;		Se muestra el √°rbol de firmantes cuando se visualiza la informaci√≥n de la firma.
+RFE;	Firmas XAdES;		Se bloquea la multifirma cuando se encuentran firmas con distintas versiones de XAdES en el mismo documento.
+RFE;	Firmas XAdES;		En las firmas XAdES expl√≠citas (configuraci√≥n no recomendada) trif√°sicas, la aplicaci√≥n que solicita la firma debe proporcionar el hash de los datos. No se calculan en servidor.
+RFE;	Firmas XAdES;		Se agregan los par√°metros extra "includeMimeTypeAttribute" y "mimeType" para crear firmas con el atributo "id-aa-ets-mimeType".
+RFE;	Firmas XAdES;		Ahora se detecta cuando se trata de firmar o contrafirmas una firma longeva de archivo CAdES y se pide al usuario que confirme que desea agregar la nueva firma a pesar de que esta invalidar√° la firma final.
+BUG;	Firmas XAdES;		La firma trif√°sica manifest ya no solicita el fichero de datos.
+BUG;	Firmas XAdES;		Las cofirmas y contrafirmas manifest ya solicitan el fichero de firma cuando este no se indica.
+BUG;    Firmas XAdES;       Las cofirmas manifest replican el manifest y los DataObjectFormat para permitir la correcta validaci√≥n de la firma.
+BUG;	Firmas XAdES;		Se corrige la detecci√≥n de versi√≥n de XAdES para permitir la multifirma de versiones distintas a la 1.3.2.
+BUG;	Firmas XAdES;		Se vuelven a extraer como binarios los datos de firmas XAdES Enveloped de un nodo concreto en el que se encuentren como Base 64. [INC 1110905]
+RFE;	Firma lotes;		Se implementa un nuevo mecanismo de firma de lotes m√°s √≥ptimo y f√°cil de usar.
 RFE;	Hashes;			Se externaliza la funcionalidad a un plugin.
-RFE;	InvocaciÛn-JavaScript;	Se notifica al cliente de firma la versiÛn del JavaScript de despliegue.
-RFE;	InvocaciÛn-JavaScript;	Se permite configurar una versiÛn mÌnima de AutoFirma que debe ejecutarse.
-BUG;	InvocaciÛn-JavaScript;	Algunos errores no se trasladaban a la funciÛn callback de error.
-BUG;	InvocaciÛn-JavaScript;	ExistÌan problemas de codificaciÛn de mensajes de error devueltos.
-BUG;	InvocaciÛn-Lotes;	Se reciben los lotes a firmar incluso cuando estos exceden el tamaÒo en la cabecera de la peticiÛn permitido por el navegador.
-RFE;	Consola;		En las firmas PDF se permite indicar la ruta de los ficheros de la imagen de r˙brica, la imagen a estampar y los datos adjuntos, en lugar de proporcionarlos en Base 64.
+BUG;	Hashes;			Se corrige la integraci√≥n en Windows para poder usar el men√∫ contextual para generar y comprobar hashes.
+BUG;	Invocaci√≥n-JavaScript;	Algunos errores no se trasladaban a la funci√≥n callback de error.
+BUG;	Invocaci√≥n-JavaScript;	Exist√≠an problemas de codificaci√≥n de mensajes de error devueltos.
+BUG;	Invocaci√≥n-JavaScript;	La cancelaci√≥n de la operaci√≥n de firma y guardado ya no invoca al m√©todo JavaScript de √©xito.
+BUG;	Invocaci√≥n-JavaScript;	Se implementa la obtenci√≥n del certificado de firma de los lotes cuando la comunicaci√≥n es por sockets.
+RFE;    Invocaci√≥n-JavaScript;	Se homogeniza el comportamiento de las firmas trif√°sicas y monof√°sicas permitiendo que en las trif√°sicas el usuario tambi√©n pueda confirmar la operaci√≥n o insertar la contrase√±a de un documento PDF en las firmas que lo requieran.
+RFE;	Invocaci√≥n-JavaScript;	Se incorpora el m√©todo setPortRange() para fijar que la comunicaci√≥n con AutoFirma se haga en un puerto aleatorio dentro de un rango o en un puerto espec√≠fico.
+RFE;	Invocaci√≥n-JavaScript;	Se implementa un nuevo cojunto de funciones para la firma de lotes.
+RFE;	Invocaci√≥n-JavaScript;	Se permite la firma de lotes sin depender de un servicio de firma trif√°sica. Pensado s√≥lo para firmas y documentos de peque√±o tama√±o.
+RFE;	Invocaci√≥n-JavaScript;	Se notifica al cliente de firma la versi√≥n del JavaScript de despliegue.
+RFE;	Invocaci√≥n-JavaScript;	Se permite configurar una versi√≥n m√≠nima de AutoFirma que debe ejecutarse.
+BUG;	Invocaci√≥n-Lotes;	Se reciben los lotes a firmar incluso cuando su cabecera excede el tama√±o de petici√≥n permitido por el navegador.
+RFE;	Consola;		En las firmas PDF se permite indicar la ruta de los ficheros de la imagen de r√∫brica, la imagen a estampar y los datos adjuntos, en lugar de proporcionarlos en Base 64.
 RFE;	Linux;			Se identifica la arquitectura de las bibliotecas NSS antes de la carga para comprobar que son de la misma arquitecura que el la JRE utilizada.
+RFE;    Linux;          Mejoras visuales (iconos, bordes, contrastes...)
+RFE;    Linux;          Compatibilidad con Ubuntu 22.04. Se incluyen los nuevos directorios de perfiles Firefox y Chromium entre los buscados para el uso de sus respectivos almacenes.
+RFE;	Mac;			Compatibilidad con macOS Monterrey mediante cambios en el sistema de restauraci√≥n e instalaci√≥n de la aplicaci√≥n.
+RFE;	Instalaci√≥n;		El instalador de Windows habilita el Java Access Brige para permitir el funcionamiento de los lectores de pantalla.
+
+AutoFirma v1.7.2
+--------------------------
+BUG;	Windows;		Se corrige la generaci√≥n del certificado SSL durante la instalaci√≥n para permitir el uso de AutoFirma con Internet Explorer en Windows 7.
+RFE;	Windows;		Se agregan metadatos adicionales al instalador.
+
+AutoFirma v1.7.1
+--------------------------
+RFE;	Librer√≠as;		Se incorpora la librer√≠a JMulticard v1.6. El cambio m√°s relevante, es que es compatible con los DNIe con n√∫mero de soporte a partir del BMP100001. [INC 769883]
+BUG;	Hashes;			Correcci√≥n del proceso de hash de directorios.
+RFE;	Windows;		Se actualizan los certificados de confianza incorporados en la JRE distribuida con la aplicaci√≥n.
+RFE;	Mac;			Se actualizan los certificados de confianza incorporados en la JRE distribuida con la aplicaci√≥n.
 
 AutoFirma v1.7
 --------------------------
-RFE;	General;		Se identifican por separado la versiÛn de AutoFirma de cada sistema operativo lo que permite que AutoFirma por separado de las actualizaciones para cada uno de ellos.
-RFE;	General;		La comprobaciÛn de actualizaciones sÛlo se realiza una vez al dÌa.
-RFE;	General;		Se comprueban por defecto los certificados SSL de los servicios a los que se conecta y se permite desactivar esta comprobacion desde el panel de preferencias (˙til para pruebas y para permitir firmar en sitios web con certificados SSL no reconocidos). [INC 598357]
-RFE;	General;		Se agrega a las opciones de configuraciÛn manual de proxy la posibilidad de configurar excepciones.
-RFE;	General;		AdecuaciÛn al est·ndar ETSI TS 119 192-1: Se verifican a nivel critogr·fico y de caducidad de los certificados las firmas cargadas.
-RFE;	General;		AdecuaciÛn al est·ndar ETSI TS 119 192-1: Se solita confirmaciÛn antes firmar.
-RFE;	General;		AdecuaciÛn al est·ndar ETSI TS 119 192-1: Se permite revisar los atributos a firmar.
-RFE;	LibrerÌas;		AutoFirma 32 y 64 bits se distribuye con OpenJDK JRE 11.0.6.
-RFE;	LibrerÌas;		Se incorpora la librerÌa JXAdES v0.2.2.
-RFE;	LibrerÌas;		Se incorpora la librerÌa JMulticard v1.6. Entre otras cosas, es compatible con los DNIe con n˙mero de soporte a partir del BMP100001. [INC 769883]
-RFE;	UI;			Se muestra al usuario la opciÛn para el girÛ del texto de la firma visible PDF.
-RFE;	UI;			Se remodela la interfaz de configuraciÛn de proxy para hacerla m·s intuitiva.
-RFE;	UI;			Se permite a los usuarios cambiar de almacÈn de claves desde el di·logo de selecciÛn de certificado.
-RFE;	UI;			Se permite a los usuarios cambiar la vista de los certificados entre: Personales (vista est·ndar), Representante y PseudÛnimo.
-BUG;	UI;			No se muestra al usuario la opciÛn de extraer datos de la firma cuando esta sea XAdES Externally Detached o una firma con manifest.
-RFE;	KeyStores;		Se mejora la detecciÛn de perfil de Firefox para corregir problemas derivados de los cambios en las versiones 69 y superiores (cambia seg˙n sistema operativo). 
-BUG;	KeyStores;		Se corrige el comportamiento del filtro de certificados de seudÛnimo para identificarlos por la extension "2.5.4.65".  [INC 480736]
-BUG;	KeyStores;		Se corrige la selecciÛn de perfil de Firefox ya que a veces se seleccionaba el primer perfil disponible en lugar del activo. [INC 602646]
-RFE;	Firmas;			Soporte para la generaciÛn de los distintos formatos de firma con algoritmos de curva eliptica (a˙n no se soporta el uso de certficados con claves de curva elÌptica).
-BUG;	Firmas;			Se corrige el que se expandiesen los datos de la polÌtica de firma de la AGE cuando se indicaba el par·metro "expPolicy" y un formato de firma que no soportase esta polÌtica (como FacturaE)
-BUG;	Firmas;			Se evita la generaciÛn de ficheros temporales en las operaciÛnes de comprobaciÛn de formato de firma.
+RFE;	General;		Se identifican por separado la versi√≥n de AutoFirma de cada sistema operativo lo que permite que AutoFirma por separado de las actualizaciones para cada uno de ellos.
+RFE;	General;		La comprobaci√≥n de actualizaciones s√≥lo se realiza una vez al d√≠a.
+RFE;	General;		Se comprueban por defecto los certificados SSL de los servicios a los que se conecta y se permite desactivar esta comprobacion desde el panel de preferencias (√∫til para pruebas y para permitir firmar en sitios web con certificados SSL no reconocidos). [INC 598357]
+RFE;	General;		Se agrega a las opciones de configuraci√≥n manual de proxy la posibilidad de configurar excepciones.
+RFE;	General;		Adecuaci√≥n al est√°ndar ETSI TS 119 192-1: Se verifican a nivel critogr√°fico y de caducidad los certificados las firmas cargadas.
+RFE;	General;		Adecuaci√≥n al est√°ndar ETSI TS 119 192-1: Se solita confirmaci√≥n antes firmar.
+RFE;	General;		Adecuaci√≥n al est√°ndar ETSI TS 119 192-1: Se permite revisar los atributos a firmar.
+RFE;	Librer√≠as;		AutoFirma 32 y 64 bits se distribuye con OpenJDK JRE 11.0.6.
+RFE;	Librer√≠as;		Se incorpora la librer√≠a JXAdES v0.2.2.
+RFE;	UI;			Se muestra al usuario la opci√≥n para el gir√≥ del texto de la firma visible PDF.
+RFE;	UI;			Se remodela la interfaz de configuraci√≥n de proxy para hacerla m√°s intuitiva.
+RFE;	UI;			Se permite a los usuarios cambiar de almac√©n de claves desde el di√°logo de selecci√≥n de certificado.
+RFE;	UI;			Se permite a los usuarios cambiar la vista de los certificados entre: Personales (vista est√°ndar), Representante y Pseud√≥nimo.
+BUG;	UI;			No se muestra al usuario la opci√≥n de extraer datos de la firma cuando esta sea XAdES Externally Detached o una firma con manifest.
+RFE;	KeyStores;		Se mejora la detecci√≥n de perfil de Firefox para corregir problemas derivados de los cambios en las versiones 69 y superiores (cambia seg√∫n sistema operativo). 
+BUG;	KeyStores;		Se corrige el comportamiento del filtro de certificados de seud√≥nimo para identificarlos por la extension "2.5.4.65".  [INC 480736]
+BUG;	KeyStores;		Se corrige la selecci√≥n de perfil de Firefox ya que a veces se seleccionaba el primer perfil disponible en lugar del activo. [INC 602646]
+RFE;	Firmas;			Soporte para la generaci√≥n de los distintos formatos de firma con algoritmos de curva eliptica (a√∫n no se soporta el uso de certficados con claves de curva el√≠ptica).
+RFE;	Firmas;			Adecuaci√≥n al est√°ndar ETSI TS 119 192-1: Se realiza la validaci√≥n de los datos firmados contra el certificado utilizado para firmar.
+BUG;	Firmas;			Se corrige el que se expandiesen los datos de la pol√≠tica de firma de la AGE cuando se indicaba el par√°metro "expPolicy" y un formato de firma que no soportase esta pol√≠tica (como FacturaE)
+BUG;	Firmas;			Se evita la generaci√≥n de ficheros temporales en las operaci√≥nes de comprobaci√≥n de formato de firma.
 RFE;	Firmas CAdES;		Se permite que en las llamadas desde el navegador o consola se indique el ClaimedRole.
-RFE;	Firmas CAdES;		AdecuaciÛn interna para el futuro soporte de firmas CAdES B-Level.
-BUG;	Firmas CAdES;		Se realiza la comprobaciÛn de atributos longevos en las firmas trif·sicas para impedir la cofirma de firmas no compatibles.
-RFE;	Firmas XAdES;		Se obvia la configuraciÛn de manifest (extraParam "useManifest") en las operaciones de cofirma y contrafirma. No se pueden realizar multifirmas con manifest, independientemente a si la firma original tenÌa manifest o no.
-RFE;	Firmas XAdES;		Se permite la firma XAdES con manifest de m˙ltiples referencias externas indicando el hash correspondiente a los datos referenciados por ellas.
-RFE;	Firmas XAdES;		En las firmas manifest, se utilizar· el par·metro "referencesDigestMethod" para determinar el algoritmo de hash utilizado cuando no se indique el parametro "precalculatedHashAlgorithm".
-RFE;	Firmas XAdES;		Se identificar· en las cofirmas la versiÛn de XAdES utilizada en la firma original y se generar·n declarando la misma versiÛn.
-RFE;	Firmas XAdES;		Se agrega compatibilidad parcial para la generaciÛn de cofirmas y contrafirmas de firmas XAdES 1.1.1 y 1.2.2 (No se permite la generaciÛn de firmas en estos formatos).
-RFE;	Firmas XAdES;		Mejoras en la identificaciÛn de los distintos tipos de firmas (Enveloping, Enveloped, internally Detached y Externally Detached).
+RFE;	Firmas CAdES;		Adecuaci√≥n interna para el futuro soporte de firmas CAdES B-Level.
+BUG;	Firmas CAdES;		Se realiza la comprobaci√≥n de atributos longevos en las firmas trif√°sicas para impedir la cofirma de firmas no compatibles.
+RFE;	Firmas XAdES;		Se obvia la configuraci√≥n de manifest (extraParam "useManifest") en las operaciones de cofirma y contrafirma. No se pueden realizar multifirmas con manifest, independientemente a si la firma original ten√≠a manifest o no.
+RFE;	Firmas XAdES;		Se permite la firma XAdES con manifest de m√∫ltiples referencias externas indicando el hash correspondiente a los datos referenciados por ellas.
+RFE;	Firmas XAdES;		En las firmas manifest, se utilizar√° el par√°metro "referencesDigestMethod" para determinar el algoritmo de hash utilizado cuando no se indique el parametro "precalculatedHashAlgorithm".
+RFE;	Firmas XAdES;		Se identificar√° en las cofirmas la versi√≥n de XAdES utilizada en la firma original y se generar√°n declarando la misma versi√≥n.
+RFE;	Firmas XAdES;		Se agrega compatibilidad parcial para la generaci√≥n de cofirmas y contrafirmas de firmas XAdES 1.1.1 y 1.2.2 (No se permite la generaci√≥n de firmas en estos formatos).
+RFE;	Firmas XAdES;		Mejoras en la identificaci√≥n de los distintos tipos de firmas (Enveloping, Enveloped, internally Detached y Externally Detached).
 RFE;	Firmas XAdES;		Se habilita el procesado seguro de los XML en todas las funciones de carga para evitar ataques con XML.
-RFE;	Firmas XAdES;		AdecuaciÛn interna para el futuro soporte de firmas XAdES B-Level.
-BUG;	Firmas XAdES;		Las firmas manifest deber·n recibir el hash de los datos referenciados. Nunca se accedera a los datos para calcular su hash.
-BUG;	Firmas XAdES;		Las firmas Externally Detached de URLs externas ahora est·n correctamente referenciadas por el objeto DataObjectFormat.
+RFE;	Firmas XAdES;		Adecuaci√≥n interna para el futuro soporte de firmas XAdES B-Level.
+BUG;	Firmas XAdES;		Las firmas manifest deber√°n recibir el hash de los datos referenciados. Nunca se accedera a los datos para calcular su hash.
+BUG;	Firmas XAdES;		Las firmas Externally Detached de URLs externas ahora est√°n correctamente referenciadas por el objeto DataObjectFormat.
 BUG;	Firmas XAdES;		Las firmas Externally Detached no solicitaran datos a firmar cuando pueden recuperarlos a partir de la URI indicada.
 BUG;	Firmas XAdES;		No se extrae el contenido de las firmas XAdES Externally Detached y firmas con manifest.
-BUG;	Firmas XAdES;		Se corrige que al cofirmar firmas se puedan cofirmar referencias de la firma que no correspondÌan a los datos firmados. [INC 603014]
-BUG;	Firmas XAdES;		Se corrige que al cofirmar firmas la referencia a los datos siempre fuese de tipo Object en lugar del tipo seÒalado por la firma (referencias externas, referencias a los datos en firmas Detached, etc.). [INC 603014]
-BUG;	Firmas XAdES;		Se corrige la identificaciÛn de las firmas XAdES con sellos de tiempo XML, lo que permite su cofirma y contrafirma. [INC 514933]
-BUG;	Firmas XAdES;		Se corrige que fallase el proceso de cofirma de una firma XAdES que incluyese espacios, saltos de lÌnea o comentarios entre los nodos de las transformaciones que declara. [INC 609777]
+BUG;	Firmas XAdES;		Se corrige que al cofirmar firmas se puedan cofirmar referencias de la firma que no correspond√≠an a los datos firmados. [INC 603014]
+BUG;	Firmas XAdES;		Se corrige que al cofirmar firmas la referencia a los datos siempre fuese de tipo Object en lugar del tipo se√±alado por la firma (referencias externas, referencias a los datos en firmas Detached, etc.). [INC 603014]
+BUG;	Firmas XAdES;		Se corrige la identificaci√≥n de las firmas XAdES con sellos de tiempo XML, lo que permite su cofirma y contrafirma. [INC 514933]
+BUG;	Firmas XAdES;		Se corrige que fallase el proceso de cofirma de una firma XAdES que incluyese espacios, saltos de l√≠nea o comentarios entre los nodos de las transformaciones que declara. [INC 609777]
 BUG;	Firmas XAdES;		La contrafirma de una contrafirma realizada con un espacio de nombres XAdES distinto a "xades" se generaba declarando el espacio de nombres "null" y no lo declaraba en los nodos. [INC 726628]
-BUG;	Firmas XAdES;		Las firmas enveloped que declaraban en la URI de referencia a los datos un identificador de nodo podÌan identificarse incorrectamente como Detached lo que llevaba a que se decodificase un Base 64 que contuviesen si la estructura del XML se asemejaba a la de las firmas detached ordinarias del cliente.
+BUG;	Firmas XAdES;		Las firmas enveloped que declaraban en la URI de referencia a los datos un identificador de nodo pod√≠an identificarse incorrectamente como Detached lo que llevaba a que se decodificase un Base 64 que contuviesen si la estructura del XML se asemejaba a la de las firmas detached ordinarias del cliente.
 RFE;	Firmas PAdES;		En lugar de mostrar un error directamente, se consulta al usuario si desea forzar la firma del documentos PDF cerficados o con firmas no registradas a pesar de que esto puede invalidar las firmas anteriores.
-RFE;	Firmas PAdES;		Se permite indicar la orientaciÛn de la firma visible PDF.
-RFE;	Firmas PAdES;		Se agrega la ofuscaciÛn de los identificadores de usuario en las firmas visibles PDF cuando dichos identificadores se extraen del certificado de firma. Se omite la ofuscaciÛn con certificados de seudÛnimo.
-RFE;	Firmas PAdES;		AdecuaciÛn interna para el futuro soporte de firmas PAdES B-Level.
-BUG;	Firmas PAdES;		Se corrige el que no se muestre la informaciÛn de las firmas PDF aunque alguna una de las firmas no contenga la fecha de firma.
-BUG;	Firmas PAdES;		Se corrige el que no se detectasen elementos de firma en PDF generados con determinadas herramientas. [INC 627484] (CorrecciÛn seÒalada por La DiputaciÛn Provincial de A CoruÒa)
+RFE;	Firmas PAdES;		Se permite indicar la orientaci√≥n de la firma visible PDF.
+RFE;	Firmas PAdES;		Se agrega la ofuscaci√≥n de los identificadores de usuario en las firmas visibles PDF cuando dichos identificadores se extraen del certificado de firma. Se omite la ofuscaci√≥n con certificados de seud√≥nimo.
+RFE;	Firmas PAdES;		Adecuaci√≥n interna para el futuro soporte de firmas PAdES B-Level.
+BUG;	Firmas PAdES;		Se corrige el que no se muestre la informaci√≥n de las firmas PDF aunque alguna una de las firmas no contenga la fecha de firma.
+BUG;	Firmas PAdES;		Se corrige el que no se detectasen elementos de firma en PDF generados con determinadas herramientas. [INC 627484] (Correcci√≥n se√±alada por La Diputaci√≥n Provincial de A Coru√±a)
 RFE;	Hashes;			Se incorpora un nuevo formato de fichero de hashes de un directorio.
-RFE;	Hashes;			Se optimiza el proceso de c·lculo y comprobaciÛn de hashes pasando a usar hilos concurrentes para reducir los tiempos de proceso.
-BUG;	Hashes;			Se corrige que no se mostrasen los ficheros prexistentes de informe de comprobaciÛn de hashes en el di·logo para el guardado de este informe.
-BUG;	Hashes;			Durante la comprobaciÛn de hashes a partir del fichero XML, se comprueba que los hashes declarados en Base 64 y hexadecimal para un mismo fichero sean iguales.
-RFE;	InvocaciÛn-JavaScript;	ComunicaciÛn por WebSockets. Se sustituye la comunicaciÛn por socket tradicional, salvo en Internet Explorer, mejorando la estabilidad y velocidad. (Requiere el JavaScript del Cliente 1.7 o superior).
-RFE;	InvocaciÛn-JavaScript;	AutoFirma pedir· que se actualice cuando se ejecute desde el nuevo JavaScript de despliegue (necesario para aprovechar la comunicaciÛn por websockets).
-RFE;	InvocaciÛn-JavaScript;	Se agrega compatibilidad con el mÈtodo setStickySignatory en la comunicaciÛn por servidor intermedio. (Requiere el JavaScript del Cliente 1.7 o superior).
-RFE;	InvocaciÛn-JavaScript;	Las llamadas a "getSignersStructure" para recuperar la informaciÛn de las firmas XAdES y CAdES devolver·n tambiÈn el algoritmo usado en cada una de las firmas.
-RFE;	InvocaciÛn-JavaScript;	Las firmas XAdES Externally Detached y firmas Manifest no obligaran a la configuraciÛn de un dato de entrada, ya que las referencias necesarias se pueden incluir en los extraParams.
-RFE;	InvocaciÛn-JavaScript;	Se permite que se pueda desactivar y volver a activar la fijaciÛn de certificado mediante setStickySignatory sin hacer entre medias una llamada a un mÈtodo de firma o selecciÛn de certificado. [INC 646540]
-REF;	InvocaciÛn-JavaScript;	Se permite verificar las firmas antes de agregarles una nueva multifirma (extraParam "checkSignatures").
-RFE;	InvocaciÛn-JavaScript;	AdecuaciÛn al est·ndar ETSI TS 119 192-1: Para evitar el uso de certificados caducados, se omitiran por defecto del di·logo de selecciÛn. Si el integrador define filtros de certificados, queda bajo su responsabilidad el indicar que se omitan.
-BUG;	InvocaciÛn-JavaScript;	Se evita la impresiÛn de datos grandes en el log, lo que evita que este se corrompa y borre y que AutoFirma no complete el proceso de guardado.
-BUG;	InvocaciÛn-JavaScript;	Se corrige el que no se dÈ mensaje de error cuando se use comunicaciÛn por servidor intermedio y se llame a un mÈtodo de carga de ficheros.
-BUG;	InvocaciÛn-JavaScript;	Se corrige la operaciÛn de selecciÛn de certificado con servidor intermedio cuando el tamaÒo de la configuraciÛn de la operaciÛn era demasiado grande y se subÌa al servidor.
-BUG;	InvocaciÛn-JavaScript;	Se identifica correctamente el navegador Safari en iOS 13 (Mejora proporcionada por el usuario "rasputino" de GitHub).
-RFE;	Consola;		Se habilitan nuevas opciones de configuraciÛn de calculo y comprobaciÛn de hashes.
-RFE;	Consola;		Se permite el uso de las funciones de calculo y comprobaciÛn de hashes sin necesidad de interacciÛn con interfaces gr·ficos.
-BUG;	Windows;		Se corrige el que la ruta de AutoFirma no se elimine del PATH durante la desinstalaciÛn.
-RFE;	Linux;			Se mejora el criterio de selecciÛn del directorio de bibliotecas de NSS (Mejora proporcionada por el usuario "ssaavedra" de GitHub).
-BUG;	Mac;			Se corrige el acceso al almacÈn de Firefox.
-BUG;	Mac;			Se corrige la funciÛn de restauraciÛn de la instalaciÛn.
-RFE;	InstalaciÛn;		Los instaladores Windows y macOS permiten seleccionar al usuario que se configure Firefox para que confÌe en los certificados de confianza del almacÈn del sistema.
+RFE;	Hashes;			Se optimiza el proceso de c√°lculo y comprobaci√≥n de hashes pasando a usar hilos concurrentes para reducir los tiempos de proceso.
+BUG;	Hashes;			Se corrige que no se mostrasen los ficheros prexistentes de informe de comprobaci√≥n de hashes en el di√°logo para el guardado de este informe.
+BUG;	Hashes;			Durante la comprobaci√≥n de hashes a partir del fichero XML, se comprueba que los hashes declarados en Base 64 y hexadecimal para un mismo fichero sean iguales.
+RFE;	Invocaci√≥n-JavaScript;	Comunicaci√≥n por WebSockets. Se sustituye la comunicaci√≥n por socket tradicional, salvo en Internet Explorer, mejorando la estabilidad y velocidad. (Requiere el JavaScript del Cliente 1.7 o superior).
+RFE;	Invocaci√≥n-JavaScript;	AutoFirma pedir√° que se actualice cuando se ejecute desde el nuevo JavaScript de despliegue (necesario para aprovechar la comunicaci√≥n por websockets).
+RFE;	Invocaci√≥n-JavaScript;	Se agrega compatibilidad con el m√©todo setStickySignatory en la comunicaci√≥n por servidor intermedio. (Requiere el JavaScript del Cliente 1.7 o superior).
+RFE;	Invocaci√≥n-JavaScript;	Se permite la obtenci√≥n del certificado de firma en las operaciones de firma de lote.
+RFE;	Invocaci√≥n-JavaScript;	Las llamadas a "getSignersStructure" para recuperar la informaci√≥n de las firmas XAdES y CAdES devolver√°n tambi√©n el algoritmo usado en cada una de las firmas.
+RFE;	Invocaci√≥n-JavaScript;	Las firmas XAdES Externally Detached y firmas Manifest no obligaran a la configuraci√≥n de un dato de entrada, ya que las referencias necesarias se pueden incluir en los extraParams.
+RFE;	Invocaci√≥n-JavaScript;	Se permite que se pueda desactivar y volver a activar la fijaci√≥n de certificado mediante setStickySignatory sin hacer entre medias una llamada a un m√©todo de firma o selecci√≥n de certificado. [INC 646540]
+REF;	Invocaci√≥n-JavaScript;	Se permite verificar las firmas antes de agregarles una nueva multifirma (extraParam "checkSignatures").
+RFE;	Invocaci√≥n-JavaScript;	Adecuaci√≥n al est√°ndar ETSI TS 119 192-1: Para evitar el uso de certificados caducados, se omitiran por defecto del di√°logo de selecci√≥n. Si el integrador define filtros de certificados, queda bajo su responsabilidad el indicar que se omitan.
+BUG;	Invocaci√≥n-JavaScript;	Se evita la impresi√≥n de datos grandes en el log, lo que evita que este se corrompa y borre y que AutoFirma no complete el proceso de guardado.
+BUG;	Invocaci√≥n-JavaScript;	Se corrige el que no se d√© mensaje de error cuando se use comunicaci√≥n por servidor intermedio y se llame a un m√©todo de carga de ficheros.
+BUG;	Invocaci√≥n-JavaScript;	Se corrige la operaci√≥n de selecci√≥n de certificado con servidor intermedio cuando el tama√±o de la configuraci√≥n de la operaci√≥n era demasiado grande y se sub√≠a al servidor.
+BUG;	Invocaci√≥n-JavaScript;	Se identifica correctamente el navegador Safari en iOS 13 (Mejora proporcionada por el usuario "rasputino" de GitHub).
+RFE;	Consola;		Se habilitan nuevas opciones de configuraci√≥n de calculo y comprobaci√≥n de hashes.
+RFE;	Consola;		Se permite el uso de las funciones de calculo y comprobaci√≥n de hashes sin necesidad de interacci√≥n con interfaces gr√°ficos.
+BUG;	Windows;		Se corrige el que la ruta de AutoFirma no se elimine del PATH durante la desinstalaci√≥n.
+RFE;	Linux;			Se mejora el criterio de selecci√≥n del directorio de bibliotecas de NSS (Mejora proporcionada por el usuario "ssaavedra" de GitHub).
+BUG;	Mac;			Se corrige el acceso al almac√©n de Firefox.
+BUG;	Mac;			Se corrige la funci√≥n de restauraci√≥n de la instalaci√≥n.
+RFE;	Instalaci√≥n;		Los instaladores Windows y macOS permiten seleccionar al usuario que se configure Firefox para que conf√≠e en los certificados de confianza del almac√©n del sistema.
 
 AutoFirma v1.6.5
 --------------------------
 RFE;	General;		AutoFirma es compatible con OpenJDK 11.
-RFE;	General;		Se integra un mecanismo de plugins con el que agregar nuevas funcionalidades de la aplicaciÛn.
-RFE;	LibrerÌas;		Se distribuye OpenJDK 11 con AutoFirma macOS y Windows (64 bits).
-RFE;	LibrerÌas;		ActualizaciÛn a JMulticard 1.5. Esta version permite el cacheo de los pines de las tarjetas de FNMT y DNIe. Es necesario usar "setStickySignatory" para habilitar el cacheo.
-RFE;	Librerias;		Se incorpora la biblioteca Apache Satuario v2.1.3. Esta permite evitar el problema de compatibilidad de las firmas XAdES con Java 11 omitiendo los saltos de lÌnea internos del XML para que no se introduzcan retornos de carro (&#13;) en los Base64.
-RFE;	UI;			Se muestra el di·logo de selecciÛn de certificados incluso cuando no hay certificados para permitir cargar un PKCS#12 o insertar una tarjeta inteligente.
-RFE;	UI;			Se redimensiona el di·logo de selecciÛn de certificados al nuevo contenido cuando se recarga el almacÈn o se abre uno nuevo.
-RFE;	UI;			Se remodelan diversos di·logos gr·ficos para mejorar la accesibilidad visual de la aplicaciÛn.
-RFE;	UI;			Antes de abrir o guardar un fichero de datos firmados, se muestra un di·logo con informaciÛn sobre el mismo.
+RFE;	General;		Se integra un mecanismo de plugins con el que agregar nuevas funcionalidades de la aplicaci√≥n.
+RFE;	Librer√≠as;		Se distribuye OpenJDK 11 con AutoFirma macOS y Windows (64 bits).
+RFE;	Librer√≠as;		Actualizaci√≥n a JMulticard 1.5. Esta version permite el cacheo de los pines de las tarjetas de FNMT y DNIe. Es necesario usar "setStickySignatory" para habilitar el cacheo.
+RFE;	Librerias;		Se incorpora la biblioteca Apache Satuario v2.1.3. Esta permite evitar el problema de compatibilidad de las firmas XAdES con Java 11 omitiendo los saltos de l√≠nea internos del XML para que no se introduzcan retornos de carro (&#13;) en los Base64.
+RFE;	UI;			Se muestra el di√°logo de selecci√≥n de certificados incluso cuando no hay certificados para permitir cargar un PKCS#12 o insertar una tarjeta inteligente.
+RFE;	UI;			Se redimensiona el di√°logo de selecci√≥n de certificados al nuevo contenido cuando se recarga el almac√©n o se abre uno nuevo.
+RFE;	UI;			Se remodelan diversos di√°logos gr√°ficos para mejorar la accesibilidad visual de la aplicaci√≥n.
+RFE;	UI;			Antes de abrir o guardar un fichero de datos firmados, se muestra un di√°logo con informaci√≥n sobre el mismo.
 RFE;	UI;			Los ficheros ejecutables firmados nunca se ejecutan al extraerlos de una firma, se almacenan donde indique el usuario.
-RFE;	UI;			Se agrega la arquitectura de Java al di·logo "Acerca de..." de la aplicaciÛn.
-RFE;	UI;			Se externaliza la configuraciÛn del formato de firma por defecto a un di·logo accesible desde la pantalla "General" de las preferencias.
-RFE;	UI;			Se agrega la funcionalidad de firma masiva para la firma de m˙ltiples documentos o directorios desde la interfaz gr·fica.
-RFE;	UI;			Se permite configurar desde el panel de preferencias si las firmas CAdES y XAdES deben cofirmarse, contrafirmar las firmas hoja del ·rbol de firma o contrafirmas todas sus firmas.
-RFE;	UI;			Se permite acceder al panel de preferencias desde la informaciÛn mostrada cuando se selecciona una firma CAdES o XAdES, para asÌ poder modificar su configuraciÛn.
+RFE;	UI;			Se agrega la arquitectura de Java al di√°logo "Acerca de..." de la aplicaci√≥n.
+RFE;	UI;			Se externaliza la configuraci√≥n del formato de firma por defecto a un di√°logo accesible desde la pantalla "General" de las preferencias.
+RFE;	UI;			Se agrega la funcionalidad de firma masiva para la firma de m√∫ltiples documentos o directorios desde la interfaz gr√°fica.
+RFE;	UI;			Se permite configurar desde el panel de preferencias si las firmas CAdES y XAdES deben cofirmarse, contrafirmar las firmas hoja del √°rbol de firma o contrafirmas todas sus firmas.
+RFE;	UI;			Se permite acceder al panel de preferencias desde la informaci√≥n mostrada cuando se selecciona una firma CAdES o XAdES, para as√≠ poder modificar su configuraci√≥n.
 RFE;	UI;			Se configura que el formato de firma por defecto para los documentos OOXML y ODF sea CAdES.
-BUG;	UI;			Se corrige el error por el cual, al abrir un PKCS#12 desde el di·logo de selecciÛn de certificados, el di·logo de inserciÛn de contraseÒa quedaba inaccesible por detr·s.
+BUG;	UI;			Se corrige el error por el cual, al abrir un PKCS#12 desde el di√°logo de selecci√≥n de certificados, el di√°logo de inserci√≥n de contrase√±a quedaba inaccesible por detr√°s.
 BUG;	UI;			Se corrigen atajos de teclado duplicados.
-BUG;	UI;			Se corrige la identificaciÛn de los ficheros .xls y .ppt al extraerlos de las firmas y ya no se intentar·n abrir con la aplicaciÛn asignada a los .doc.
+BUG;	UI;			Se corrige la identificaci√≥n de los ficheros .xls y .ppt al extraerlos de las firmas y ya no se intentar√°n abrir con la aplicaci√≥n asignada a los .doc.
 RFE;	KeyStores;		Se permite que los PKCS#11 se declaren en Firefox mediante rutas relativas, en cullo caso buscan en el PATH.
-RFE;	KeyStores;		Se integra en AutoFirma el NSS de Firefox 65 para Windows para permitir el acceso al almacÈn de los nuevos Firefox cuando la arquitectura de Firefox y AutoFirma sean distintas.
-BUG;	KeyStores;		Se corrige la firma con tarjetas inteligentes desde FireFox, que en algunos casos permitÌa listar los certificados pero no usarlos.
-BUG;	KeyStores;		Se corrige el caso en el que, al actualizar un almacÈn de certificados a travÈs del di·logo, aparecÌa un di·logo de PIN que quedaba por detras del propio di·logo de selecciÛn.
+RFE;	KeyStores;		Se integra en AutoFirma el NSS de Firefox 65 para Windows para permitir el acceso al almac√©n de los nuevos Firefox cuando la arquitectura de Firefox y AutoFirma sean distintas.
+BUG;	KeyStores;		Se corrige la firma con tarjetas inteligentes desde FireFox, que en algunos casos permit√≠a listar los certificados pero no usarlos.
+BUG;	KeyStores;		Se corrige el caso en el que, al actualizar un almac√©n de certificados a trav√©s del di√°logo, aparec√≠a un di√°logo de PIN que quedaba por detras del propio di√°logo de selecci√≥n.
 BUG;	KeyStores;		Se corrige el refresco de los almacenes PKCS#12 y JKS.
 RFE;	Firma lotes;		Se optimiza el proceso de firma en servidor para reducir el consumo de memoria.
 RFE;	Firmas PAdES;		Se elimina el margen de los textos en las firmas visibles PDF.
-RFE;	Firmas PAdES;		Se permite configuar en los PDF que los lectores pueden incluir en ellos la marca de validaciÛn de las firmas.
-BUG;	Firmas PAdES;		Se corrige el proceso de carga para que, al cargar un PDF sin firmas, se indique que no se trata de una firma PDF v·lida.
+RFE;	Firmas PAdES;		Se permite configuar en los PDF que los lectores pueden incluir en ellos la marca de validaci√≥n de las firmas.
+BUG;	Firmas PAdES;		Se corrige el proceso de carga para que, al cargar un PDF sin firmas, se indique que no se trata de una firma PDF v√°lida.
 BUG;	Firmas PAdES;		Se corrige la firma de campos de firma preexistentes.
-BUG;	Firmas PAdES;		Se corrige la validaciÛn de algunas firmas PAdES no generadas por el Cliente @firma.
-RFE;	InvocaciÛn-JavaScript;	Cuando ocurre un error al firmar se detalla mejor al usuario el motivo que lo originÛ.
-RFE;	InvocaciÛn-JavaScript;	Se agrega compatibilidad con el mÈtodo de selecciÛn de certificados del Cliente @firma cuando se utiliza la comunicaciÛn por servidor intermedio (Requiere el JavaScript del Cliente 1.6.5 o superior).
-RFE;	InvocaciÛn-JavaScript;	Se habilita un modo de espera con servidor intermedio que evita que una aplicaciÛn dÈ por caducada una peticiÛn mientras AutoFirma siga abierto (Requiere el JavaScript del Cliente 1.6.5 o superior).
-BUG;	InvocaciÛn-JavaScript;	Se corrige el proceso de comunicaciÛn para evitar que en llamadas de firma en serie por sockets se envÌen a firmar datos erroneos (afectaba al uso de Internet Explorer 11) (Requiere el JavaScript del Cliente 1.6.5 o superior).
-RFE;	Consola;		Ahora es posible firmar con formatos OOXML y ODF a travÈs de consola.
-RFE;	Consola;		Se agrega la opciÛn '-certgui' para realizar una operacion de firma por consola pero que se muestre el di·logo gr·fico de selecciÛn de certificado. Este dialogo se configura con los extraParams y no puede omitirse con "mandatoryCertificate".
+BUG;	Firmas PAdES;		Se corrige la validaci√≥n de algunas firmas PAdES no generadas por el Cliente @firma.
+RFE;	Invocaci√≥n-JavaScript;	Cuando ocurre un error al firmar se detalla mejor al usuario el motivo que lo origin√≥.
+RFE;	Invocaci√≥n-JavaScript;	Se agrega compatibilidad con el m√©todo de selecci√≥n de certificados del Cliente @firma cuando se utiliza la comunicaci√≥n por servidor intermedio (Requiere el JavaScript del Cliente 1.6.5 o superior).
+RFE;	Invocaci√≥n-JavaScript;	Se habilita un modo de espera con servidor intermedio que evita que una aplicaci√≥n d√© por caducada una petici√≥n mientras AutoFirma siga abierto (Requiere el JavaScript del Cliente 1.6.5 o superior).
+BUG;	Invocaci√≥n-JavaScript;	Se corrige el proceso de comunicaci√≥n para evitar que en llamadas de firma en serie por sockets se env√≠en a firmar datos erroneos (afectaba al uso de Internet Explorer 11) (Requiere el JavaScript del Cliente 1.6.5 o superior).
+RFE;	Consola;		Ahora es posible firmar con formatos OOXML y ODF a trav√©s de consola.
+RFE;	Consola;		Se agrega la opci√≥n '-certgui' para realizar una operacion de firma por consola pero que se muestre el di√°logo gr√°fico de selecci√≥n de certificado. Este dialogo se configura con los extraParams y no puede omitirse con "mandatoryCertificate".
 RFE;	Windows;		El instalador EXE pregunta al usuario si desea crear el acceso directo en el escritorio.
-BUG;	Windows;		Se corrige que se quedase bloqueado el proceso de instalaciÛn cuando se encontrase una contraseÒa maestra en el almacÈn de FireFox.
-BUG;	Windows;		Se corrige que se agregase al PATH la ruta de instalaciÛn por defecto de AutoFirma en lugar de la ruta real de instalaciÛn.
+BUG;	Windows;		Se corrige que se quedase bloqueado el proceso de instalaci√≥n cuando se encontrase una contrase√±a maestra en el almac√©n de FireFox.
+BUG;	Windows;		Se corrige que se agregase al PATH la ruta de instalaci√≥n por defecto de AutoFirma en lugar de la ruta real de instalaci√≥n.
 RFE;	Linux;			Se incluye instalador RPM.
 
 
 AutoFirma v.1.6.3
 --------------------------
-RFE;	UI;			Se agrega, para sistemas operativos Windows, una opciÛn al panel General de las preferencias para desabilitar el uso de tarjetas mediante JMulticard. TambiÈn afecta al uso desde el navegador.
-RFE;	UI;			La opciÛn de uso de proxy de red aparecer· ahora habilitada por defecto para emular la configuraciÛn por defecto de AutoFirma 1.5.
-BUG;	Windows;		El empaquetado Windows 32bits ahora no reserva memoria adicional para evitar que no se pueda abrir la aplicaciÛn cuando no la haya.
+RFE;	UI;			Se agrega, para sistemas operativos Windows, una opci√≥n al panel General de las preferencias para deshabilitar el uso de tarjetas mediante JMulticard. Tambi√©n afecta al uso desde el navegador.
+RFE;	UI;			La opci√≥n de uso de proxy de red aparecer√° ahora habilitada por defecto para emular la configuraci√≥n por defecto de AutoFirma 1.5.
+BUG;	Windows;		El empaquetado Windows 32bits ahora no reserva memoria adicional para evitar que no se pueda abrir la aplicaci√≥n cuando no la haya.
 
 
 AutoFirma v1.6.2
 --------------------------
-RFE;	UI;			El di·logo de selecciÛn de certificados se muestra sobre cualquier otra pantalla.
-RFE;	UI;			Se agrega una opciÛn en el men˙ Archivo para abrir y ver la informaciÛn de una firma.
-BUG;	UI;			Se elimina la opciÛn de validaciÛn de certificados desde el panel de informaciÛn de firma, ya que no se puede verificar que la informaciÛn de validaciÛn proporcionada sea de confianza.
-BUG;	Firmas;			Se corrige la configuraciÛn de la polÌtica de firma de la AGE cuando se utiliza el formato AUTO con una multifirma.
-BUG;	Firmas CAdES;		Se corrige error en la identificaciÛn de los documentos OOXML y ODF por el cual no se validaban correctamente las firmas CAdES realizadas sobre este tipo de documentos firmados.
-BUG;	Firmas XAdES;		Se corrige la validaciÛn de las firmas XAdES realizadas sobre datos binarios.
-BUG;	Firmas XAdES;		Se corrige la contrafirma de firmas XAdES en las que se declaraba el espacios de nombre vacÌo.
-BUG;	Firmas XAdES;		Se hereda el prefijo del espacio de nombre de XAdES del nodo "UnsignedSignatureProperties" cuando se realiza una contrafirma sobre una firma que ya contenÌa este nodo.
+RFE;	UI;			El di√°logo de selecci√≥n de certificados se muestra sobre cualquier otra pantalla.
+RFE;	UI;			Se agrega una opci√≥n en el men√∫ Archivo para abrir y ver la informaci√≥n de una firma.
+BUG;	UI;			Se elimina la opci√≥n de validaci√≥n de certificados desde el panel de informaci√≥n de firma, ya que no se puede verificar que la informaci√≥n de validaci√≥n proporcionada sea de confianza.
+BUG;	Firmas;			Se corrige la configuraci√≥n de la pol√≠tica de firma de la AGE cuando se utiliza el formato AUTO con una multifirma.
+BUG;	Firmas CAdES;		Se corrige error en la identificaci√≥n de los documentos OOXML y ODF por el cual no se validaban correctamente las firmas CAdES realizadas sobre este tipo de documentos firmados.
+BUG;	Firmas XAdES;		Se corrige la validaci√≥n de las firmas XAdES realizadas sobre datos binarios.
+BUG;	Firmas XAdES;		Se corrige la contrafirma de firmas XAdES en las que se declaraba el espacios de nombre vac√≠o.
+BUG;	Firmas XAdES;		Se hereda el prefijo del espacio de nombre de XAdES del nodo "UnsignedSignatureProperties" cuando se realiza una contrafirma sobre una firma que ya conten√≠a este nodo.
 
 
 AutoFirma v1.6.1
 --------------------------
-RFE;	LibrerÌas;		ActualizaciÛn a JMulticard 1.5. Esta versiÛn desactiva el soporte de las tarjetas de GyD, lo que permite que se carguen con el controlador oficial.
+RFE;	Librer√≠as;		Actualizaci√≥n a JMulticard 1.5. Esta versi√≥n desactiva el soporte de las tarjetas de GyD, lo que permite que se carguen con el controlador oficial.
 RFE;	KeyStores;		Se mejora la compatibilidad con Firefox 58 y superiores.
 
 
@@ -171,143 +231,143 @@ AutoFirma v1.6
 --------------------------
 RFE;	General;		Compatibilidad con Java 9
 RFE;	General;		Mejoras en el uso de proxies.
-RFE;	General;		Se incorpora el soporte para la generaciÛn y comprobaciÛn de huellas de ficheros en Base16.
-RFE;	General;		Se activa la comprobaciÛn de los certificados de las conexiones SSL. Esto implica que las conexiones con los servicios del servidor intermedio, el servicio de firma trif·sica y el servicio de despliegue JNLP deben estar securizadas (en caso de estarlo) con certificados de confianza para Java.
-RFE;	General;		Se incorporan los certificados raÌces y las CA intermedias de generaciÛn de certificados SSL a las JRE con las que se publica AutoFirma.
-RFE:	LibrerÌas;		ActualizaciÛn a SpongyCastle 1.54.
-RFE;	LibrerÌas;		ActualizaciÛn a JMulticard 1.4.
-RFE;	LibrerÌas;		ActualizaciÛn a JXAdES 0.2.0.
-RFE;	LibrerÌas;		ActualizaciÛn a PDFBox 2.0.7.
-BUG;	UI;			Se corrige la URL de la p·gina de ayuda del di·logo de selecciÛn de certificados. [INC 295720]
-BUG;	UI;			Se corrige el guardado y uso del usuario y contraseÒa del proxy configurado. [INC 329883]
-BUG;	UI;			Se corrige un error en Windows por el que, despuÈs de actualizar la aplicaciÛn, se seguÌa mostrando la ayuda de la versiÛn anterior.
-RFE;	KeyStores;		Se detectan perfiles temporales de Windows para utilizar en lugar del almacÈn del sistema una serie de tarjetas inteligentes de las que se pueda encontrar los PKCS#11.
-RFE;	KeyStores;		Se agrega un filtro de certificados para la selecciÛn expresa de un certificado proporcionado en base64 (que puede haberse obtenido como resultado de una operaciÛn de firma).
-BUG;	KeyStores;		CorrecciÛn en el acceso al almacÈn de claves de Mozilla Firefox cuando se encontrase el almacÈn configurado en modo SQL.
-BUG;	KeyStores;		CorrecciÛn del di·logo de inserciÛn de PIN de las tarjetas DNIe/FNMT para admitir signos de puntuaciÛn. [INC 295960]
-BUG;	Firmas;			Corregido error que impedÌa hacer firmas trif·sicas aplicando la opciÛn de configuraciÛn "includeOnlySignningCertificate".
+RFE;	General;		Se incorpora el soporte para la generaci√≥n y comprobaci√≥n de huellas de ficheros en Base16.
+RFE;	General;		Se activa la comprobaci√≥n de los certificados de las conexiones SSL. Esto implica que las conexiones con los servicios del servidor intermedio, el servicio de firma trif√°sica y el servicio de despliegue JNLP deben estar securizadas (en caso de estarlo) con certificados de confianza para Java.
+RFE;	General;		Se incorporan los certificados ra√≠ces y las CA intermedias de generaci√≥n de certificados SSL a las JRE con las que se publica AutoFirma.
+RFE:	Librer√≠as;		Actualizaci√≥n a SpongyCastle 1.54.
+RFE;	Librer√≠as;		Actualizaci√≥n a JMulticard 1.4.
+RFE;	Librer√≠as;		Actualizaci√≥n a JXAdES 0.2.0.
+RFE;	Librer√≠as;		Actualizaci√≥n a PDFBox 2.0.7.
+BUG;	UI;			Se corrige la URL de la p√°gina de ayuda del di√°logo de selecci√≥n de certificados. [INC 295720]
+BUG;	UI;			Se corrige el guardado y uso del usuario y contrase√±a del proxy configurado. [INC 329883]
+BUG;	UI;			Se corrige un error en Windows por el que, despu√©s de actualizar la aplicaci√≥n, se segu√≠a mostrando la ayuda de la versi√≥n anterior.
+RFE;	KeyStores;		Se detectan perfiles temporales de Windows para utilizar en lugar del almac√©n del sistema una serie de tarjetas inteligentes de las que se pueda encontrar los PKCS#11.
+RFE;	KeyStores;		Se agrega un filtro de certificados para la selecci√≥n expresa de un certificado proporcionado en base64 (que puede haberse obtenido como resultado de una operaci√≥n de firma).
+BUG;	KeyStores;		Correcci√≥n en el acceso al almac√©n de claves de Mozilla Firefox cuando se encontrase el almac√©n configurado en modo SQL.
+BUG;	KeyStores;		Correcci√≥n del di√°logo de inserci√≥n de PIN de las tarjetas DNIe/FNMT para admitir signos de puntuaci√≥n. [INC 295960]
+BUG;	Firmas;			Corregido error que imped√≠a hacer firmas trif√°sicas aplicando la opci√≥n de configuraci√≥n "includeOnlySignningCertificate".
 BUG;	Firmas XAdES;		Se corrige un error por el cual fallaban las cofirmas y contrafirmas XAdES cuando se configura la propiedad "explicit=true".
-BUG;	Firmas XAdES;		Se corrige un error por el cual fallaban las contrafirmas XAdES trif·sicas sobre determinadas firmas. [INC 283137]
-BUG;	Firmas XAdES;		Se corrige un error por el cual fallaban las contrafirmas XAdES cuando existÌan contrafirmas previas con un prefijo de espacio de nombres no reconocido. [INC 332565]
-BUG;	Firmas XAdES;		Se vuelve a insertar en el nodo CONTENT de las firmas XAdES el tipo de dato firmado. Esto tambiÈn corrige la extracciÛn de los datos cuando se firma un XML. [INC 333030]
+BUG;	Firmas XAdES;		Se corrige un error por el cual fallaban las contrafirmas XAdES trif√°sicas sobre determinadas firmas. [INC 283137]
+BUG;	Firmas XAdES;		Se corrige un error por el cual fallaban las contrafirmas XAdES cuando exist√≠an contrafirmas previas con un prefijo de espacio de nombres no reconocido. [INC 332565]
+BUG;	Firmas XAdES;		Se vuelve a insertar en el nodo CONTENT de las firmas XAdES el tipo de dato firmado. Esto tambi√©n corrige la extracci√≥n de los datos cuando se firma un XML. [INC 333030]
 RFE;	Firmas PAdES;		Se generan por defecto firmas PAdES-BES.
-BUG;	Firmas PAdES;		En la firmas trif·sicas se puede referir a la ˙ltima p·gina con el identificador "-1", al igual que se hacÌa con las firmas normales.
-BUG;	Firmas FacturaE;	Se corrige la firma con el formato FacturaE a travÈs de consola.
+BUG;	Firmas PAdES;		En la firmas trif√°sicas se puede referir a la √∫ltima p√°gina con el identificador "-1", al igual que se hac√≠a con las firmas normales.
+BUG;	Firmas FacturaE;	Se corrige la firma con el formato FacturaE a trav√©s de consola.
 RFE;	Firmas OOXMl;		Compatibilidad con Microsoft Office 2016 [INC 281980][INC 318690]
-RFE;	Java WebStart;		Se agrega la compatibilidad para el despliegue de AutoFirma como aplicaciÛn Java WebStart.
-RFE;	InvocaciÛn-JavaScript;	Se agrega la compatibilidad con el mÈtodo setStickySignatory() del MiniApplet para la selecciÛn ˙nica del certificado (sÛlo comunicaciÛn por sockets). [INC 256414][INC 216366]
-RFE;	InvocaciÛn-JavaScript;	Se agrega la compatibilidad con los mÈtodos de carga de datos del MiniApplet (sÛlo comunicaciÛn por sockets).
-RFE;	InvocaciÛn-JavaScript;	Se agrega la compatibilidad con el mÈtodo getCurrentLog() del MiniApplet (sÛlo comunicaciÛn por sockets).
-RFE;	InvocaciÛn-JavaScript;	Mejora significativa en la estabilidad de la conexiÛn entre AutoFirma y el navegador web. Esto corrige problemas de comunicaciÛn entre AutoFirma y Chrome.
-BUG;	InvocaciÛn-JavaScript;	Se corrige el problema de truncado del certificado devuelto en el callback de Èxito tras las operaciones de firma con la comunicaciÛn por sockets.
-BUG;	InstalaciÛn;	Se corrige el proceso de instalaciÛn para que no se modifique el perfil del usuario por defecto de Windows y evitar la corrupciÛn de datos de los nuevos usuarios. [INC 280709]
-BUG;	InstalaciÛn;	Se corrige el proceso de instalaciÛn para que se puedan abrir los ficheros de firma con extensiones registradas en unidades de red. [INC 298244]
+RFE;	Java WebStart;		Se agrega la compatibilidad para el despliegue de AutoFirma como aplicaci√≥n Java WebStart.
+RFE;	Invocaci√≥n-JavaScript;	Se agrega la compatibilidad con el m√©todo setStickySignatory() del MiniApplet para la selecci√≥n √∫nica del certificado (s√≥lo comunicaci√≥n por sockets). [INC 256414][INC 216366]
+RFE;	Invocaci√≥n-JavaScript;	Se agrega la compatibilidad con los m√©todos de carga de datos del MiniApplet (s√≥lo comunicaci√≥n por sockets).
+RFE;	Invocaci√≥n-JavaScript;	Se agrega la compatibilidad con el m√©todo getCurrentLog() del MiniApplet (s√≥lo comunicaci√≥n por sockets).
+RFE;	Invocaci√≥n-JavaScript;	Mejora significativa en la estabilidad de la conexi√≥n entre AutoFirma y el navegador web. Esto corrige problemas de comunicaci√≥n entre AutoFirma y Chrome.
+BUG;	Invocaci√≥n-JavaScript;	Se corrige el problema de truncado del certificado devuelto en el callback de √©xito tras las operaciones de firma con la comunicaci√≥n por sockets.
+BUG;	Instalaci√≥n;	Se corrige el proceso de instalaci√≥n para que no se modifique el perfil del usuario por defecto de Windows y evitar la corrupci√≥n de datos de los nuevos usuarios. [INC 280709]
+BUG;	Instalaci√≥n;	Se corrige el proceso de instalaci√≥n para que se puedan abrir los ficheros de firma con extensiones registradas en unidades de red. [INC 298244]
 
 
 AutoFirma v1.5
 --------------------------
-RFE;	General;		Se incorporan funciones para el c·lculo y comprobaciÛn de huellas digitales (hash).
-RFE;	General;		Se recuerda el ˙ltimo directorio desde el que se cargÛ o guardÛ un fichero y el siguiente di·logo de carga o guardado de fichero que aparezca mostrar· por defecto ese directorio.
-RFE;	General;		Se permite configurar las URL remotas del fichero de versiÛn y la web de actualizaciÛn de la aplicaciÛn.
-RFE;	General;		Se permite la configuraciÛn de AutoFirma mediante la importaciÛn de un fichero de configuraciÛn.
-RFE;	KeyStores;		Se incorpora el soporte completo de DNIe 3.0 (comunicaciÛn por chip y NFC).
-RFE;	KeyStores;		Se implementa el filtro de certificados "disableopeningexternalstores" que evita que se muestre el botÛn para la carga de PKCS#12 en el di·logo de selecciÛn.
-BUG;	KeyStores;		CorrecciÛn del filtro de certificados "ssl".
+RFE;	General;		Se incorporan funciones para el c√°lculo y comprobaci√≥n de huellas digitales (hash).
+RFE;	General;		Se recuerda el √∫ltimo directorio desde el que se carg√≥ o guard√≥ un fichero y el siguiente di√°logo de carga o guardado de fichero que aparezca mostrar√° por defecto ese directorio.
+RFE;	General;		Se permite configurar las URL remotas del fichero de versi√≥n y la web de actualizaci√≥n de la aplicaci√≥n.
+RFE;	General;		Se permite la configuraci√≥n de AutoFirma mediante la importaci√≥n de un fichero de configuraci√≥n.
+RFE;	KeyStores;		Se incorpora el soporte completo de DNIe 3.0 (comunicaci√≥n por chip y NFC).
+RFE;	KeyStores;		Se implementa el filtro de certificados "disableopeningexternalstores" que evita que se muestre el bot√≥n para la carga de PKCS#12 en el di√°logo de selecci√≥n.
+BUG;	KeyStores;		Correcci√≥n del filtro de certificados "ssl".
 BUG;	KeyStores;		Correcciones en el uso de claves de tarjetas inteligentes.
-BUG;	KeyStores;		CorrecciÛn para permitir el uso del controlador PKCS#11 del DNIe y la tarjeta CERES en caso de error en el controlador Java al acceder a travÈs del almacÈn de Firefox.
+BUG;	KeyStores;		Correcci√≥n para permitir el uso del controlador PKCS#11 del DNIe y la tarjeta CERES en caso de error en el controlador Java al acceder a trav√©s del almac√©n de Firefox.
 BUG;	KeyStores;		Compatibilidad de AutoFirma con Firefox 48 y superior Linux.
 RFE;	Firmas Binarias;	Se migra a SpongyCastle 1.54 para evitar las colisiones con versiones antiguas de BouncyCastle que se pueden encontrar en servidor.
-BUG;	Firmas CAdES;		Correccion en la configuraciÛn de los par·metros de los CommitmentTypeIndication (se usa el prefijo "commitmentTypeIndication" en lugar de "commitmentTypeIndications".
-BUG;	Firmas CAdES;		Se reintroduce el atributo Content-Hints en las contrafirmas para que sean acordes a la polÌtica de firma de la AGE.
+BUG;	Firmas CAdES;		Correccion en la configuraci√≥n de los par√°metros de los CommitmentTypeIndication (se usa el prefijo "commitmentTypeIndication" en lugar de "commitmentTypeIndications".
+BUG;	Firmas CAdES;		Se reintroduce el atributo Content-Hints en las contrafirmas para que sean acordes a la pol√≠tica de firma de la AGE.
 RFE;	Firmas PAdES;		Se cambia el paquete de iText para evitar colisiones con versiones oficiales que se pueden encontrar en servidor.
-RFE;	Firmas PAdES;		Se amplÌan las funciones de firma visible PDF permitiendo la configuraciÛn del texto e imagen de firma.
+RFE;	Firmas PAdES;		Se ampl√≠an las funciones de firma visible PDF permitiendo la configuraci√≥n del texto e imagen de firma.
 BUG;	Firmas PAdES;		Se corrige el problema que llevaba a invalidar como PDF/A la firma de documentos que lo fueran y estuviesen generados con algunas herramientas.
-RFE;	InvocaciÛn;		Se incorpora una funciÛn para la ejecutar la operaciÛn de firma/multifirma seguida del guardado del resultado en disco.
-RFE;	InvocaciÛn;		Se incorpora una funciÛn para la selecciÛn directa de certificados por parte del usuario. SÛlo v·lida para la comunicaciÛn por sockets.
-RFE;	InvocaciÛn;		Se admite el par·metro "filenameExts" en las distintas operaciones de firma/multifirma para filtrar por extensiÛn los tipos de fichero que puede cargar por defecto el usuario.
-BUG;	InvocaciÛn-Sockets;	Se corrige un problema que hacÌa fallar la comunicaciÛn por sockets entre AutoFirma y el navegador para tamaÒo de datos muy concretos.
-BUG;	InvocaciÛn-Sockets;	Se corrige un problema que hacÌa fallar la comunicaciÛn por sockets entre AutoFirma y las ˙ltimas versiones de Mozilla Firefox cuando el tamaÒo de datos era superior a 512Kbs.
-BUG;	InvocaciÛn-Servidor;	Se corrige un problema en la comunicaciÛn con servidor intermedio con el JavaScript de despliegue cuando los datos tienen determinado tamaÒo.
-BUG;	InvocaciÛn-Servidor;	Se corrige un problema que hacÌa fallar la comunicaciÛn por servidor intermedio cuando los datos tenÌan cierto tamaÒo y se especificaban en base64 con saltos de lÌnea.
-RFE;	InvocaciÛn-KeyStores;	Se permite el cambio de almacÈn de claves despuÈs de la carga de AutoFirma. Los almacenes soportados son los de Windows, Mozilla y el llavero de OS X.
-RFE;	InvocaciÛn-Lotes;	Se implementa la operaciÛn de contrafirma por lotes.
-RFE;	InvocaciÛn-Lotes;	Se implementa la firma de facturas electrÛnicas por lotes.
-BUG;	InvocaciÛn-Firmas;	Se corrige un error en el paso de par·metros con caracteres no ASCII. Por ejemplo, en la definiciÛn de filtros.
-BUG;	InvocaciÛn-JavaScript;	Se evita la triple llamada a la funciÛn callback de error cuando no se puede lanzar AutoFirma.
-BUG;	InvocaciÛn-JavaScript;	Se corrige que despuÈs de la llamada a la funciÛn de Èxito asociada a la operaciÛn de guardado de datos, se ejecute la operaciÛn de error cuando la comunicaciÛn es a travÈs de servidor intermedio.
-BUG;	InvocaciÛn-JavaScript;	Correcciones para el correcto lanzamiento de la aplicaciÛn nativa cuando Firefox no cargue el applet.
-BUG;	InvocaciÛn-JavaScript;	Correcciones en la funciÛn downloadRemoteData() para la correcta descarga de ficheros binarios.
-RFE;	InstalaciÛn;		Se actualiza a la JRE 8 u111
-RFE;	InstalaciÛn;		Se publica instalador MSI para despliegues masivos sobre Windows.
-RFE;	InstalaciÛn;		Se publican versiones Windows de 32 y 64 bits, cada cual con un JRE con la misma arquitectura.
-BUG;	InstalaciÛn;		Se corrige que se elimine el contenido de la variable de entorno PATH cuando este valor era superior a 1024 caracteres antes de instalar/desinstalar. En su lugar, no se agrega/elimina la ruta de AutoFirma.
-BUG;	InstalaciÛn;		Se corrige la referencia a la JRE del directorio de instalaciÛn, lo que permite la instalaciÛn y uso de AutoFirma sin tener Java 8 instalado.
-BUG;	InstalaciÛn;		Se corrige el proceso de instalaciÛn de AutoFirma en macOS Sierra.
+RFE;	Invocaci√≥n;		Se incorpora una funci√≥n para la ejecutar la operaci√≥n de firma/multifirma seguida del guardado del resultado en disco.
+RFE;	Invocaci√≥n;		Se incorpora una funci√≥n para la selecci√≥n directa de certificados por parte del usuario. S√≥lo v√°lida para la comunicaci√≥n por sockets.
+RFE;	Invocaci√≥n;		Se admite el par√°metro "filenameExts" en las distintas operaciones de firma/multifirma para filtrar por extensi√≥n los tipos de fichero que puede cargar por defecto el usuario.
+BUG;	Invocaci√≥n-Sockets;	Se corrige un problema que hac√≠a fallar la comunicaci√≥n por sockets entre AutoFirma y el navegador para tama√±o de datos muy concretos.
+BUG;	Invocaci√≥n-Sockets;	Se corrige un problema que hac√≠a fallar la comunicaci√≥n por sockets entre AutoFirma y las √∫ltimas versiones de Mozilla Firefox cuando el tama√±o de datos era superior a 512Kbs.
+BUG;	Invocaci√≥n-Servidor;	Se corrige un problema en la comunicaci√≥n con servidor intermedio con el JavaScript de despliegue cuando los datos tienen determinado tama√±o.
+BUG;	Invocaci√≥n-Servidor;	Se corrige un problema que hac√≠a fallar la comunicaci√≥n por servidor intermedio cuando los datos ten√≠an cierto tama√±o y se especificaban en base64 con saltos de l√≠nea.
+RFE;	Invocaci√≥n-KeyStores;	Se permite el cambio de almac√©n de claves despu√©s de la carga de AutoFirma. Los almacenes soportados son los de Windows, Mozilla y el llavero de OS X.
+RFE;	Invocaci√≥n-Lotes;	Se implementa la operaci√≥n de contrafirma por lotes.
+RFE;	Invocaci√≥n-Lotes;	Se implementa la firma de facturas electr√≥nicas por lotes.
+BUG;	Invocaci√≥n-Firmas;	Se corrige un error en el paso de par√°metros con caracteres no ASCII. Por ejemplo, en la definici√≥n de filtros.
+BUG;	Invocaci√≥n-JavaScript;	Se evita la triple llamada a la funci√≥n callback de error cuando no se puede lanzar AutoFirma.
+BUG;	Invocaci√≥n-JavaScript;	Se corrige que despu√©s de la llamada a la funci√≥n de √©xito asociada a la operaci√≥n de guardado de datos, se ejecute la operaci√≥n de error cuando la comunicaci√≥n es a trav√©s de servidor intermedio.
+BUG;	Invocaci√≥n-JavaScript;	Correcciones para el correcto lanzamiento de la aplicaci√≥n nativa cuando Firefox no cargue el applet.
+BUG;	Invocaci√≥n-JavaScript;	Correcciones en la funci√≥n downloadRemoteData() para la correcta descarga de ficheros binarios.
+RFE;	Instalaci√≥n;		Se actualiza a la JRE 8 u111
+RFE;	Instalaci√≥n;		Se publica instalador MSI para despliegues masivos sobre Windows.
+RFE;	Instalaci√≥n;		Se publican versiones Windows de 32 y 64 bits, cada cual con un JRE con la misma arquitectura.
+BUG;	Instalaci√≥n;		Se corrige que se elimine el contenido de la variable de entorno PATH cuando este valor era superior a 1024 caracteres antes de instalar/desinstalar. En su lugar, no se agrega/elimina la ruta de AutoFirma.
+BUG;	Instalaci√≥n;		Se corrige la referencia a la JRE del directorio de instalaci√≥n, lo que permite la instalaci√≥n y uso de AutoFirma sin tener Java 8 instalado.
+BUG;	Instalaci√≥n;		Se corrige el proceso de instalaci√≥n de AutoFirma en macOS Sierra.
 
 
 AutoFirma v1.4.3
 --------------------------
-RFE;	InstalaciÛn;	Se crea una CA a partir de la cual se genera el certificado para la comunicaciÛn por servicio con el JavaScript de despliegue del MiniApplet, evitando asÌ problemas de comunicaciÛn. Durante el proceso de instalaciÛn/desinstalaciÛn se cierra Firefox para permitir instalar/desinstalar el certificado.
-RFE;	InstalaciÛn;	El usuario no tiene que seleccionar confiar en los certificados para la comunicaciÛn con el JavaScript de despliegue, evitando que puede interrumpirse el proceso.
-RFE;	InstalaciÛn;	Se configura como de confianza el protocolo "afirma" para Google Chrome, evitando que se muestren mensajes de advertencia. Durante el proceso de instalaciÛn/desinstalaciÛn se cierra Chrome para permitir habilitar/deshabilitar la confianza en el protocolo.
+RFE;	Instalaci√≥n;	Se crea una CA a partir de la cual se genera el certificado para la comunicaci√≥n por servicio con el JavaScript de despliegue del MiniApplet, evitando as√≠ problemas de comunicaci√≥n. Durante el proceso de instalaci√≥n/desinstalaci√≥n se cierra Firefox para permitir instalar/desinstalar el certificado.
+RFE;	Instalaci√≥n;	El usuario no tiene que seleccionar confiar en los certificados para la comunicaci√≥n con el JavaScript de despliegue, evitando que puede interrumpirse el proceso.
+RFE;	Instalaci√≥n;	Se configura como de confianza el protocolo "afirma" para Google Chrome, evitando que se muestren mensajes de advertencia. Durante el proceso de instalaci√≥n/desinstalaci√≥n se cierra Chrome para permitir habilitar/deshabilitar la confianza en el protocolo.
 
 
 AutoFirma v1.4.2
 --------------------------
-RFE;	General;	Se incluyen todas las capacidades de configuraciÛn de firma del MiniApplet 1.4 por medio de la invocaciÛn por protocolo.
-RFE;	General;	Se permite configurar que no se muestre el di·logo de selecciÛn autom·tica del DNIe al iniciar la aplicaciÛn.
-RFE;	General;	Se permite configurar quÈ formato de firma debe aplicarse para cada tipo de fichero.
-BUG;	General;	Se corrige la direcciÛn de la URL de actualizaciÛn.
-RFE:	LibrerÌas;	ActualizaciÛn a BouncyCastle 1.53.
-RFE;	Consola;	Ahora es posible configurar un almacÈn PKCS#11.
-RFE;	Firma PAdES;	Se permite configurar que se realicen firmas visibles PDF y seleccionar el ·rea de firma en cada operaciÛn.
+RFE;	General;	Se incluyen todas las capacidades de configuraci√≥n de firma del MiniApplet 1.4 por medio de la invocaci√≥n por protocolo.
+RFE;	General;	Se permite configurar que no se muestre el di√°logo de selecci√≥n autom√°tica del DNIe al iniciar la aplicaci√≥n.
+RFE;	General;	Se permite configurar qu√© formato de firma debe aplicarse para cada tipo de fichero.
+BUG;	General;	Se corrige la direcci√≥n de la URL de actualizaci√≥n.
+RFE:	Librer√≠as;	Actualizaci√≥n a BouncyCastle 1.53.
+RFE;	Consola;	Ahora es posible configurar un almac√©n PKCS#11.
+RFE;	Firma PAdES;	Se permite configurar que se realicen firmas visibles PDF y seleccionar el √°rea de firma en cada operaci√≥n.
 
 
 AutoFirma v1.4.1
 --------------------------
 
-RFE;	General;	Se habilita el mÛdulo de actualizaciÛn que avisa cuando hay disponible una nueva versiÛn de AutoFirma.
+RFE;	General;	Se habilita el m√≥dulo de actualizaci√≥n que avisa cuando hay disponible una nueva versi√≥n de AutoFirma.
 
 
 AutoFirma v1.4
 --------------------------
 
-RFE;	General;	Cambio de nombre del producto. Deja de ser FirmaF·cil para convertirse en AutoFirma.
-RFE;	General;	Ahora se genera en disco el log de la ˙ltima ejecuciÛn de la aplicaciÛn para facilitar la notificaciÛn de errores a los servicios de soporte.
-RFE;	JavaScript;	Ahora, cuando el script de despliegue del MiniApplet propocione un URL en claro como datos, se descargar·n los datos de esta URL y se firmar·n en su lugar.
-RFE:	LibrerÌas;	ActualizaciÛn a BouncyCastle 1.51.
-RFE:	LibrerÌas;	ActualizaciÛn a JXAdES 0.1.1.
-RFE;	UI;		El di·logo de selecciÛn de certificados aparece con botones para refrescar los certificados del almacÈn, cambiar a almacÈn PKCS#12 y acceder a la Wiki de referencia de la aplicaciÛn.
-RFE;	UI;		Facilidades para introducir un OID v·lido para las polÌticas de firma personalizadas.
-RFE;	Consola;	Se da acceso a funcionalidades criptogr·ficas por consola.
-BUG;	Firmas XML;	Se corrige un error de compatibilidad de bibliotecas en MacOS X que afectaba a las firmas XML. Para ello se ha tenido que prescindir de los gr·ficos vectoriales en favor de mapas de bits.
-RFE;	Firmas ODF;	Se agrega el mÛdulo de firma ODF que se usar· para la firma de los documentos en este formato.
-RFE;	Firmas OOXML;	Se agrega el mÛdulo de firma OXML que se usar· para la firma de los documentos en este formato.
+RFE;	General;	Cambio de nombre del producto. Deja de ser FirmaF√°cil para convertirse en AutoFirma.
+RFE;	General;	Ahora se genera en disco el log de la √∫ltima ejecuci√≥n de la aplicaci√≥n para facilitar la notificaci√≥n de errores a los servicios de soporte.
+RFE;	JavaScript;	Ahora, cuando el script de despliegue del MiniApplet propocione un URL en claro como datos, se descargar√°n los datos de esta URL y se firmar√°n en su lugar.
+RFE:	Librer√≠as;	Actualizaci√≥n a BouncyCastle 1.51.
+RFE:	Librer√≠as;	Actualizaci√≥n a JXAdES 0.1.1.
+RFE;	UI;		El di√°logo de selecci√≥n de certificados aparece con botones para refrescar los certificados del almac√©n, cambiar a almac√©n PKCS#12 y acceder a la Wiki de referencia de la aplicaci√≥n.
+RFE;	UI;		Facilidades para introducir un OID v√°lido para las pol√≠ticas de firma personalizadas.
+RFE;	Consola;	Se da acceso a funcionalidades criptogr√°ficas por consola.
+BUG;	Firmas XML;	Se corrige un error de compatibilidad de bibliotecas en MacOS X que afectaba a las firmas XML. Para ello se ha tenido que prescindir de los gr√°ficos vectoriales en favor de mapas de bits.
+RFE;	Firmas ODF;	Se agrega el m√≥dulo de firma ODF que se usar√° para la firma de los documentos en este formato.
+RFE;	Firmas OOXML;	Se agrega el m√≥dulo de firma OXML que se usar√° para la firma de los documentos en este formato.
 
 
-FirmaF·cil v1.3u1
+FirmaF√°cil v1.3u1
 --------------------------
 
-BUG;	Applet;		Se actualiza a la versiÛn 0.1.1 de JXAdES para corregir el error de la posiciÛn del nodo SignerRole.
+BUG;	Applet;		Se actualiza a la versi√≥n 0.1.1 de JXAdES para corregir el error de la posici√≥n del nodo SignerRole.
 
 
-FirmaF·cil v1.3
+FirmaF√°cil v1.3
 --------------------------
 
 RFE;	General;	Se agrega el controlador 100% Java para simplificar el uso del DNIe.
-RFE;	General;	Se agrega una pantalla para la configuraciÛn de las preferencias de firma (polÌticas, modo de CAdES, variante de XAdES y PAdES,...)
-RFE;	General;	Ahora se genera en disco el log de la ˙ltima ejecuciÛn de la aplicaciÛn para facilitar la notificaciÛn de errores a los servicios de soporte.
-BUG;	General;	CorrecciÛn en las firmas EPES. Ahora, si no indica el hash de la polÌtica, se calcula con el algoritmo indicado en lugar de hacerlo siempre con SHA-512.
-RFE:	LibrerÌas;	ActualizaciÛn a BouncyCastle 1.50.
-RFE:	LibrerÌas;	ActualizaciÛn a JXAdES 0.1.0.
-BUG;	UI;		Se corrige la pantalla de selecciÛn de fichero para que no aparezca en blanco en algunos equipos.
-RFE;	UI;		Se agrega la funciÛn de validaciÛn de certificados de firma para los certificados de una serie predefinida de autoridades de certificaciÛn. Inicialmente: PolicÌa y Camerfirma.
-RFE;	UI;		El di·logo de selecciÛn de certificados muestra un icono en los certificados prÛximos a caducar.
-BUG;	Firmas CAdES;	Se corrige un desvio de las CAdES-EPES con respecto al est·ndar.
-BUG;	Firmas CAdES;	CorrecciÛn en la contrafirma trif·sica.
+RFE;	General;	Se agrega una pantalla para la configuraci√≥n de las preferencias de firma (pol√≠ticas, modo de CAdES, variante de XAdES y PAdES,...)
+RFE;	General;	Ahora se genera en disco el log de la √∫ltima ejecuci√≥n de la aplicaci√≥n para facilitar la notificaci√≥n de errores a los servicios de soporte.
+BUG;	General;	Correcci√≥n en las firmas EPES. Ahora, si no indica el hash de la pol√≠tica, se calcula con el algoritmo indicado en lugar de hacerlo siempre con SHA-512.
+RFE:	Librer√≠as;	Actualizaci√≥n a BouncyCastle 1.50.
+RFE:	Librer√≠as;	Actualizaci√≥n a JXAdES 0.1.0.
+BUG;	UI;		Se corrige la pantalla de selecci√≥n de fichero para que no aparezca en blanco en algunos equipos.
+RFE;	UI;		Se agrega la funci√≥n de validaci√≥n de certificados de firma para los certificados de una serie predefinida de autoridades de certificaci√≥n. Inicialmente: Polic√≠a y Camerfirma.
+RFE;	UI;		El di√°logo de selecci√≥n de certificados muestra un icono en los certificados pr√≥ximos a caducar.
+BUG;	Firmas CAdES;	Se corrige un desvio de las CAdES-EPES con respecto al est√°ndar.
+BUG;	Firmas CAdES;	Correcci√≥n en la contrafirma trif√°sica.
 BUG;	Firmas CAdES;	Las contrafirmas no agregan atributo contentType.
 RFE;	Firmas XAdES;	Se actualiza el dereferenciador a medida para mantener la compatibilidad con Java 8.
-RFE;	Firmas XAdES;	Ahora, en una firma enveloped, si el nodo raÌz tiene Id, no se usa "" para referenciarlo, sino este Id, y se omite por lo tanto la transformaciÛn XPath adicional.
-RFE;	Firmas XAdES;	Ahora el nodo raÌz AFIRMA siempre se crea con un Id para facilitar tratamientos posteriores.
-BUG;	Firmas XAdES;	Ahora todos los campos del KeyInfo de XAdES tienen en cuenta el escape de caracteres seg˙n XMLDSig y RFC 4514
-RFE;	Firmas PAdES;	Ahora no se distingue entre tipos de certificaciones PDF, cualquier tipo de certificaciÛn (no admisiÛn de cambios, solo admisiÛn de valores en campos de formulario, solo admisiÛn de anotaciones y valores en campos de formulario) hara que se rechaze el proceso de firma a menos que se indique lo contrario mediante par·metros adicionales.
+RFE;	Firmas XAdES;	Ahora, en una firma enveloped, si el nodo ra√≠z tiene Id, no se usa "" para referenciarlo, sino este Id, y se omite por lo tanto la transformaci√≥n XPath adicional.
+RFE;	Firmas XAdES;	Ahora el nodo ra√≠z AFIRMA siempre se crea con un Id para facilitar tratamientos posteriores.
+BUG;	Firmas XAdES;	Ahora todos los campos del KeyInfo de XAdES tienen en cuenta el escape de caracteres seg√∫n XMLDSig y RFC 4514
+RFE;	Firmas PAdES;	Ahora no se distingue entre tipos de certificaciones PDF, cualquier tipo de certificaci√≥n (no admisi√≥n de cambios, solo admisi√≥n de valores en campos de formulario, solo admisi√≥n de anotaciones y valores en campos de formulario) hara que se rechaze el proceso de firma a menos que se indique lo contrario mediante par√°metros adicionales.
