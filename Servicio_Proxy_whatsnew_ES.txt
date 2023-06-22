@@ -1,0 +1,31 @@
+
+Cambios del servicio proxy del Portafirmas móvil
+------------------------------------------------
+
+2.6.3 (12/01/2022)
+ - Nuevas trazasa de log.
+
+2.6.2 (16/11/2022)
+ - Se vuelven a separar los servicios proxy y de firma trifásica.
+ - Se realizan cambios para identificar el problema en el despliegue de preproducción.
+
+2.6.1 (8/11/2022)
+ - Se modifica la prioridad en los proveedores de firma XML para solucionar un problema de las firmas XAdES.
+
+2.6 (18/10/2022)
+ - Se permite configurar el guardado en cache (en disco) de los documentos a firmar para evitar la llamada al servicio Portafirmas tanto en la prefirma como en la postfirma.
+ - Se corrige un problema por el que fallaba el agregar la cabecera de seguridad de los mensajes al Portafirmas cuando se usaba Java 8 o superior.
+ - Se integra la lógica de firma trifásica en el servicio proxy. Ya no es necesario el servicio de firma trifásica.
+
+2.5.3 (13/10/2002)
+ - Se permite configurar un usuario/contraseña para la conexión con el servicio Portafirmas.
+ - Se notifica a las aplicaciones cliente cuando una petición de firma requiere confirmación del usuario antes de procesarla.
+
+2.5.3 (18/07/2022)
+ - Se agrega la cabecera “Expect: 100-Continue” a las peticiones a los servicios del Portafirmas y el servidor trifásico.
+ - Se puede activar el modo debug del gran arrancándolo con el parámetro “-Dproxy.debug=true”.
+
+2.5.2 (25/07/2022)
+ - Se incorpora la gestión de validadores y autorizaciones.
+ - Se proporciona la versión del proxy junto a la configuración del usuario al llamar a esa operación.
+ - Se incluyen mejoras y correcciones para la estabilidad del servicio.

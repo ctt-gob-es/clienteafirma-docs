@@ -1,18 +1,29 @@
-Portafirmas Android
+Portafirmas m贸vil v1.9 (01/06/2023)
+------------------------------------
+ - Descarga y compartici贸n de documentos.
+ - Formato HTML de los mensajes de las peticiones.
+ - V铆nculos en los mensajes de las peticiones.
+ - Vista ampliada del listado de peticiones.
+
+
+Portafirmas m贸vil v1.8 (13/07/2022)
+------------------------------------
+ - Autenticaci贸n y firma con DNIe.
+
 
 Portafirmas v1.5
 --------------------------
-BUG;	Se corrige la visualizaci髇 de documentos en Android.
-BUG;	Ya no se declaran equivocadamente la operaci髇 de las l韓eas de firma en el detalle de las peticiones.
-RFE;	Visualizaci髇 del mensaje de las peticiones.
+BUG;	Se corrige la visualizaci贸n de documentos en Android.
+BUG;	Ya no se declaran equivocadamente la operaci贸n de las l铆neas de firma en el detalle de las peticiones.
+RFE;	Visualizaci贸n del mensaje de las peticiones.
 RFE;	Nuevo modo de acceso con certificados remotos (acceso con Cl@ve Permante y firma con Cl@ve Firma).
-RFE;	Adaptaci髇 completa del Portafirmas Android a Firebase para mantener el soporte de las notificaciones PUSH.
+RFE;	Adaptaci贸n completa del Portafirmas Android a Firebase para mantener el soporte de las notificaciones PUSH.
 
 
 Portafirmas v2.3.2
 --------------------------
-BUG;	Se corrige el cierre de la aplicaci髇 con las versiones del servicio proxy no adaptadas al nuevo mecanismo de seguridad (como el incluido con la versi髇 distribuible del Portafirmas).
-BUG;	Se corrige la recuperaci髇 del listado de aplicaciones para los filtros de peticiones de firma.
+BUG;	Se corrige el cierre de la aplicaci贸n con las versiones del servicio proxy no adaptadas al nuevo mecanismo de seguridad (como el incluido con la versi贸n distribuible del Portafirmas).
+BUG;	Se corrige la recuperaci贸n del listado de aplicaciones para los filtros de peticiones de firma.
 BUG;	Se agrega la solicitud de permisos al almacenamiento externo para evitar errores en la carga y el guardado de ficheros.
 BUG;	Se corrige que algunos textos apareciesen cortados.
 BUG;	Se corrigen algunos problemas de compatibilidad con Android 4.3.

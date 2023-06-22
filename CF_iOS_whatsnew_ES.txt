@@ -1,0 +1,55 @@
+Cliente iOS v1.8
+---------------------------
+RFE;       General;            Compatibilidad con iOS 16.
+RFE;       General;            Se devuelve el certificado utilizado en las operaciones de firma.
+BUG;       General;            Correcciones de estabilidad y apariencia.
+RFE;       Lotes;              Se implementa el nuevo sistema de firma de lotes.
+RFE;       Firma;              Se elimina la opción de firma CAdES monofásica.
+RFE;       Firma;              Se implementa la firma de FacturaE.
+RFE;       UI;                 Actualización de textos y ayuda.
+
+
+Cliente iOS v1.5
+---------------------------
+RFE;       General;            Compatibilidad con iOS 13 y nuevos dispositivos iPad/iPhone.
+RFE;       General;            Importación de certificados desde la aplicación Archivos.
+RFE;       Firma;              Se implementa la firma de NONE/NONEtri.
+
+
+Cliente iOS v1.4.9
+---------------------------
+RFE;       General;            Compatibilidad con iOS 10.1.
+RFE;       General;            Mejora en el tratamiento de errores en los despliegues.
+
+
+Cliente iOS v1.4.8
+---------------------------
+BUG;       General;            Corrección de error que cierra la aplicación. Afecta sobre todo a iOS 9.3.2.
+
+
+Cliente iOS v1.4.7
+---------------------------
+BUG;       General;            Se corrige problema de selección de certificado.
+
+
+Cliente iOS v1.4.6
+---------------------------
+BUG;       General;            Se corrige problema de selección de certificado en la primera invocación desde el navegador.
+
+
+Cliente iOS v1.1
+---------------------------
+RFE;       General;            Mejoras de estabilidad.
+RFE;       Firma;              Compatibilidad con nuevo servicio de firma trifásica.
+BUG;       Firma;              Corrección de firma PAdES.
+
+
+Cliente iOS v1.0.2
+---------------------------
+RFE;       General;            Textos en inglés.
+RFE;       Firma;              Se implementa la firma trifásica.
+
+
+Cliente iOS v1.0.1
+---------------------------
+BUG;       UI;                 Correcciones y mejoras estéticas.

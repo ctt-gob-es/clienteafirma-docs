@@ -1,9 +1,55 @@
+Cliente Android v1.8.2 VC24
+---------------------------
+BUG;	General;		Se corrige la operación de guardado de datos que creaba el fichero vacío.
+BUG;	General;		Se permite la comunicación con dominio sin SSL con versiones antiguas de Android.
+RFE;	General;		Se actualiza el algoritmo de firma de las firmas locales a SHA256withRSA.
+BUG;	PAdES;			Se corrige la firma de documentos PDF/A-1.
+BUG;	DNIe;			Corrección en el diálogo de CAN del DNIe.
+BUG;	UI;			Corrección de iconos en versiones antiguas de Android.
+RFE;	UI;			Actualización de la declaración de accesibilidad.
+
+Cliente Android v1.8 VC23
+---------------------------
+RFE;	Android;		Adaptación a Android 13.
+RFE;	KeyStores;		Compatibilidad DNIe 4.0.
+RFE;	General;		Permite establecer una lista de dominios seguros.
+RFE;	General;		Se amplía el listado de certificados SSL de confianza.
+RFE;	General;		Compatibilidad con la firma de lotes de AutoFirma 1.8.
+RFE;	UI;			Mejora de la accesibilidad.
+RFE;	UI;			Mejora de la presentación del icono de la aplicación.
+BUG;	UI;			Se evitan error al recuperar el resultado de firma en dispositivos con pantalla grande o cuando se visualiza la aplicación en apaisado.
+
+Cliente Android v1.7.2 VC22
+---------------------------
+RFE;	KeyStores;		Nuevos certificados de confianza.
+RFE;	UI;			Mejora de la accesibilidad.
+RFE;	UI;			Corrección de textos.
+
+Cliente Android v1.7.1 VC21
+---------------------------
+BUG;	General;		Se corrige la comunicación sobre conexiones SSL cifradas con certificados de prestadores de certificación españoles.
+
+Cliente Android v1.7.0 VC20
+---------------------------
+RFE;	Android;		Adaptación a Android 11.
+RFE;	KeyStores;		Adaptación para el funcionamiento de los nuevos DNIe 3.0.
+RFE;	General;		Se unifica el comportamiento de las conexiones con servidores externos y se desactiva la comunicación con aquellos con certificado SSL que no sea de confianza.
+RFE;	General;		Correcciones en la gestión de permisos.
+RFE;	General;		Mejoras en la estabilidad de la aplicación.
+RFE;	UI;			Actualización de la URL de la política de privacidad.
+
+Version 1.6.2
+-----------
+- Actualización de los formatos de firma con las mejoras del Cliente @firma.
+- Devolución del certificado utilizado en las operaciones de firma.
+
 
 Version 1.6
 -----------
 - Se corrige un cierre inesperado de la aplicación cuando en la configuración de firma proporcionada desde el navegador web no se envían los datos a firmar y, aún así, es demasiado grande para enviarse sin servidor intermedio.
 - Se corrige la generación de firmas PAdES visibles.
 - Se agrega el soporte para la operación de selección de certificados al invocarse desde un navegador web.
+
 
 Version 1.5
 -----------
